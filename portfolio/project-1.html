@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>My Awesome Website - Project Title One</title>
+    <meta name="description" content="Details about Project Title One." />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="container">
+      <hgroup>
+        <h1>My Awesome Website</h1>
+        <p>Portfolio & Blog</p>
+      </hgroup>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../portfolio/portfolio-home.html">Portfolio</a></li>
+          <li><a href="../../blog/blog-home.html">Blog</a></li>
+          <li></li>
+          <li>
+            <button id="theme-toggle" aria-label="Toggle theme">
+              <svg
+                id="theme-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section id="project-details">
+        <header>
+          <h1>Project Title One</h1>
+          <p class="project-meta">
+            Completed in <time datetime="2023-09">September 2023</time> |
+            Technologies: HTML, CSS, JavaScript
+          </p>
+        </header>
+
+        <div class="project-details">
+          <p>
+            This is the detailed description of Project Title One. Explain the
+            purpose of the project, the problem it aimed to solve, and your role
+            in its development. Go into more detail than the brief description
+            on the portfolio homepage.
+          </p>
+
+          <img
+            src="https://placehold.co/1200x800/e0e0e0/333333?text=Project+Screenshot+1"
+            alt="Project Screenshot 1"
+          />
+          <h3>Project Goals</h3>
+          <p>
+            Outline the main objectives you had for this project. What were you
+            trying to achieve?
+          </p>
+          <ul>
+            <li>Goal 1</li>
+            <li>Goal 2</li>
+            <li>Goal 3</li>
+          </ul>
+
+          <img
+            src="https://placehold.co/1200x800/d0d0d0/333333?text=Project+Screenshot+2"
+            alt="Project Screenshot 2"
+          />
+          <h3>Technologies Used</h3>
+          <p>
+            List the key technologies, languages, frameworks, or tools you
+            utilized for this project.
+          </p>
+          <p class="project-meta">HTML, CSS (Pico CSS), JavaScript, Git</p>
+
+          <h3>Challenges and Learnings</h3>
+          <p>
+            Discuss any significant challenges you faced during development and
+            what you learned from them.
+          </p>
+
+          <h3>Project Outcome</h3>
+          <p>
+            Describe the final result of the project and whether it met the
+            initial goals.
+          </p>
+        </div>
+
+        <div class="project-links">
+          <a href="#" role="button">View Live Project</a>
+          <a href="#" role="button" class="secondary outline"
+            >View Source Code</a
+          >
+          <a href="portfolio.html" role="button" class="contrast outline"
+            >&larr; Back to Portfolio</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="container">
+      <small>
+        © 2023 My Awesome Website • Built with
+        <a href="https://picocss.com" target="_blank">Pico</a>
+      </small>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const htmlElement = document.documentElement;
+        const themeIcon = document.getElementById("theme-icon");
+
+        // SVG paths for lightbulb and moon icons
+        const lightbulbPath =
+          "M12 2c-3.31 0-6 2.69-6 6 0 2.06 1.03 3.87 2.61 4.89.7.44 1.39.96 1.89 1.59.5.63.76 1.3.9 1.94.14.64.19 1.3.19 1.98v1.5a1 1 0 0 0 2 0v-1.5c0-.68.05-1.34.19-1.98.14-.64.4-1.31.9-1.94.5-.63 1.19-1.15 1.89-1.59C16.97 11.87 18 10.06 18 8c0-3.31-2.69-6-6-6zm-2 18h4a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2z"; // Path for a lightbulb
+        const moonPath =
+          "M12 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10c0-.39-.031-.777-.089-1.156-1.255 1.77-3.289 2.956-5.587 2.956-4.005 0-7.25-3.245-7.25-7.25 0-2.304 1.19-4.343 2.96-5.592-.375-.058-.76-.087-1.158-.087z"; // A simple crescent for moon
+
+        // Function to set the theme and update the icon
+        const setTheme = (theme) => {
+          htmlElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme); // Save preference
+
+          // Update icon based on theme
+          if (theme === "dark") {
+            themeIcon.innerHTML = `<path d="${moonPath}"/>`;
+          } else {
+            themeIcon.innerHTML = `<path d="${lightbulbPath}"/>`;
+          }
+        };
+
+        // Check for saved theme preference on load
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          // Default to 'light' or 'auto' if no preference is saved
+          // Pico CSS defaults to auto if no data-theme is set
+          // We'll explicitly set 'light' here if no preference exists
+          setTheme("dark"); // Or 'dark' if you prefer dark by default
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = htmlElement.getAttribute("data-theme");
+          if (currentTheme === "dark") {
+            setTheme("light");
+          } else {
+            setTheme("dark");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

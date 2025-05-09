@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>My Awesome Website - Welcome!</title>
+    <meta
+      name="description"
+      content="Welcome to my personal website, showcasing my portfolio and blog."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="container">
+      <hgroup>
+        <h1>My Awesome Website</h1>
+        <p>Portfolio & Blog</p>
+      </hgroup>
+      <nav>
+        <ul>
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="portfolio/portfolio-home.html">Portfolio</a></li>
+          <li><a href="blog/blog-home.html">Blog</a></li>
+          <li>
+            <button id="theme-toggle" aria-label="Toggle theme">
+              <svg
+                id="theme-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section id="hero">
+        <hgroup>
+          <h2>Welcome!</h2>
+          <p>Discover my work and explore my thoughts.</p>
+        </hgroup>
+        <p>
+          Hi there! I'm excited to share my projects and insights with you.
+          Whether you're interested in seeing what I've built or reading my
+          latest articles, you're in the right place.
+        </p>
+        <div class="grid">
+          <a href="portfolio/portfolio-home.html" role="button"
+            >View Portfolio</a
+          >
+          <a href="blog/blog.html" role="button" class="secondary"
+            >Read the Blog</a
+          >
+        </div>
+      </section>
+      <section id="about-preview" class="container">
+        <article>
+          <h3>About This Site</h3>
+          <p>
+            This website serves as a central hub for my professional portfolio
+            and personal blog. I use the portfolio section to showcase projects
+            I'm proud of, and the blog to share my experiences, tutorials, and
+            thoughts on various topics.
+          </p>
+          <p><a href="#" class="contrast outline">Learn More About Me</a></p>
+        </article>
+      </section>
+    </main>
+    <footer class="container">
+      <small>
+        © 2023 My Awesome Website • Built with
+        <a href="https://picocss.com" target="_blank">Pico</a>
+      </small>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const htmlElement = document.documentElement;
+        const themeIcon = document.getElementById("theme-icon");
+
+        // SVG paths for lightbulb and moon icons
+        const lightbulbPath =
+          "M12 2c-3.31 0-6 2.69-6 6 0 2.06 1.03 3.87 2.61 4.89.7.44 1.39.96 1.89 1.59.5.63.76 1.3.9 1.94.14.64.19 1.3.19 1.98v1.5a1 1 0 0 0 2 0v-1.5c0-.68.05-1.34.19-1.98.14-.64.4-1.31.9-1.94.5-.63 1.19-1.15 1.89-1.59C16.97 11.87 18 10.06 18 8c0-3.31-2.69-6-6-6zm-2 18h4a1 1 0 0 0 0-2h-4a1 1 0 0 0 0 2z"; // Path for a lightbulb
+        const moonPath =
+          "M12 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10c0-.39-.031-.777-.089-1.156-1.255 1.77-3.289 2.956-5.587 2.956-4.005 0-7.25-3.245-7.25-7.25 0-2.304 1.19-4.343 2.96-5.592-.375-.058-.76-.087-1.158-.087z"; // A simple crescent for moon
+
+        // Function to set the theme and update the icon
+        const setTheme = (theme) => {
+          htmlElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme); // Save preference
+
+          // Update icon based on theme
+          if (theme === "dark") {
+            themeIcon.innerHTML = `<path d="${moonPath}"/>`;
+          } else {
+            themeIcon.innerHTML = `<path d="${lightbulbPath}"/>`;
+          }
+        };
+
+        // Check for saved theme preference on load
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+        } else {
+          // Default to 'light' or 'auto' if no preference is saved
+          // Pico CSS defaults to auto if no data-theme is set
+          // We'll explicitly set 'light' here if no preference exists
+          setTheme("light"); // Or 'dark' if you prefer dark by default
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = htmlElement.getAttribute("data-theme");
+          if (currentTheme === "dark") {
+            setTheme("light");
+          } else {
+            setTheme("dark");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
