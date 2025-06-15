@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors;
+        }
+        .nav-link-active {
+            @apply px-3 py-2 rounded-md text-sm font-medium bg-gray-900 text-white;
+        }
+        .blog-post-item {
+            @apply bg-white shadow-lg rounded-lg p-6 md:p-8 mb-8 transition-shadow hover:shadow-xl;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-900 rounded-md">Your Name</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link-active">Blog</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 rounded-md p-2">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="index.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Home</a>
+            <a href="portfolio.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Portfolio</a>
+            <a href="blog.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Blog</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Thoughts & Writings</h1>
+            <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+                Welcome to my blog. Here I share insights on technology, design, and personal growth.
+            </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <article class="blog-post-item">
+                <header>
+                    <h2 class="text-3xl font-semibold text-gray-900 mb-2">
+                        <a href="post.html" class="hover:underline rounded-md">The Future of Web Development</a>
+                    </h2>
+                    <p class="text-sm text-gray-600 mb-4">Published on <time datetime="2024-05-15">May 15, 2024</time> by [Your Name]</p>
+                </header>
+                <div class="prose prose-lg max-w-none text-gray-700 mb-4">
+                    <p>
+                        Web development is an ever-evolving field. In this post, we explore some of the upcoming trends,
+                        from serverless architectures to the rise of AI-powered tools and the increasing importance of WebAssembly...
+                    </p>
+                </div>
+                <a href="post.html" class="inline-block text-gray-900 font-semibold hover:underline rounded-md">Read More &rarr;</a>
+            </article>
+
+            <article class="blog-post-item">
+                <header>
+                    <h2 class="text-3xl font-semibold text-gray-900 mb-2">
+                        <a href="post.html" class="hover:underline rounded-md">Mastering Minimalism in Design</a>
+                    </h2>
+                    <p class="text-sm text-gray-600 mb-4">Published on <time datetime="2024-04-28">April 28, 2024</time> by [Your Name]</p>
+                </header>
+                <div class="prose prose-lg max-w-none text-gray-700 mb-4">
+                    <p>
+                        Minimalism isn't just about less; it's about making more with less. This article delves into the principles
+                        of minimalist design, how to apply them effectively, and the impact they can have on user experience...
+                    </p>
+                </div>
+                <a href="post.html" class="inline-block text-gray-900 font-semibold hover:underline rounded-md">Read More &rarr;</a>
+            </article>
+
+            <article class="blog-post-item">
+                <header>
+                    <h2 class="text-3xl font-semibold text-gray-900 mb-2">
+                        <a href="post.html" class="hover:underline rounded-md">A Guide to Productive Remote Work</a>
+                    </h2>
+                    <p class="text-sm text-gray-600 mb-4">Published on <time datetime="2024-04-10">April 10, 2024</time> by [Your Name]</p>
+                </header>
+                <div class="prose prose-lg max-w-none text-gray-700 mb-4">
+                    <p>
+                        Remote work is the new norm for many. Learn strategies for staying focused, maintaining work-life balance,
+                        and collaborating effectively with your team, no matter where you are...
+                    </p>
+                </div>
+                <a href="post.html" class="inline-block text-gray-900 font-semibold hover:underline rounded-md">Read More &rarr;</a>
+            </article>
+
+            <nav class="mt-12 text-center" aria-label="Pagination">
+                <a href="#" class="px-4 py-2 mx-1 text-gray-700 bg-white rounded-md shadow-sm hover:bg-gray-50">Previous</a>
+                <a href="#" aria-current="page" class="px-4 py-2 mx-1 text-white bg-gray-900 rounded-md shadow-sm">1</a>
+                <a href="#" class="px-4 py-2 mx-1 text-gray-700 bg-white rounded-md shadow-sm hover:bg-gray-50">2</a>
+                <a href="#" class="px-4 py-2 mx-1 text-gray-700 bg-white rounded-md shadow-sm hover:bg-gray-50">3</a>
+                <a href="#" class="px-4 py-2 mx-1 text-gray-700 bg-white rounded-md shadow-sm hover:bg-gray-50">Next</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
+            <p>&copy; <span id="currentYear"></span> [Your Name]. All rights reserved.</p>
+             <p class="text-sm mt-1">
+                Connect with me:
+                <a href="#" class="hover:underline rounded-md">Twitter</a> |
+                <a href="#" class="hover:underline rounded-md">LinkedIn</a> |
+                <a href="#" class="hover:underline rounded-md">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Set current year in footer
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+    </script>
+
+</body>
+</html>
