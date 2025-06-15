@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title - Your Name</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-100 text-gray-800 transition-colors duration-300 ease-in-out;
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors;
+        }
+        .nav-link-active { /* Technically not active here, but kept for consistency if needed */
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900;
+        }
+        /* Basic prose styling for blog content */
+        .prose-custom {
+            @apply text-lg leading-relaxed;
+        }
+        .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+            @apply font-bold mb-4 mt-8 text-gray-900;
+        }
+        .prose-custom h1 { @apply text-4xl; }
+        .prose-custom h2 { @apply text-3xl; }
+        .prose-custom h3 { @apply text-2xl; }
+        .prose-custom p { @apply mb-6; }
+        .prose-custom a { @apply text-blue-600 hover:underline rounded-sm; }
+        .prose-custom ul, .prose-custom ol { @apply list-inside mb-6 pl-4; }
+        .prose-custom ul { @apply list-disc; }
+        .prose-custom ol { @apply list-decimal; }
+        .prose-custom blockquote { @apply border-l-4 border-gray-300 pl-4 italic text-gray-700 my-6; }
+        .prose-custom pre { @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-6 text-sm; }
+        .prose-custom code { @apply bg-gray-200 text-gray-800 px-1 py-0.5 rounded-md text-sm; }
+        .prose-custom pre code { @apply bg-transparent text-white p-0; } /* Reset for code within pre */
+        .prose-custom img { @apply rounded-lg shadow-md my-8 max-w-full h-auto; }
+
+        /* Dark Mode Styles */
+        .dark body {
+            @apply bg-slate-900 text-slate-300;
+        }
+        .dark header {
+            @apply bg-slate-800 shadow-md border-b border-slate-700;
+        }
+        .dark .nav-link {
+            @apply text-slate-300 hover:bg-slate-700 hover:text-white;
+        }
+         /* Active link in nav for dark mode */
+        .dark nav a.nav-link.text-gray-700.hover\:bg-gray-200.hover\:text-gray-900.nav-link-active,
+        .dark nav a.nav-link-active { /* More specific if needed */
+             @apply bg-slate-300 text-slate-900 hover:bg-slate-400;
+        }
+        .dark article.bg-white { /* Main article background */
+            @apply bg-slate-800 shadow-xl;
+        }
+        /* General text color overrides for dark mode */
+        .dark .text-gray-900 { @apply text-slate-100; }
+        .dark .text-gray-800 { @apply text-slate-200; }
+        .dark .text-gray-700 { @apply text-slate-300; }
+        .dark .text-gray-600 { @apply text-slate-400; }
+        .dark .text-gray-500 { @apply text-slate-500; }
+
+        .dark .border-gray-200 { @apply border-slate-700; }
+        .dark .border-gray-300 { @apply border-slate-600; }
+
+        /* Prose custom dark mode */
+        .dark .prose-custom h1, .dark .prose-custom h2, .dark .prose-custom h3 {
+            @apply text-slate-100;
+        }
+        .dark .prose-custom a { @apply text-blue-400 hover:text-blue-300; }
+        .dark .prose-custom blockquote {
+            @apply border-slate-600 text-slate-400;
+        }
+        .dark .prose-custom pre { /* Code blocks */
+            @apply bg-slate-950 text-slate-300;
+        }
+        .dark .prose-custom code { /* Inline code */
+            @apply bg-slate-700 text-slate-300;
+        }
+        .dark .prose-custom pre code { /* Code inside pre, reset background */
+            @apply bg-transparent text-slate-300;
+        }
+        .dark .prose-custom img { @apply opacity-90; } /* Slightly dim images in dark mode */
+
+        /* Header specific dark mode adjustments */
+        .dark header .text-2xl.font-bold.text-gray-900 { /* Site Name */
+            @apply text-slate-100;
+        }
+        .dark .md\:hidden button.text-gray-700 { /* Mobile menu button */
+            @apply text-slate-300 hover:text-white focus:ring-slate-500;
+        }
+        .dark #mobile-menu { /* Mobile menu itself */
+            @apply bg-slate-800 shadow-lg;
+        }
+        .dark #mobile-menu a.text-gray-700 { /* Mobile menu links */
+            @apply text-slate-300 hover:bg-slate-700;
+        }
+
+        /* Footer dark mode */
+        .dark footer {
+            @apply bg-slate-800 border-t border-slate-700;
+        }
+        .dark footer .text-gray-600 { /* Footer main text */
+            @apply text-slate-400;
+        }
+        .dark footer a.hover\:underline { /* Footer links */
+            @apply text-blue-400 hover:text-blue-300;
+        }
+        
+        /* Theme toggle button styling */
+        #theme-toggle {
+            /* Default (Light Mode - button shows "Dark") */
+            @apply bg-slate-700 text-white hover:bg-slate-600 focus:ring-slate-500;
+        }
+        .dark #theme-toggle {
+            /* Dark Mode - button shows "Light" */
+            @apply bg-slate-300 text-slate-900 hover:bg-slate-400 focus:ring-slate-400;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800"> <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative"> <div class="absolute top-1/2 left-4 transform -translate-y-1/2 z-[51]"> <button id="theme-toggle" class="px-3 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2" aria-live="polite">
+                    <span id="theme-toggle-text">Dark</span>
+                </button>
+            </div>
+
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center pl-16 sm:pl-20"> 
+                    <a href="index.html" class="text-2xl font-bold text-gray-900 rounded-md">Your Name</a>
+                </div>
+                <nav class="hidden md:flex space-x-4">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    <a href="blog.html" class="nav-link">Blog</a> 
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 rounded-md p-2">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="index.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Home</a>
+            <a href="portfolio.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Portfolio</a>
+            <a href="blog.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-200 rounded-md">Blog</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article class="max-w-3xl mx-auto bg-white shadow-xl rounded-lg p-6 md:p-10">
+            <header class="mb-8 text-center border-b pb-6 border-gray-200">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">The Future of Web Development</h1>
+                <p class="text-base text-gray-600">
+                    Published on <time datetime="2024-05-15">May 15, 2024</time> by [Your Name]
+                </p>
+                <p class="text-sm text-gray-500 mt-1">Reading time: Approx. 7 minutes</p>
+            </header>
+
+            <img src="https://placehold.co/1200x600/e0f2fe/0c4a6e?text=Web+Dev+Future" alt="Abstract representation of future web" class="w-full h-auto rounded-lg mb-8 shadow-md">
+
+
+            <div class="prose-custom max-w-none">
+                <p>Web development is a dynamic and rapidly evolving field. Staying ahead of the curve means understanding the trends that are shaping its future. In this post, we'll delve into some of the most significant developments, from serverless architectures and the rise of AI-powered tools to the increasing importance of WebAssembly and the continued push for better performance and user experience.</p>
+
+                <h2>The Serverless Revolution Continues</h2>
+                <p>Serverless computing, which allows developers to build and run applications without managing servers, continues to gain traction. Platforms like AWS Lambda, Google Cloud Functions, and Azure Functions are making it easier than ever to deploy scalable, cost-effective applications. This shift allows developers to focus more on code and less on infrastructure, accelerating development cycles.</p>
+                
+                <blockquote>
+                    "The best way to predict the future is to invent it." – Alan Kay. This rings particularly true in the fast-paced world of web tech.
+                </blockquote>
+
+                <h2>AI and Machine Learning Integration</h2>
+                <p>Artificial intelligence (AI) and machine learning (ML) are no longer just buzzwords; they are becoming integral parts of web applications. From personalized user experiences and intelligent chatbots to automated content generation and sophisticated data analysis, AI is opening up new possibilities for what websites and web apps can do.</p>
+                <ul>
+                    <li>Personalized content recommendations</li>
+                    <li>Enhanced search functionality</li>
+                    <li>AI-driven accessibility features</li>
+                    <li>Automated A/B testing and optimization</li>
+                </ul>
+
+                <h2>WebAssembly (Wasm) Gaining Momentum</h2>
+                <p>WebAssembly provides a way to run code written in languages other than JavaScript (like C++, Rust, Go) on the web at near-native speed. This is a game-changer for performance-intensive applications such as:</p>
+                <ol>
+                    <li>Online gaming</li>
+                    <li>Video and audio editing software</li>
+                    <li>Complex data visualization tools</li>
+                    <li>Scientific simulations</li>
+                </ol>
+                <p>As Wasm matures, we can expect to see more powerful and complex applications running directly in the browser.</p>
+
+                <pre><code>// Example of a simple JavaScript function
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet('Developer');</code></pre>
+
+                <h2>Focus on Core Web Vitals and Performance</h2>
+                <p>User expectations for fast-loading and smooth-interacting websites are higher than ever. Google's Core Web Vitals (Largest Contentful Paint, First Input Delay, Cumulative Layout Shift) have further emphasized the importance of performance. Developers will continue to prioritize optimization techniques, efficient code, and modern image formats to deliver superior user experiences.</p>
+
+                <p>This is just a glimpse into the exciting future of web development. Continuous learning and adaptation will be key for developers looking to thrive in this ever-changing landscape. What trends are you most excited about? Share your thoughts in the comments below (if this were a real blog!).</p>
+            </div>
+
+            <section class="mt-12 pt-8 border-t border-gray-200">
+                <div class="flex items-center">
+                    <img src="https://placehold.co/100x100/e2e8f0/333?text=Author" alt="Author Name" class="w-16 h-16 rounded-full mr-4 shadow-sm">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900">[Your Name]</h4>
+                        <p class="text-gray-600 text-sm">
+                            [A short bio about yourself - e.g., Passionate developer, avid writer, and lifelong learner. Connecting dots between technology and creativity.]
+                        </p>
+                        <div class="mt-1">
+                             <a href="#" class="text-sm text-blue-600 hover:underline rounded-sm">More posts by [Your Name]</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="mt-10 pt-6 border-t border-gray-200 flex justify-between items-center text-sm">
+                <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium rounded-md p-2 hover:bg-gray-100 transition-colors">&larr; Back to Blog List</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-medium rounded-md p-2 hover:bg-gray-100 transition-colors">Next Post &rarr;</a>
+            </nav>
+
+
+        </article>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-600">
+            <p>&copy; <span id="currentYear"></span> [Your Name]. All rights reserved.</p>
+             <p class="text-sm mt-1">
+                Connect with me:
+                <a href="#" class="hover:underline rounded-md">Twitter</a> |
+                <a href="#" class="hover:underline rounded-md">LinkedIn</a> |
+                <a href="#" class="hover:underline rounded-md">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Set current year in footer
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Theme Toggle Functionality
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const themeToggleText = document.getElementById('theme-toggle-text');
+        const htmlDocElement = document.documentElement; // Target <html> element
+
+        // Apply theme based on 'theme' parameter ('light' or 'dark')
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                htmlDocElement.classList.add('dark');
+                if (themeToggleText) themeToggleText.textContent = 'Light';
+                if (themeToggleButton) themeToggleButton.setAttribute('aria-pressed', 'true');
+            } else {
+                htmlDocElement.classList.remove('dark');
+                if (themeToggleText) themeToggleText.textContent = 'Dark';
+                if (themeToggleButton) themeToggleButton.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        // Toggle theme and save preference to localStorage
+        function toggleActiveTheme() {
+            const currentThemeIsDark = htmlDocElement.classList.contains('dark');
+            const newTheme = currentThemeIsDark ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        }
+
+        // Add event listener for the theme toggle button
+        if (themeToggleButton) {
+            themeToggleButton.addEventListener('click', toggleActiveTheme);
+        }
+
+        // Apply saved theme or system preference on initial page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else if (systemPrefersDark) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light'); // Default to light theme if no preference or saved theme
+            }
+        });
+    </script>
+
+</body>
+</html>
