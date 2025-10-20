@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alberto Progida - Engineering Portfolio</title>
+    <title>Alberto Progida</title>
     <style>
         * {
             margin: 0;
@@ -11,30 +11,104 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #151933;
+            --bg-card: #1a1f3a;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --accent-primary: #818cf8;
+            --accent-secondary: #c084fc;
+            --accent-tertiary: #2dd4bf;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --glow: rgba(129, 140, 248, 0.15);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(192, 132, 252, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            color: var(--text-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-primary);
+            transform: scale(1.1);
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            color: var(--text-primary);
+            padding: 5rem 2rem 4rem;
             text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(129, 140, 248, 0.1);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(129, 140, 248, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(192, 132, 252, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
         }
 
         header p {
             font-size: 1.1rem;
-            opacity: 0.95;
+            color: var(--text-secondary);
             margin-bottom: 1rem;
+            position: relative;
         }
 
         .contact-info {
@@ -42,101 +116,192 @@
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-size: 0.95rem;
+            position: relative;
         }
 
         .contact-info a {
-            color: white;
+            color: var(--accent-tertiary);
             text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .contact-info a:hover {
-            opacity: 1;
-            text-decoration: underline;
+            color: var(--accent-primary);
+            text-shadow: 0 0 8px var(--glow);
+        }
+
+        .contact-info span {
+            color: var(--text-secondary);
+        }
+
+        .nav-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .nav-toggle button {
+            background: transparent;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            color: var(--text-secondary);
+            padding: 0.7rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-toggle button:first-child {
+            border-radius: 25px 0 0 25px;
+            border-right: none;
+        }
+
+        .nav-toggle button:last-child {
+            border-radius: 0 25px 25px 0;
+            border-left: none;
+        }
+
+        .nav-toggle button.active {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border-color: transparent;
+        }
+
+        .nav-toggle button:hover:not(.active) {
+            background: rgba(129, 140, 248, 0.1);
+            color: var(--text-primary);
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 3rem 2rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .project {
-            background: white;
-            border-radius: 12px;
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .project, .blog-post {
+            background: var(--bg-card);
+            border-radius: 16px;
             padding: 2.5rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
+            border: 1px solid rgba(129, 140, 248, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .project:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        .project::before, .blog-post::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.05) 0%, rgba(192, 132, 252, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
         }
 
-        .project-header {
+        .project:hover::before, .blog-post:hover::before {
+            opacity: 1;
+        }
+
+        .project:hover, .blog-post:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px var(--shadow), 0 0 0 1px var(--accent-primary);
+        }
+
+        .project-header, .blog-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 1rem;
+            position: relative;
         }
 
-        .project h2 {
-            color: #667eea;
+        .project h2, .blog-post h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 1.8rem;
             font-weight: 600;
         }
 
-        .project-year {
-            background: #667eea;
+        .project-year, .blog-date {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             color: white;
             padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            box-shadow: 0 2px 8px rgba(129, 140, 248, 0.3);
         }
 
-        .project-description {
-            color: #555;
+        .project-description, .blog-excerpt {
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            position: relative;
         }
 
-        .tech-tags {
+        .tech-tags, .blog-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
+            position: relative;
         }
 
         .tag {
-            background: #f0f0f0;
+            background: rgba(129, 140, 248, 0.1);
+            border: 1px solid rgba(129, 140, 248, 0.2);
             padding: 0.4rem 0.9rem;
             border-radius: 6px;
             font-size: 0.85rem;
-            color: #555;
+            color: var(--accent-tertiary);
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: rgba(129, 140, 248, 0.2);
+            border-color: var(--accent-primary);
         }
 
         .highlights {
-            background: #f8f9ff;
-            border-left: 4px solid #667eea;
+            background: rgba(129, 140, 248, 0.05);
+            border-left: 3px solid var(--accent-primary);
             padding: 1rem 1.5rem;
             margin-top: 1.5rem;
             border-radius: 4px;
+            position: relative;
         }
 
         .highlights h3 {
-            color: #667eea;
+            color: var(--accent-primary);
             font-size: 1rem;
             margin-bottom: 0.8rem;
         }
@@ -148,12 +313,12 @@
 
         .highlights li {
             padding: 0.4rem 0;
-            color: #555;
+            color: var(--text-secondary);
         }
 
         .highlights li::before {
             content: "▸ ";
-            color: #667eea;
+            color: var(--accent-tertiary);
             font-weight: bold;
             margin-right: 0.5rem;
         }
@@ -163,9 +328,10 @@
             align-items: center;
             justify-content: flex-end;
             margin-top: 1rem;
-            color: #667eea;
+            color: var(--accent-primary);
             font-size: 0.9rem;
             font-weight: 500;
+            position: relative;
         }
 
         .click-hint::after {
@@ -174,16 +340,50 @@
             transition: transform 0.3s;
         }
 
-        .project:hover .click-hint::after {
+        .project:hover .click-hint::after, .blog-post:hover .click-hint::after {
             transform: translateX(4px);
         }
 
         footer {
-            background: #2d3748;
-            color: white;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
+            border-top: 1px solid rgba(129, 140, 248, 0.1);
+            position: relative;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            --bg-primary: #f5f5f7;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1d1d1f;
+            --text-secondary: #6e6e73;
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --accent-tertiary: #14b8a6;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --glow: rgba(99, 102, 241, 0.2);
+        }
+
+        body.light-mode::before {
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+        }
+
+        body.light-mode header {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        body.light-mode .project, body.light-mode .blog-post {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        body.light-mode .project:hover, body.light-mode .blog-post:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--accent-primary);
         }
 
         @media (max-width: 768px) {
@@ -191,11 +391,11 @@
                 font-size: 2rem;
             }
 
-            .project {
+            .project, .blog-post {
                 padding: 1.5rem;
             }
 
-            .project h2 {
+            .project h2, .blog-post h2 {
                 font-size: 1.5rem;
             }
 
@@ -203,162 +403,253 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .nav-toggle button {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+
     <header>
         <h1>Alberto Progida</h1>
         <p>Mechanical Engineer | Space Systems | Robotics</p>
         <div class="contact-info">
-            <a href="mailto:albertoprogida@gmail.com">albertoprogida@gmail.com</a>
-            <span>07393 040 964</span>
-            <span>London, UK</span>
+            <a href="mailto:albertoprogida@gmail.com">
+                <span>✉️</span> albertoprogida@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                <span>💼</span> LinkedIn
+            </a>
+            <span>📞 07393 040 964</span>
+            <span>📍 London, UK</span>
+        </div>
+        <div class="nav-toggle">
+            <button class="active" onclick="showSection('blog')">Blog</button>
+            <button onclick="showSection('portfolio')">Portfolio</button>
         </div>
     </header>
 
     <div class="container">
-        <a href="composite-flexure.html" class="project">
-            <div class="project-header">
-                <h2>Composite Flexure</h2>
-                <span class="project-year">MSc Thesis 2024</span>
-            </div>
-            <p class="project-description">
-                Advanced CFRP flexure design operating in the post-buckled regime, building on optimized cut-out geometry. Developing innovative methods for integrating power and data transfer within an 80μm thick laminate using custom ultra-thin flex-PCBs created with physical deposition machinery.
-            </p>
-            <div class="highlights">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Conducted Abaqus Explicit quasi-static simulations for folding sequence analysis</li>
-                    <li>Developed fabrication techniques through iterative testing of cure times, pressure, and mould preparation</li>
-                    <li>Innovated dual tape spring design to reduce material waste and eliminate machining steps</li>
-                    <li>Created custom stackup flex-PCBs without dramatically affecting moment-rotation response</li>
-                </ul>
-            </div>
-            <div class="tech-tags">
-                <span class="tag">Abaqus</span>
-                <span class="tag">CFRP</span>
-                <span class="tag">Composite Materials</span>
-                <span class="tag">FEA</span>
-                <span class="tag">PCB Design</span>
-            </div>
-            <div class="click-hint">View Project Details</div>
-        </a>
+        <!-- Blog Section -->
+        <div id="blog" class="section active">
+            <a href="blog/post1.html" class="blog-post">
+                <div class="blog-header">
+                    <h2>Getting Started with CFRP Composite Design</h2>
+                    <span class="blog-date">Oct 15, 2024</span>
+                </div>
+                <p class="blog-excerpt">
+                    A deep dive into the fundamentals of carbon fiber reinforced polymer design, covering material selection, layup strategies, and common pitfalls to avoid when working with advanced composites in aerospace applications.
+                </p>
+                <div class="blog-tags">
+                    <span class="tag">Composites</span>
+                    <span class="tag">Materials</span>
+                    <span class="tag">Tutorial</span>
+                </div>
+                <div class="click-hint">Read More</div>
+            </a>
 
-        <a href="lodestar-space.html" class="project">
-            <div class="project-header">
-                <h2>Lodestar Space - Robotics Engineer</h2>
-                <span class="project-year">2023</span>
-            </div>
-            <p class="project-description">
-                Designed and constructed a fully functional 7-DOF robotic arm prototype in just 2 weeks to validate simulation and control models. Created as a "development battleship" with mechanical and electrical modularity for rapid R&D iteration.
-            </p>
-            <div class="highlights">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Developed Excel tool for parametric conceptual design of 7-DOF manipulator</li>
-                    <li>Rapid prototyping using extensive additive manufacturing techniques</li>
-                    <li>Integrated 100:1 Harmonic Drive reducers with COTS BLDC motors and controllers</li>
-                    <li>Designed modular architecture for easy actuator exchange and upgrades</li>
-                </ul>
-            </div>
-            <div class="tech-tags">
-                <span class="tag">Robotics</span>
-                <span class="tag">Additive Manufacturing</span>
-                <span class="tag">CAD</span>
-                <span class="tag">Harmonic Drives</span>
-                <span class="tag">Control Systems</span>
-            </div>
-            <div class="click-hint">View Project Details</div>
-        </a>
+        <!-- Portfolio Section -->
+        <div id="portfolio" class="section">
+            <a href="portfolio/composite-flexure.html" class="project">
+                <div class="project-header">
+                    <h2>Composite Flexure</h2>
+                    <span class="project-year">MSc Thesis 2024</span>
+                </div>
+                <p class="project-description">
+                    Advanced CFRP flexure design operating in the post-buckled regime, building on optimized cut-out geometry. Developing innovative methods for integrating power and data transfer within an 80μm thick laminate using custom ultra-thin flex-PCBs created with physical deposition machinery.
+                </p>
+                <div class="highlights">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Conducted Abaqus Explicit quasi-static simulations for folding sequence analysis</li>
+                        <li>Developed fabrication techniques through iterative testing of cure times, pressure, and mould preparation</li>
+                        <li>Innovated dual tape spring design to reduce material waste and eliminate machining steps</li>
+                        <li>Created custom stackup flex-PCBs without dramatically affecting moment-rotation response</li>
+                    </ul>
+                </div>
+                <div class="tech-tags">
+                    <span class="tag">Abaqus</span>
+                    <span class="tag">CFRP</span>
+                    <span class="tag">Composite Materials</span>
+                    <span class="tag">FEA</span>
+                    <span class="tag">PCB Design</span>
+                </div>
+                <div class="click-hint">View Project Details</div>
+            </a>
 
-        <a href="darwin-iii.html" class="project">
-            <div class="project-header">
-                <h2>Darwin III Sounding Rocket - Chief Engineer</h2>
-                <span class="project-year">2022</span>
-            </div>
-            <p class="project-description">
-                Led the Endeavour rocketry team through the complete development cycle of a high-performance sounding rocket, from concept to successful launch. Coordinated structures, mechanisms, electrical systems, and project management across a talented student team.
-            </p>
-            <div class="highlights">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Designed complex fincan structure to provide stiff boundary conditions and delay flutter onset</li>
-                    <li>Led conceptual and detailed design of airbrake subsystem for controlled descent</li>
-                    <li>Developed custom avionics PCBs and integration procedures</li>
-                    <li>Successfully launched at Santa Margarida, Portugal with 15g acceleration and Max-Q within 3 seconds</li>
-                    <li>Implemented field-minimized integration procedures for dusty launch environment</li>
-                </ul>
-            </div>
-            <div class="tech-tags">
-                <span class="tag">Systems Engineering</span>
-                <span class="tag">Structures</span>
-                <span class="tag">Mechanisms</span>
-                <span class="tag">Avionics</span>
-                <span class="tag">Project Management</span>
-            </div>
-            <div class="click-hint">View Project Details</div>
-        </a>
+            <a href="portfolio/lodestar-space.html" class="project">
+                <div class="project-header">
+                    <h2>Lodestar Space - Robotics Engineer</h2>
+                    <span class="project-year">2023</span>
+                </div>
+                <p class="project-description">
+                    Designed and constructed a fully functional 7-DOF robotic arm prototype in just 2 weeks to validate simulation and control models. Created as a "development battleship" with mechanical and electrical modularity for rapid R&D iteration.
+                </p>
+                <div class="highlights">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Developed Excel tool for parametric conceptual design of 7-DOF manipulator</li>
+                        <li>Rapid prototyping using extensive additive manufacturing techniques</li>
+                        <li>Integrated 100:1 Harmonic Drive reducers with COTS BLDC motors and controllers</li>
+                        <li>Designed modular architecture for easy actuator exchange and upgrades</li>
+                    </ul>
+                </div>
+                <div class="tech-tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Additive Manufacturing</span>
+                    <span class="tag">CAD</span>
+                    <span class="tag">Harmonic Drives</span>
+                    <span class="tag">Control Systems</span>
+                </div>
+                <div class="click-hint">View Project Details</div>
+            </a>
 
-        <a href="subsea-actuator.html" class="project">
-            <div class="project-header">
-                <h2>Subsea Pan & Tilt Actuator</h2>
-                <span class="project-year">BEng Thesis 2022</span>
-            </div>
-            <p class="project-description">
-                Designed a precision underwater actuator for Acoustic Doppler Velocimeters capable of operating in harsh marine environments up to 90m depth. Comprehensive engineering solution including structural analysis, material selection, sealing design, and custom Python load analysis.
-            </p>
-            <div class="highlights">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Developed 58:1 low-backlash worm drive system producing 23 Nm output torque</li>
-                    <li>Selected Super Duplex A2 nickel alloy and Titanium fasteners to prevent galvanic corrosion</li>
-                    <li>Implemented redundant sealing with dynamic rotary seals and O-rings per Parker Hannifin guides</li>
-                    <li>Created Python script for worst-case load analysis based on tidal flow patterns</li>
-                    <li>Generated production-ready 2D drawings and complete BOM with specific product IDs</li>
-                </ul>
-            </div>
-            <div class="tech-tags">
-                <span class="tag">Marine Engineering</span>
-                <span class="tag">Python</span>
-                <span class="tag">Material Selection</span>
-                <span class="tag">Sealing Design</span>
-                <span class="tag">CAD</span>
-            </div>
-            <div class="click-hint">View Project Details</div>
-        </a>
+            <a href="portfolio/darwin-iii.html" class="project">
+                <div class="project-header">
+                    <h2>Darwin III Sounding Rocket - Chief Engineer</h2>
+                    <span class="project-year">2022</span>
+                </div>
+                <p class="project-description">
+                    Led the Endeavour rocketry team through the complete development cycle of a high-performance sounding rocket, from concept to successful launch. Coordinated structures, mechanisms, electrical systems, and project management across a talented student team.
+                </p>
+                <div class="highlights">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Designed complex fincan structure to provide stiff boundary conditions and delay flutter onset</li>
+                        <li>Led conceptual and detailed design of airbrake subsystem for controlled descent</li>
+                        <li>Developed custom avionics PCBs and integration procedures</li>
+                        <li>Successfully launched at Santa Margarida, Portugal with 15g acceleration and Max-Q within 3 seconds</li>
+                        <li>Implemented field-minimized integration procedures for dusty launch environment</li>
+                    </ul>
+                </div>
+                <div class="tech-tags">
+                    <span class="tag">Systems Engineering</span>
+                    <span class="tag">Structures</span>
+                    <span class="tag">Mechanisms</span>
+                    <span class="tag">Avionics</span>
+                    <span class="tag">Project Management</span>
+                </div>
+                <div class="click-hint">View Project Details</div>
+            </a>
 
-        <a href="hyped.html" class="project">
-            <div class="project-header">
-                <h2>HYPED - Propulsion Mechanical Engineer</h2>
-                <span class="project-year">2020</span>
-            </div>
-            <p class="project-description">
-                Collaborated with physicists to realize the largest student-developed Linear Induction Motors at the time. Responsible for material selection, design, manufacturing, and testing of mounting solutions for high-temperature vacuum operation.
-            </p>
-            <div class="highlights">
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Designed PEEK brackets to handle 1.5 kN transverse force and 1 kN thrust at 130°C</li>
-                    <li>Maintained 2mm airgap for 20kg motor assembly through precision engineering</li>
-                    <li>Created serviceable split design with precision ground shoulder bolts</li>
-                    <li>Selected engineering plastics to prevent electrical shorting and EM field disturbance</li>
-                    <li>Designed, procured, and assembled comprehensive test rig with procedures</li>
-                </ul>
-            </div>
-            <div class="tech-tags">
-                <span class="tag">Linear Induction Motors</span>
-                <span class="tag">PEEK Engineering</span>
-                <span class="tag">High Temperature Design</span>
-                <span class="tag">Test Engineering</span>
-                <span class="tag">Hyperloop</span>
-            </div>
-            <div class="click-hint">View Project Details</div>
-        </a>
+            <a href="portfolio/subsea-actuator.html" class="project">
+                <div class="project-header">
+                    <h2>Subsea Pan & Tilt Actuator</h2>
+                    <span class="project-year">BEng Thesis 2022</span>
+                </div>
+                <p class="project-description">
+                    Designed a precision underwater actuator for Acoustic Doppler Velocimeters capable of operating in harsh marine environments up to 90m depth. Comprehensive engineering solution including structural analysis, material selection, sealing design, and custom Python load analysis.
+                </p>
+                <div class="highlights">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Developed 58:1 low-backlash worm drive system producing 23 Nm output torque</li>
+                        <li>Selected Super Duplex A2 nickel alloy and Titanium fasteners to prevent galvanic corrosion</li>
+                        <li>Implemented redundant sealing with dynamic rotary seals and O-rings per Parker Hannifin guides</li>
+                        <li>Created Python script for worst-case load analysis based on tidal flow patterns</li>
+                        <li>Generated production-ready 2D drawings and complete BOM with specific product IDs</li>
+                    </ul>
+                </div>
+                <div class="tech-tags">
+                    <span class="tag">Marine Engineering</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Material Selection</span>
+                    <span class="tag">Sealing Design</span>
+                    <span class="tag">CAD</span>
+                </div>
+                <div class="click-hint">View Project Details</div>
+            </a>
+
+            <a href="portfolio/hyped.html" class="project">
+                <div class="project-header">
+                    <h2>HYPED - Propulsion Mechanical Engineer</h2>
+                    <span class="project-year">2020</span>
+                </div>
+                <p class="project-description">
+                    Collaborated with physicists to realize the largest student-developed Linear Induction Motors at the time. Responsible for material selection, design, manufacturing, and testing of mounting solutions for high-temperature vacuum operation.
+                </p>
+                <div class="highlights">
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Designed PEEK brackets to handle 1.5 kN transverse force and 1 kN thrust at 130°C</li>
+                        <li>Maintained 2mm airgap for 20kg motor assembly through precision engineering</li>
+                        <li>Created serviceable split design with precision ground shoulder bolts</li>
+                        <li>Selected engineering plastics to prevent electrical shorting and EM field disturbance</li>
+                        <li>Designed, procured, and assembled comprehensive test rig with procedures</li>
+                    </ul>
+                </div>
+                <div class="tech-tags">
+                    <span class="tag">Linear Induction Motors</span>
+                    <span class="tag">PEEK Engineering</span>
+                    <span class="tag">High Temperature Design</span>
+                    <span class="tag">Test Engineering</span>
+                    <span class="tag">Hyperloop</span>
+                </div>
+                <div class="click-hint">View Project Details</div>
+            </a>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Alberto Progida. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-icon');
+            body.classList.toggle('light-mode');
+            
+            if (body.classList.contains('light-mode')) {
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-toggle button').forEach(b => b.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(section).classList.add('active');
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('activeSection', section);
+        }
+
+        // Load saved preferences
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.querySelector('.theme-icon');
+            
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                icon.textContent = '☀️';
+            }
+
+            const savedSection = localStorage.getItem('activeSection');
+            if (savedSection && savedSection === 'portfolio') {
+                showSection('portfolio');
+                document.querySelectorAll('.nav-toggle button')[1].classList.add('active');
+                document.querySelectorAll('.nav-toggle button')[0].classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
