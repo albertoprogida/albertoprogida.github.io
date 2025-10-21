@@ -459,6 +459,55 @@
                 <div class="click-hint">Read More</div>
             </a>
 
+            <a href="blog/post2.html" class="blog-post">
+                <div class="blog-header">
+                    <h2>Lessons from Building a Sounding Rocket</h2>
+                    <span class="blog-date">Sep 28, 2024</span>
+                </div>
+                <p class="blog-excerpt">
+                    Reflections on leading the Darwin III project - from managing a multidisciplinary team to handling the chaos of launch day. What worked, what didn't, and what I'd do differently next time.
+                </p>
+                <div class="blog-tags">
+                    <span class="tag">Rocketry</span>
+                    <span class="tag">Project Management</span>
+                    <span class="tag">Lessons Learned</span>
+                </div>
+                <div class="click-hint">Read More</div>
+            </a>
+
+            <a href="blog/post3.html" class="blog-post">
+                <div class="blog-header">
+                    <h2>Why Harmonic Drives are Perfect for Space Robotics</h2>
+                    <span class="blog-date">Sep 10, 2024</span>
+                </div>
+                <p class="blog-excerpt">
+                    Exploring the advantages of harmonic drive reducers in robotic manipulators for space applications. High gear ratios, zero backlash, and compact form factors make them ideal for precision control in demanding environments.
+                </p>
+                <div class="blog-tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Space Systems</span>
+                    <span class="tag">Mechanisms</span>
+                </div>
+                <div class="click-hint">Read More</div>
+            </a>
+
+            <a href="blog/post4.html" class="blog-post">
+                <div class="blog-header">
+                    <h2>FEA Best Practices for Mechanical Engineers</h2>
+                    <span class="blog-date">Aug 22, 2024</span>
+                </div>
+                <p class="blog-excerpt">
+                    Practical tips for getting reliable results from finite element analysis. Mesh refinement, boundary conditions, material models, and verification strategies that I've learned through real projects.
+                </p>
+                <div class="blog-tags">
+                    <span class="tag">FEA</span>
+                    <span class="tag">Simulation</span>
+                    <span class="tag">Best Practices</span>
+                </div>
+                <div class="click-hint">Read More</div>
+            </a>
+        </div>
+
         <!-- Portfolio Section -->
         <div id="portfolio" class="section">
             <a href="portfolio/composite-flexure.html" class="project">
@@ -627,7 +676,14 @@
             
             // Show selected section
             document.getElementById(section).classList.add('active');
-            event.target.classList.add('active');
+            
+            // Highlight the correct button
+            const buttons = document.querySelectorAll('.nav-toggle button');
+            if (section === 'blog') {
+                buttons[0].classList.add('active');
+            } else {
+                buttons[1].classList.add('active');
+            }
             
             // Save preference
             localStorage.setItem('activeSection', section);
