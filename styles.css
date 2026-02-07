@@ -80,6 +80,16 @@ html {
    3. Density: Added more stars to the gradients.
 */
 
+:root {
+    --star-rgb: 0, 0, 0;
+    /* Black stars for light mode */
+}
+
+.dark {
+    --star-rgb: 255, 255, 255;
+    /* White stars for dark mode */
+}
+
 .warp-speed-container {
     position: absolute;
     top: 0;
@@ -88,8 +98,13 @@ html {
     height: 100%;
     overflow: hidden;
     z-index: -1;
+    background: transparent;
+    /* Changed to transparent to show body background in light mode */
+}
+
+/* Dark mode override for background if needed, but body bg is fine */
+.dark .warp-speed-container {
     background: #0b1121;
-    /* Deep space blue-black */
 }
 
 .stars-sm,
@@ -108,21 +123,21 @@ html {
 /* Small Stars (Further, slower, dense) */
 .stars-sm {
     background-image:
-        radial-gradient(circle 4px at 10% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 20% 80%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 30% 40%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 40% 90%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 50% 20%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 60% 70%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 70% 30%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 80% 60%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 90% 10%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 10% 10%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 20% 80%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 30% 40%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 40% 90%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 50% 20%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 60% 70%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 70% 30%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 80% 60%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 90% 10%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
         /* Extra density */
-        radial-gradient(circle 4px at 15% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 85% 50%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 50% 85%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-        radial-gradient(circle 4px at 35% 25%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
-        radial-gradient(circle 4px at 65% 75%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+        radial-gradient(circle 4px at 15% 50%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 85% 50%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 50% 85%, rgba(var(--star-rgb), 0.7) 0%, transparent 50%),
+        radial-gradient(circle 4px at 35% 25%, rgba(var(--star-rgb), 0.6) 0%, transparent 50%),
+        radial-gradient(circle 4px at 65% 75%, rgba(var(--star-rgb), 0.6) 0%, transparent 50%);
 
     background-size: 600px 600px;
     animation: zoom 8s linear infinite;
@@ -131,16 +146,16 @@ html {
 /* Medium Stars (Closer, faster) */
 .stars-md {
     background-image:
-        radial-gradient(circle 2px at 15% 15%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 35% 75%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 55% 25%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 85% 65%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 15% 15%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 35% 75%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 55% 25%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 85% 65%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
         /* Extra density */
-        radial-gradient(circle 2px at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 25% 25%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 75% 75%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 10% 90%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle 2px at 90% 10%, rgba(255, 255, 255, 0.9) 0%, transparent 50%);
+        radial-gradient(circle 2px at 50% 50%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 25% 25%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 75% 75%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 10% 90%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%),
+        radial-gradient(circle 2px at 90% 10%, rgba(var(--star-rgb), 0.9) 0%, transparent 50%);
 
     background-size: 800px 800px;
     animation: zoom 4s linear infinite;
