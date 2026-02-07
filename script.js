@@ -20,10 +20,10 @@ function setTheme(theme) {
 const savedTheme = localStorage.getItem('theme');
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    setTheme('dark');
-} else {
+if (savedTheme === 'light') {
     setTheme('light');
+} else {
+    setTheme('dark');
 }
 
 // Toggle Event Listener
