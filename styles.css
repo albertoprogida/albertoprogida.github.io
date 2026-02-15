@@ -207,3 +207,7 @@ html {
 .animate-bounce-x {
     animation: bounce-x 1s infinite;
 }
+
+/* .red-glow {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4) !important;
+} */
