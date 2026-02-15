@@ -49,3 +49,33 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
         mobileMenu.classList.add('hidden');
     });
 });
+
+// Scroll Hint Logic
+function setupScrollHint(scrollId, hintId) {
+    const scrollContainer = document.getElementById(scrollId);
+    const hintElement = document.getElementById(hintId);
+
+    if (scrollContainer && hintElement) {
+        scrollContainer.addEventListener('scroll', () => {
+            // Check if scrolled to bottom (with buffer)
+            if (scrollContainer.scrollTop + scrollContainer.clientHeight >= scrollContainer.scrollHeight - 50) {
+                hintElement.classList.add('opacity-0');
+                hintElement.classList.remove('animate-bounce');
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll Hint Logic
+    setupScrollHint('resume-scroll-1', 'exp-hint');
+    setupScrollHint('resume-scroll-2', 'edu-hint');
+
+    // Hero Carousel Logic
+    setupHeroCarousel();
+});
+
+function setupHeroCarousel() {
+    // Auto-scroll removed as per user request.
+    // Standard horizontal scrolling enabled via CSS (overflow-x-auto).
+}

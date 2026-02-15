@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuRoC 2022: Darwin III Post-Flight Report | Alberto Progida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-black dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-zinc-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="text-xl font-bold text-gray-900 dark:text-white">AP</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html#home"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="../index.html#resume"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
+                        <a href="../index.html#blog"
+                            class="hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle"
+                        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        aria-label="Toggle Theme">
+                        <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <!-- Icon set by JS -->
+                        </svg>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <div class="-mr-2 flex md:hidden">
+                        <button id="mobile-menu-btn" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html#home"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white transition-colors">Home</a>
+                <a href="../index.html#resume"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white transition-colors">Resume</a>
+                <a href="../index.html#blog"
+                    class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-white transition-colors">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Content -->
+    <article class="pt-32 pb-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-8 text-center fade-in">
+                <span
+                    class="inline-block px-3 py-1 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200 mb-4">Rocketry</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">EuRoC 2022: Darwin
+                    III Post-Flight Report</h1>
+                <p class="text-gray-500 dark:text-gray-400">October 17, 2022</p>
+            </div>
+
+            <div class="prose prose-lg dark:prose-invert mx-auto fade-in delay-100">
+                <p class="lead text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    On Saturday, October 15th, 2022, the <strong>Darwin III</strong> launch vehicle took to the skies
+                    above the Santa Margarida Army Base in Portugal. Conceptualized and manufactured by the Endeavour
+                    student group at the University of Edinburgh, this mission aimed for a target apogee of 9,000
+                    meters. This report details the technical achievements, flight analysis, and lessons learned from
+                    the European Rocketry Challenge (EuRoC).
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4">The Launch Vehicle: Darwin III
+                </h2>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Darwin III is a high-performance sounding rocket powered by a Cesaroni Technologies Inc. (CTI) O3400
+                    solid rocket motor. Weighing in at 34.334kg, the vehicle was constructed using advanced Carbon Fiber
+                    Reinforced Polymer (CFRP) composites and high-strength 7075-T6 Aluminium alloy. This structure was
+                    designed to withstand the immense 500kg thrust load and accelerations reaching 150 m/sÂ².
+                </p>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    The design builds upon the team's previous success with <em>Darwin II</em>, incorporating a modular
+                    avionics bay, an SRAD (Student Research and Developed) active airbrake system for precise apogee
+                    targeting, and a deployable payload system.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Payload & Scientific Mission
+                </h2>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    The mission carried two scientifically significant experiments, recognized by the European Space
+                    Agency Payload Award as the best among over 20 competitors:
+                </p>
+                <ul class="list-disc pl-5 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
+                    <li><strong>Muon Detector:</strong> A ruggedized version of MITâ€™s CosmicWatch, designed to collect
+                        muon count data and explore relativistic effects by comparing flight rates to sea-level
+                        baselines.</li>
+                    <li><strong>Fluid Dynamics Experiment:</strong> A wide-angle lens camera system observing the
+                        behavior of propylene glycol in micro-gravity to validate CFD simulations.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Flight Analysis</h2>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Ignition occurred successfully at 12:00:28 GMT following a switch to a more energetic igniter. The
+                    vehicle performed a nominal 6.2-second burn, accelerating rapidly through the dense lower
+                    atmosphere. A sonic boom was reported by Mission Control, consistent with trajectory simulations
+                    predicting supersonic flight.
+                </p>
+
+                <div class="bg-gray-100 dark:bg-zinc-900 p-6 rounded-lg border-l-4 border-blue-500 my-8">
+                    <p class="italic text-gray-700 dark:text-gray-300">
+                        "The vehicle ascended remarkably straight - a testament to the stiffness of the teamâ€™s structure
+                        and the accuracy of the fin construction."
+                    </p>
+                </div>
+
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    However, telemetry was lost prematurely due to high interference and velocity. While GPS signals
+                    were temporarily regained after the supersonic phaseâ€”confirming structural integrity through
+                    Max-Qâ€”the vehicle failed to deploy its nosecone at apogee. This resulted in a ballistic re-entry.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mt-12 mb-4">Recovery & Lessons Learned</h2>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Darwin III impacted the ground at approximately 251 m/s, penetrating 600mm into the soil. While 80%
+                    of the vehicle disintegrated upon impact, the recovery of components allowed for a detailed failure
+                    analysis. The root cause was identified as a failure in the nosecone separation mechanism at apogee.
+                </p>
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    Despite the off-nominal recovery, the mission was deemed a partial success, achieving 4 out of 6
+                    mission goals. Key achievements included:
+                </p>
+                <ul class="list-disc pl-5 mb-6 text-gray-700 dark:text-gray-300 space-y-2">
+                    <li>Validation of advanced composite manufacturing techniques.</li>
+                    <li>Successful operation of student-developed avionics under high-G loads.</li>
+                    <li>Recognition of scientific rigour by ESA.</li>
+                    <li>Massive improvements in organizational efficiency, achieving a sub-30 minute assembly time in
+                        the field.</li>
+                </ul>
+
+                <p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                    The Endeavour team extends its gratitude to the University of Edinburgh, our industrial partners
+                    (M-Carbo, ZOT, Dassault SystÃ¨mes, nTopology), and our sponsors for making this ambitious project
+                    possible.
+                </p>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-gray-200 dark:border-zinc-700 text-center">
+                <a href="../index.html#blog" class="inline-flex items-center text-primary font-medium hover:underline">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Blog
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-black text-white py-8 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Alberto Progida. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
+
+

@@ -1,18 +1,23 @@
 /* Custom Scrollbar for Resume Section */
-.resume-scroll::-webkit-scrollbar {
+.resume-scroll::-webkit-scrollbar,
+#hero-carousel::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
-.resume-scroll::-webkit-scrollbar-track {
+.resume-scroll::-webkit-scrollbar-track,
+#hero-carousel::-webkit-scrollbar-track {
     background: transparent;
 }
 
-.resume-scroll::-webkit-scrollbar-thumb {
+.resume-scroll::-webkit-scrollbar-thumb,
+#hero-carousel::-webkit-scrollbar-thumb {
     background-color: rgba(156, 163, 175, 0.5);
     border-radius: 20px;
 }
 
-.resume-scroll::-webkit-scrollbar-thumb:hover {
+.resume-scroll::-webkit-scrollbar-thumb:hover,
+#hero-carousel::-webkit-scrollbar-thumb:hover {
     background-color: rgba(156, 163, 175, 0.8);
 }
 
@@ -104,7 +109,7 @@ html {
 
 /* Dark mode override for background if needed, but body bg is fine */
 .dark .warp-speed-container {
-    background: #0b1121;
+    background: #000000;
 }
 
 .stars-sm,
@@ -182,4 +187,23 @@ html {
         opacity: 0;
         /* Fade out */
     }
+}
+
+/* Horizontal Bounce Animation */
+@keyframes bounce-x {
+
+    0%,
+    100% {
+        transform: translateX(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-bounce-x {
+    animation: bounce-x 1s infinite;
 }

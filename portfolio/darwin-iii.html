@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -113,7 +113,7 @@
         }
 
         .back-link::before {
-            content: "←";
+            content: "â†";
             margin-right: 0.5rem;
         }
 
@@ -458,7 +458,7 @@
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="theme-icon">🌙</span>
+        <span class="theme-icon">ðŸŒ™</span>
     </button>
 
     <header>
@@ -466,8 +466,8 @@
             <a href="../index.html" class="back-link">Back to Home</a>
             <h1>Getting Started with CFRP Composite Design</h1>
             <div class="post-meta">
-                <span>📅 October 15, 2024</span>
-                <span>⏱️ 8 min read</span>
+                <span>ðŸ“… October 15, 2024</span>
+                <span>â±ï¸ 8 min read</span>
             </div>
         </div>
     </header>
@@ -493,7 +493,7 @@
             <!-- Image with Caption -->
             <div class="image-with-caption">
                 <img src="../images/cfrp-example-2.jpg" alt="Composite laminate cross-section">
-                <p class="image-caption">Cross-section of a [±45]₂ CFRP laminate showing individual ply orientation</p>
+                <p class="image-caption">Cross-section of a [Â±45]â‚‚ CFRP laminate showing individual ply orientation</p>
             </div>
 
             <h2>Material Selection</h2>
@@ -520,12 +520,12 @@
 
             <h3>Quasi-Isotropic Layups</h3>
             <p>
-                A <code>[0/±45/90]s</code> layup provides balanced in-plane properties, making it ideal for general-purpose applications where loads come from multiple directions.
+                A <code>[0/Â±45/90]s</code> layup provides balanced in-plane properties, making it ideal for general-purpose applications where loads come from multiple directions.
             </p>
 
             <h3>Angle-Ply Configurations</h3>
             <p>
-                For my MSc thesis, I used a <code>[±45]2</code> layup to maximize shear stiffness in a post-buckled flexure. This configuration provides excellent torsional rigidity while allowing controlled bending.
+                For my MSc thesis, I used a <code>[Â±45]2</code> layup to maximize shear stiffness in a post-buckled flexure. This configuration provides excellent torsional rigidity while allowing controlled bending.
             </p>
 
             <!-- Side-by-Side Images -->
@@ -553,7 +553,7 @@
             </div>
 
             <p>
-                In one memorable failure, a 40μm laminate buckled during cure because the edges heated faster than the center, causing uneven expansion and residual stresses.
+                In one memorable failure, a 40Î¼m laminate buckled during cure because the edges heated faster than the center, causing uneven expansion and residual stresses.
             </p>
 
             <h2>Looking Forward</h2>
@@ -593,10 +593,10 @@
             body.classList.toggle('light-mode');
             
             if (body.classList.contains('light-mode')) {
-                icon.textContent = '☀️';
+                icon.textContent = 'â˜€ï¸';
                 localStorage.setItem('theme', 'light');
             } else {
-                icon.textContent = '🌙';
+                icon.textContent = 'ðŸŒ™';
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -628,7 +628,7 @@
             
             if (savedTheme === 'light') {
                 document.body.classList.add('light-mode');
-                icon.textContent = '☀️';
+                icon.textContent = 'â˜€ï¸';
             }
 
             // Make all images in post clickable
@@ -658,3 +658,5 @@
     </script>
 </body>
 </html>
+
+

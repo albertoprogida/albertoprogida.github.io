@@ -1,0 +1,4328 @@
+--- START CONTENT: EuRoC_22_Post_flight_report_compressed.pdf ---
+Darwin III: Lessons Learned
+Team 11 Post-Flight Analysis for the 2022 EuRoC
+17 October 2022
+1 — Press Release
+Saturday 15th of October, 2022, the Darwin III launch vehicle, which was conceptualised, designed and
+manufactured by the endeavour student group based in Edinburgh, took off on its flight to 9000 meters
+from the Santa Margarida Army Base in Portugal during the European Rocketry Challenge launch campaign.
+The launch vehicle was carrying a payload featuring two scientifically significant experiments, which were
+recognised by the European Space Agency Payload Award as the best out of the over 20 experiments presented
+by the teams competing in the competition.
+Figure 1.1: Computer Aided Design (CAD) model of the Darwin III Launch Vehicle with Fin-Can Detail.
+Figure 1.2: Wholly student-designed CNC Machined Bulkheads and Structural rods which support the Carbon
+Fiber airframe. Machined at the University of Edinburgh Mechanical Engineering Machine Shop in Sanderson
+Building.
+1
+Team 11 Post-Flight Report - EuRoC ’22
+Figure 1.3: Three of the over 10 student designed and assembled Printed Circuit Boards (PCBs) comprising
+the Avionics Stack responisble for datalogging, guidance and telemetry tasks
+Figure 1.4: Images of the Team taken at the Unveiling Event held at the Informatics Forum in the University
+of Edinburgh Central Area Campus.
+The launch team is composed by the following students from the Schools of Engineering, Informatics and
+Physics from the University of Edinburgh.
+Name Role
+Alberto Progida Flight Director (FIDO)
+Zsolt Csonka Integration Lead
+Thomas Stott SRAD Avionics Deputy
+Ann Lee Logistics Lead
+Daniel Holler Software Lead
+Alex Stevenson Recovery Lead
+Jo Shepton Payload Principal Investigator (PI)
+Virginia Cangelosi Payload Electrical Lead
+Matus Komjaty Ground Station Operator (GSO1)
+Joseph Azrak Ground Station Operator (GSO2)
+Jasper Day Structures Deputy
+Phil Heinrich Payload Software Deputy
+Fergus Wilson Payload Mechanical Deputy
+2
+Team 11 Post-Flight Report - EuRoC ’22
+The Payload
+The experiments are a student built muon detector (a modified version of MIT’s CosmicWatch Muon Detec-
+tor, adapted and ruggedized to survive the harsh launch environement) and a fluid dynamics slosh experiment.
+The mission aims the payload were as follows:
+1. Collect muon count data using our modified CosmicWatch muon detector during flight to explore how
+muon detection rate changes with altitude, along with correlating it to temperature and pressure data
+the payload collects independently
+2. Compare the muon rate during flight to the rate at sea level to explore Einstein’s theory of special
+relativity and the efficiency of the detector
+3. Using a wide-angle lens camera, observe how propylene glycol (a fluid with a higher viscosity than water)
+behaves during flight and how this relates to the wave fluid dynamics, with focus on the potential points
+of micro-gravity.
+4. Using the IMU acceleration data, attempt to reproduce the recorded fluid behaviour in a Computational
+Fluid Dynamics (CFD) simulation.
+Both of these experiments have been researched extensively and characterised during a Summer Internship
+conducted in collaboration with the School of Physics focusing on testing the limits of the muon detector.
+Figure 1.5: A fully integrated test of the Avionics and Payload, while streaming video data to a host PC
+(left). The payload being fully integrated with the airframe at the Launch Site Integration Tent
+The Launch
+Powered by a Cesaroni Technologies Inc. (CTI) O3400 solid rocket motor, the 34.334kg vehicle took off
+the pad, performing a nominal 6.2 second burn. The structure, manufactured by students at the University
+facilities out of high performance Carbon Fiber Reinforced Polymer (CFRP) composites and high-strength
+7075-T6 Aluminium alloy withstood the 500kg thrust load imparted by the motor, cutting through the dense
+atmosphere while accelerating at 150m/s2. Ignition had been attempted with the manufacturer-provided
+igniter the previous day, 14/10/22 at 17:10 GMT, but had failed due to the humidity at the launchsite. A
+more energetic igniter was installed on launch day, and the propulsive reaction began successfully at 12:00:28
+GMT.
+Takeoff was detected by the Student Researched and Developed (SRAD) Avionics stack, but telemetry was
+lost prematurely due to the high interference environment and high speed. The team’s Ground Station
+Operators (GSO2) maintained contact with the Commercial Off-The-Shelf tracking beacon throughout the
+launch preparation procedures and the initial phases of flight. Tracking was temporarily lost at motor burnout
+due to the high altitude and velocities, making it challenging to manually point the High Gain antennas at
+3
+Team 11 Post-Flight Report - EuRoC ’22
+Figure 1.6: Final assembly of the 4 Main Segments in the Integration Tent
+Figure 1.7: The journey of Darwin III from the Integration Tent to the Launch Pad
+the vehicle.
+Figure 1.8: Liftoff and the long boosting phase captured by the official ESA photographer. The plume
+consists mostly of water vapour and some CO2. The Team is currently developing a ”green” bi-liquid engine
+with 95% combustion efficiency and a significantly cleaner exhaust
+20 seconds into the flight, one of the two GSO’s briefly regained contact with COTS transceiver, confirming
+the avionics had survived the expected initial 15G (150m/s2) acceleration. Both Mission Control and the
+Spectator Area report a sonic boom seconds early in the boost phase, which is consistent with the trajectory
+simulations carried out by the Team. GPS coordinates were not received due to the vehicle’s supersonic
+4
+Team 11 Post-Flight Report - EuRoC ’22
+speed, which deactivated in accordance with the Coordinating Committee for Multilateral Export Controls
+(CoCoM) regulations on GPS-equipped airborne objects. Following a chirp confirming the avionics health,
+contact was lost again and no further telemetry was received by the Endeavour Mission Control. EuRoC
+Mission Control maintained more precise tracking and managed to receive a single GPS coordinate once
+the vehicle had exited the supersonic regime, confirming the vehicle had crossed the point of maximum
+aerodynamic pressure (MAX-Q) without losing structural integrity. The vehicle ascended remarkably straight
+- a testament to the stiffness of the team’s structure and the accuracy of the fin construction.
+Figure 1.9: The Misison Control team (left) and the Setup of the Ground Stations (right)
+Further attempts to re-establish a telemetry link failed as the vehicle disappeared into the high-altitude haze
+slowly shedding velocity. No data is available from here-on, and events are based on educated estimations
+informed by the flight characteristics and trajectory simulations executed ahead of flight.
+Visual confirmation of drogue or main parachute ejection was not given, and the vehicle was assumed
+ballistic. No damage to life, limb or property was recorded and no fires were reported. Two recovery teams
+were dispatched immediately after the closing of the launch window to the last GPS coordinates received,
+which were necessarily in close proximity to the launch site due the early flight-stage in which they were
+received. The recovery crews were not immediately succesful but were later directed towards a point at
+39.386377N, -8.275252W by a local fire brigade, where Darwin III was immediately identified in a ”lawn
+dart” position in the shade of some large trees.
+Figure 1.10: The Landing Site of DIII and images from the Team Debriefing
+The vehicle failed to deploy its nosecone at apogee, thus entering a high velocity dive quickly reaching its
+terminal velocity of 251m/s. Darwin continued its descent following a ballistic trajectory, finally impacting
+the ground and penetrating approximately 600mm into the Portuguese soil, a dry mixture of gravel, sand
+and mid-sized sharp rocks, releasing 724’000 joules of energy in 8 thousands of a second.
+80% of the vehicle disintegrated on impact, with failure modes ranging from brittle explosion, to plastic
+5
+Team 11 Post-Flight Report - EuRoC ’22
+deformation, composite delamination and buckling. The aft end of the lower body, including the fins and the
+thrust structure, was recovered nearly intact, except for evidence of violent impact on the fins most likely
+attributable to the forest canopy. There is little evidence of delamination caused by aero-thermal heating, and
+few fatigue cracks imputable to fin flutter. Every system of the vehicle has been recovered and catalogued,
+but the vehicle is cannot be reflown in its current state.
+Figure 1.11: The Remains of Darwin III, exhibited to theJury for the Post-Flight Review. The root cause
+identified by the Team and confirmed as highly likely by the Technical Experts.
+Overall 4 out of the 6 goals set by the team were achieved, making the mission a partial success despite the off-
+nominal recovery phase. On the technical side, the team was able to validate several manufacturing techniques
+and prove the robustness of the structure through the most aggressive flight stages - notably the fins,
+nosecone and interstages. The student-developed avionics performed nominally, but the deployment on the
+field highlighted some areas for improvement, namely transmission power. Despite the data from the payload
+not being recoverable, its scientific basis was recognised by the European Space Agency, building confidence
+in the team’s rigorous processes in areas outside of manufacturing and engineering and strengthening ties to
+the UoE School of Physics. On the operational side, massive leaps in organisation and integration between
+subsystems was achieved, yielding a vehicle which could be assembled in under 30 minutes in the inhospitable
+desert environment. The focus on health and safety, checklists and procedures resulted in an overall reliable
+and predictable vehicle to operate and launch.
+The team is extremely grateful to the stakeholders who have made all of this possible: our primary academic
+partner (Schools of Engineering, Physics, Chemistry and Informatics at the University of Edinburgh), our
+main industrial partners (MCarbo, supplier of CFRP airframe; ZOT, supplier of Printed Circuit Boards;
+Dassault Systemes, Altium and nTopology, suppliers of professional-grade software), our sponsors (Skyrora,
+Edinburgh Innovations, Data Driven Innovation and EasyComposites). Finally, a heartfelt ”obrigado” goes to
+the incredibly welcoming and flexible team of EuRoC for providing the regulatory, organisational and logistical
+support that enables the launch of such high-performance vehicles.
+6
+Team 11 Post-Flight Report - EuRoC ’22
+Figure 1.12: An imaage of the Launch Team following the Awards’ Ceremony
+Figure 1.13: The Logos of our generous sponsors and industrial partners.
+The Post-Flight Analysis
+The Motor Casing plastically deformed on impact, splaying outwards and tearing open, with the Forward
+Closure becoming one with the Motor Bulkhead and the Motor Retention Hardware. The Motor Tube
+features evidence of extreme delamination following the winding angle pattern.
+The 8mm thick Stainless Steel Force Rods supporting the Avionics Bay were found contorted upon them-
+selves, having ripped their housing blocks from the Motor and Recovery Bulkheads respectively. This is
+evidence of the immense shear loading experienced on impact, sufficient to shear off over 3cm2 of 7075-T6
+Aluminium.
+The Avionics was flattened amongst the bulkheads and most Surface Mounted Devices (SMD) such as
+passive components and power regulators were ripped off the boards by the force of impact. The team
+is happy to report that a FLASH chip was salveaged from the COTS Quantum Flight Computer in good
+conditions. Data recovery attempts will be made in a controlled laboratory environment upon the return to
+Edinburgh.
+The Recovery system components were in a range of condutions. The compliant parachutes only present
+some small perforations, while the recovery hardware such as the SRAD mechanism and the COTS Tender
+7
+Team 11 Post-Flight Report - EuRoC ’22
+Descenders and Raptor systems were severaly damaged.
+The Payload was flattened between its two heavy bulkheads, with the avionics encapsulated within the steel
+and aluminium sheets. No data storage devices were salvaged, with all 3 SD cards haveing been found in
+a fractured state. The Payload and the Nosecone and Nosecone Tip were found at the bottom of the hole
+created by the vehicle, suggesting lack of separation at Apogee.
+8
+
+--- END CONTENT: EuRoC_22_Post_flight_report_compressed.pdf ---
+--- START CONTENT: EuRoC_technical_report___Darwin_II_compressed.pdf ---
+The University of Edinburgh
+Student Rocketry Team
+Darwin II: The Supersonic Endeavour
+Team 9 Project Technical Report to the 2021 EuRoC
+September 5, 2021
+Abstract
+The aim of this technical report is to describe the design, validation, optimization, and key
+system implementation of Darwin II (DII) from endeavour. DII will mark the ﬁrst
+participation of the team in EuRoC and the ﬁrst ever supersonic rocket made by the team.
+The rocket features innovative technologies which will help develop a solid platform to base
+our next rockets. Some of the key systems are: a carbon composite fuselage, active air brake
+recovery, modular avionics bay fuselage, and a deployable payload. This report introduces the
+structure of endeavour and Darwin project and outlines the main stakeholders. Then, the
+diﬀerent system architectures are discussed, focusing on the propulsion, structure, recovery
+system, payload and airbrake. Each section describes the systems in more detail and
+highlights key features. Afterwards, a holistic view of the mission is given. Major milestones,
+improvements, and lessons learnt are discussed in conclusion.
+i
+Acknowledgements
+We would like to thank The University of Edinburgh for their support. Their ﬁnancial support
+enabled team activities, the mechanical lab manufactured vital components for Darwin II, and
+the advise of the staﬀ members were very helpful in improving our design. We would like
+to speciﬁcally mention Dr. Francisca Martinez Hergueta, Dr. David Garcia Cava, Dr. Jeﬀ
+Steynor, Kristina Tamane, the G.20 staﬀ, the Student Led Initiatives Support committee, and
+Iain Gold for their advice and support for the team.
+While not a part of the team, we would like to acknowledge and thank Liam Foley and Gustav
+Ramner for their hard work on the MEng project that we have referenced in this report. Their
+work has played a key role in design of Darwin II.
+We are also very grateful for our sponsors; Cirrus Logic, RS Grass Roots, nTopology, Ansys,
+Dassault Systèmes, M-Carbo, The Institute for Research in Schools (IRIS), and playerdata for
+their support. Whether it was an in-kind or ﬁnancial support, they have enabled us to design,
+simulate, and manufacture Darwin II. In particular, Charles Simpson from Alternum gave us
+unique insights and advice as an experienced rocketeer and helped us improve our design.
+We would like to thank Portugal Space, Município de Ponte de Sor, and the wonderful team
+at EuRoC for hosting and organising this competition. It is an exciting event that gives us a
+chance to launch Darwin II and meet other rocketeers. We can’t wait to be in Portugal!
+Finally, and perhaps most importantly, we would like to thank our members for their dedication
+throughout the years. This rocket and the team wouldn’t have happened without them.
+ii
+Contents
+1 Introduction 1
+2 System Architecture 4
+2.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 Propulsion Subsystem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3 Aerostructure Subsystem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.3.1 External . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.3.2 Internal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2.3.3 Numerical Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2.4 Recovery Subsystem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.4.1 Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+2.4.2 Components and Speciﬁcations . . . . . . . . . . . . . . . . . . . . . . . 21
+2.4.3 Recovery Subsystem Calculations . . . . . . . . . . . . . . . . . . . . . . 22
+2.4.4 Recovery Simulation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+2.4.5 Recovery sequence . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.5 Payload Subsystem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+2.6 Active Flight Control Subsystem . . . . . . . . . . . . . . . . . . . . . . . . . . 34
+3 Mission Concept of Operations Overview 37
+4 Conclusions and Outlook 40
+A System Data 41
+B Detailed Test Reports 43
+B.1 Recovery testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+B.2 SRAD propulsion system testing . . . . . . . . . . . . . . . . . . . . . . . . . . . 44
+B.3 SRAD pressure system testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . 45
+B.4 SRAD Flight computer testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+B.4.1 GPS Module Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 46
+B.4.2 Battery Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+B.4.3 Barometer and Temperature Testing . . . . . . . . . . . . . . . . . . . . 48
+B.4.4 IMU Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+B.4.5 RF Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
+B.4.6 Output Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+B.4.7 Miscellaneous Testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+B.4.8 Future Tests: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+C Hazard Analysis Report 51
+D Risk Assessment 52
+E Checklists & Procedures 53
+E.1 Shipment & Edinburgh departure . . . . . . . . . . . . . . . . . . . . . . . . . . 53
+E.2 Pre-launch assembly checklist & procedure . . . . . . . . . . . . . . . . . . . . . 55
+E.2.1 Lower section . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+E.2.2 Airbrake . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+iii
+E.2.3 Avionics bay . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 55
+E.2.4 Recovery section - INCOMPLETE CHECKLIST & PROCEDURE . . . 56
+E.2.5 Nose cone - INCOMPLETE CHECKLIST . . . . . . . . . . . . . . . . . 58
+E.2.6 Entire vehicle without motor - INCOMPLETE CHECKLIST . . . . . . . 59
+E.3 Launch day . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 60
+E.3.1 Motor installation Procedure . . . . . . . . . . . . . . . . . . . . . . . . . 60
+E.3.2 Launch checklist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
+E.3.3 motor mishap disassembly PROCEDURE & CHECKLIST . . . . . . . . 62
+E.3.4 motor disassembly after recovery PROCEDURE . . . . . . . . . . . . . . 62
+F Engineering Drawings 63
+G Subsystem Details 81
+G.1 Payload Mass Budget . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+H Detailed Structural and Mechanical Calculation 83
+I Detailed Software Architecture 84
+J Detailed Electrical Architecture 86
+J.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+Bibliography 41
+iv
+List of Abbreviations
+BP - Black Powder
+CFD - Computational ﬂuid dynamics
+CFRP - Carbon ﬁbre reinforced polymer
+CNC - Computer numerical control
+COTS - Commercial oﬀ the shelf
+DoF - Degrees of freedom
+EMC - Environmental Monitoring Cluster
+FC - Flight computer
+FEA - Finite element analysis
+FoS - Factor of safety
+GFRP - Glass ﬁbre reinforced polymer
+GPS - Global positioning system
+HDPE - High-density polyethylene
+LOS - Line of sight
+PCB - Printed circuit boards
+RF - Radio frequency
+RFC - Recovery ﬂight computer
+SARA - Scottish Aeronautics and Rocketry Association
+SHSS - Shoulder Head Socket Screw
+SRAD - Student research and developed
+STEM - Science, technology, engineering, and mathematics
+TD - Tender descender
+v
+UKRA - United Kingdom Rocketry Association
+Nomenclature
+ Density [kg/m3]
+ Stress [Pa]
+a Acceleration [m/s2]
+CD Drag coeﬃcient [-]
+F Force [N]
+g Gravitational acceleration [m/s2]
+m Mass [kg]
+P Pressure [Pa]
+R Combustion Gas Constant [ft lbf/lbmR]
+r Parachute area [m2]
+r Parachute radius [m]
+T Combustion gas temperature [R]
+v Velocity [m/s]
+vi
+1. Introduction
+Figure 1.1: Endeavour team structure.
+Endeavour is the student rocketry team at The University of Edinburgh. There are three technical
+projects: Darwin, the sounding rocket project, Maxwell, liquid engine project, and Bayes, thrust vector
+controlled vehicle project. In addition, there are two non-technical teams working on outreach and
+creatives. The outreach team goes to local high schools and wider audiences and does workshops
+on rocket science and STEM. The creatives team narrates the journey to space from the student’s
+perspective through various mediums. The management team (team lead, ﬁnance manager, outreach
+lead, media and sponsorship lead, technical leads, operation lead) oversee the various aspects to lead
+the ﬁve projects and integrate them under the roof of endeavour. Through eﬀective communication
+and teamwork, the team has grown exponentially over the past two years. There are 43 members with
+around half of the team dedicated to the Darwin team. Around 16% of the team is in the Maxwell
+team, and Bayes make up about 6% of the team. A similar percentage of the members are in the
+Outreach team, and 9% of our members are in the creatives team.
+Figure 1.2: Darwin team structure.
+Endeavour is composed of students from diﬀerent degree programs in The University of Edinburgh.
+The majority of the team is from the School of Engineering and studies either mechanical engineering
+or electrical and electronics engineering. The team also have members from the School of Informatics,
+School of Physics, School of Chemistry, and School of Mathematics, with students studying computer
+science, physics, chemical engineering, and mathematics. In addition, some of these members are from
+Herriot-Watt University and Fife College, two local higher education institutions in Edinburgh, and
+one member has recently completed a modern apprenticeship in CNC machining.
+With these team members from a variety of backgrounds, endeavour aspires to advance the British
+aerospace industry from the grassroots level and allow students to experience the aerospace industry
+during university, especially since The University of Edinburgh does not yet have an active aerospace
+department.
+Our biggest supporters are The University of Edinburgh and various industry partners. In addition
+to ﬁnancial support, the advice from experienced staﬀ and technicians from the University has been
+invaluable in improving the design of Darwin II. The industry partners oﬀer ﬁnancial support and
+provide access technologies and other industry players that would not otherwise be available. The
+UnitedKingdomRocketryAssociation(UKRA)andtheScottishAeronauticsandRocketryAssociation
+(SARA) were also able to oﬀer support with advice on various regulations and matters surrounding
+amateur rocketry in the UK.
+1
+All CFRP components were gifted to the team by M-Carbo Composites, who are based in Belarus. This
+allowed us to have industry-standard composite components that ensured the structural integrity of
+the rocket. nTopology, Ansys, and Dassault Systemes allowed us to design, simulate, and optimise our
+design through valuable software. RS GrassRoots supported the manufacturing and assembly process
+with various tool kits, and Cirrus Logic gave ﬁnancial support that enabled various technical and
+logistical activities. IRIS has gifted a particle detector to use in Darwin II’s payload, and playerdata
+have oﬀered advice and support to the payload team. While the support from various stakeholders
+and sponsors has been helpful, there were many challenges faced during the design and manufacture
+of Darwin II. COVID-19 has brought many logistical challenges and restrictions in meetings and
+manufacturing of the vehicle. It caused signiﬁcant delays and longer lead times in machining, acquiring
+components, and assembly. The team has therefore spent the past year improving the rocket’s design,
+ensuring that all necessary health and safety regulations are met whilst planning the manufacturing
+processes.
+2
+Figure 1.3: Team sponsors.
+Figure 1.4: Team stakeholders.
+3
+2. System Architecture
+2.1 Overview
+Darwin II is endeavour’s second sounding rocket design. It is designed for a 9 km apogee, and travels in
+thesupersonicﬂightregime. Theﬁnallengthofthevehicleis2.66m, withatotalmassincludingmotors
+of 35.5 kg and a 156.4 mm (6 inch) outer-diameter with 2 mm wall thickness. The fuselage is made
+up of carbon-ﬁbre-reinforced polymer (CFRP), except for the radio frequency (RF) windows located
+at the avionics bay and the nose cone, which are made out of glass-ﬁbre-reinforced polymer (GFRP).
+The aft cone is additively manufactured from 3D printed continuous carbon ﬁbre. The bulkheads
+are aluminium 6082-T6 and many non-structural components are 3D-printed with PLA. A student
+research and developed (SRAD) airbrake system made up of aluminium and high-density polyethylene
+(HDPE) allows for the manipulation of the drag generated after motor burnout and better target the
+predicted apogee. Darwin II employs a dual deployment system, where separation and drogue chute
+deployment occur at apogee at the nose cone using CO2 charges, and the main parachute is deployed
+at an altitude of 500 m using a tender descender. The recovery system will be described in more detail
+in Section 2.4.
+Theﬂightcomputer(FC)ofDarwin II, namedMajor Tom, is comprised ofthreePCBs. Theﬁrstboard,
+as shown in Figure J.2, holds the two Raspberry Pi’s for two cameras. The second board (Figure J.3)
+acts as a SRAD ﬂight computer and holds the sensors, switches, outputs for the airbrake and recovery,
+and sensory status indicators. The third board (Figure J.4) is used to mount the telemetry components,
+a GPS module, commercial oﬀ the shelf (COTS) redundancies, and the camera that will be recording
+the outside during ﬂight. Major Tom communicates with the ground control over RF for initialisation
+at launch and data transmission during ﬂight and recovery. The sensors communicate with the central
+microcontroller (Teensy 4.0) through SPI protocol and measurements are ﬁltered with a Kalman ﬁlter
+for more accurate data. See Figure I.1 for a detailed software architecture, the diﬀerent phases, and
+the conditions that deﬁnes each of the phases.
+Darwin II’s scientiﬁc payload is a deployable body that ejects at apogee and houses its own recovery
+system. It takes the form of a CANSat, housing the scientiﬁc instruments and a 1U CUBESat structure
+housing telemetry and recovery subsystems. The CANSat collects environmental data as well as the
+incidence of high-energy particle activity throughout the atmospheric column. Section 2.5 covers the
+detailed structure, avionics, and other relevant information related to the payload.
+2.2 Propulsion Subsystem
+Engine Design
+The ﬁrst major step in Darwin II’s design process was in selecting an appropriate motor: this decision
+prescribes the thrust available throughout the ﬂight, and therefore imposes restrictions on the rocket’s
+overall mass, aerodynamic properties and structural integrity, which are required in order for the rocket
+to reach its target apogee of 9km. Since Darwin II is being entered into the COTS Solid Propellant
+category, only motors of this type were considered in the design process. For additional simplicity, only
+motors easily obtainable through the EuRoC competition were considered, and thus various motors
+from Cesaroni’s Pro98 line of reloadable rocket motors were looked at. Figure 3.1 shows a cross-
+sectional view of the Cesaroni’s Pro98 21062O3400-6GXL rocket motor casing, for which Darwin II’s
+lower body is designed to integrate with.
+4
+Figure 2.1: Rocket motor casing cross-section.
+Propellant
+The motor selected (21062O3400-6GXL) uses the Imax propellant, which packs the maximum total
+impulse in a given motor envelope (hence the name). The total impulse of Imax reloads is around
+10-1%5 higher than that of any other reload in the same motor hardware. Imax reloads feature a large
+ﬂame with a hint of green and a large volume of dense smoke. Despite not having the highest speciﬁc
+impulse on the market, it has a higher density compared to other propellants available. Therefore, the
+O3400 has a considerable total impulse.
+Impulse
+Following simple OpenRocket analysis during the early stages of design, and based on existing similar
+rocket designs, it quickly became clear that a high thrust, high impulse motor, from either the top
+range of the N class (total impulse of 10,240.01–20,480Ns) or low range of the O class (total impulse
+of 20,480.01–40,960 Ns) was required. Figure 2.2 shows a comparison between the thrust curves of two
+such motors: Cesaroni’s 21062O3400-P and 20146N5800-P, both of which provide suﬃcient thrust for
+Darwin II’s design to exceed its target apogee under simulated conditions.
+0 1 2 3 4 5 6 70
+2;000
+4;000
+6;000
+8;000
+Time [s]
+Thrust Force [N]
+Cesaroni 21062O3400-P
+Cesaroni 20146N5800-P
+Figure 2.2: Rocket motor thrust curve comparison.
+Ultimately, the Cesaroni 2106203400-P has been selected as Darwin II’s ﬁrst choice motor. Its lower
+peak thrust compared to the 20146N5800-P results in a reduced risk of failure caused by stresses on
+the motor mounting assembly due to this load. The chosen motor also takes longer to reach this peak
+force, resulting in less of a shock load being applied, and ultimately lower inertial forces on the rocket’s
+body due to the lower acceleration caused by the reduced thrust force.
+5
+Arming and Ignition
+As a COTS motor, no special arming and ignition sequence is necessary. The manufacturer introduces
+the use of an e-match connected at the bottom of the motor (nozzle), which can then be ignited
+remotely once everyone is within a safe range from the rocket, as per EuRoC’s launch system layout.
+Once the e-match is activated by an electrical signal, the solid propellant of the rocket engine starts
+its combustion, accelerating the air and propelling the rocket to the sky.
+2.3 Aerostructure Subsystem
+2.3.1 External
+Carbon Fibre Components
+Early on in the design process, the decision was made to use CFRP as the primary material in the
+rocket’s airframe. CFRP’s high strength-weight ratio make it an obvious candidate for use in the
+rocket’s airframe. Following the in-house manufacture of a roll-wrapped CFRP tube for endeavour’s
+ﬁrst sounding rocket design, Darwin I, and the various challenges that this presented without access
+to suitable industrial equipment, the decision was made to outsource the manufacture of Darwin II’s
+CFRP components. The manufacture of the CFRP airframe and motor-mount sleeve used in Darwin
+II was carried out using state-of-the-art ﬁlament winding technology, with a winding angle of 15 as
+per manufacturers’ recommendations, to provide the best compromise between strength under axial
+and bending loads.
+All ﬂat CFRP components (ﬁns and their relevant connectors) have been manufactured using sheets
+of CFRP consisting of a 3k tow, which have then been precision manufactured using a CNC cutting
+process. The resulting components from these processes are shown in Figure 2.3.
+(a)
+ (b)
+Figure 2.3: Filament wound CFRP (a) motor mount tube and (b) body tube alongside sheet
+CFRP ﬁns, images courtesy of M-Carbo.
+RF Transparent Sections
+One of the biggest disadvantages of using a CFRP fuselage is the lack of radio frequency transparency:
+the carbon ﬁbres in the matrix conduct electricity and cause the fuselage to act as a Faraday cage,
+thus preventing the passage of radio waves through it. To solve this issue, the parts of the fuselage
+that contain radio frequency transmitters, or signal emitters, are made of GFRP. Glass ﬁber does not
+conduct electricity and therefore allows RF signals to pass through. The sections with RF transparency
+can be seen in Figure 2.4. The RF transparent sections make up a 3-sided fuselage, used in the
+6
+Figure 2.4: Cross section of Darwin II, black fuselage representing CFRP and the yellow one
+for GFRP (RF transparent)
+electronics bay, manufactured using wet layup glass ﬁbre, and the nose cone, manufactured using a
+continuous ﬁbre 3D print with a blend of kevlar and glass ﬁbre. To ensure there is no interference,
+both RF transparent sections are at least two body diameters in length.
+2.3.2 Internal
+Section Interfaces
+The rocket can be divided into three main sections:
+• A lower section containing the motor, ﬁns, aft cone, motor sleeve, centering rings and motor
+bulkhead.
+• An electronics bay: which holds all electronics components, the air brakes system, the fuselage
+(including three rods for structural strength), recovery bulkhead and recovery activation systems.
+• Nose cone and payload.
+The three main interfaces are highlighted in red in Figure 2.5. Starting from the aft end of the rocket,
+there is the motor bulkhead, a machined part from aluminum 6082-T6, optimized for weight reduction
+and stiﬀness. It interfaces with half of a body-diameter of the lower fuselage and is secured to the
+fuselage through 12 M3 bolts. A machined groove for the attachment and centering of the motor sleeve
+is included, as well as a shoulder for the top of the motor.
+Figure 2.5: Render of Darwin II with transparent fuselage. The three interfaces are highlighted
+in red.
+7
+Figure 2.6: Avionics bay and nose cone assemblies. Highlighted in red are the interfaces. The
+two green cylinders in the middle represent the parachutes.
+There are three threaded steel rods screwed to the motor bulkhead that carry the rocket’s structural
+loads through the avionics section, as shown in Figure 2.6. Moving forwards, the three rods are bolted
+to the machined aluminum 6082-T6 recovery bulkhead. A body-diameter long coupling tube is glued to
+the bulkhead for additional interference. It also includes a 3D printed extension to increase the bonded
+surface between the bulkhead and the coupling tube. The recovery fuselage, where the parachutes and
+lines are stored, is glued permanently to this bulkhead assembly and reinforced with 6 M3 bolts.
+The last interface is between the recovery fuselage and the nose cone-payload assembly. As this is the
+only section of the rocket that separates for recovery deployment, the stiﬀness and integrity of this is a
+priority for the safety of launch and a successful recovery. For this reason a conventional coupling tube
+has been employed here, extending a full body-diameter to either side of the separation point. This
+coupling tube can be seen on the right of Figure 2.6. It is bonded with epoxy to the CFRP recovery
+fuselage, making a solid piece with the recovery bulkhead which is also glued to the fuselage. The
+coupling tube is held to the nose cone with 4 M2 Nylon shear pins, which will break once the CO2
+canisters have been ﬁred, separating the nose cone and deploying the drogue parachute. More detail
+about the interfaces between the Payload and the Nosecone can be found in Section 2.5.
+Motor Retention and Load Transfer
+The motor has a positive retention mechanism to prevent failure and release from the rocket. A 3/8”
+Shoulder Head Socket Screw (SHSS) screws into the motor through a centre hole in the motor bulkhead.
+The SHSS is used to locate and secure the motor, and is not responsible for the transfer of the thrust
+force to the motor bulkhead. The motor also has a relatively snug ﬁt inside the motor sleeve which
+will help to stop unwanted rotation of the motor when being handled.
+The motor must be secured in place using a motor casing. The casing is made from ﬁlament-wound
+CFRP to provide a strong, lightweight part. There are 3 equispaced centering rings located across the
+motor sleeve to keep the casing in line with the outer body of the rocket, as seen in Figure 2.7. These
+will help distribute the lateral forces on the airframe as well as the motor bulkhead by keeping the
+motor centered. There are also three sets of connectors on the motor sleeve for ﬁn attachment, and
+will pass through the body tube to lock the rotation of the motor sleeve. These connectors will then be
+further strengthened by laying up GFRP on the connectors and the interfaces with the outer tube to
+ensure no movement of the ﬁn root. In addition, the ﬁns and ﬁn attachments also help with centring
+the motor as the ﬁns pass through the lower body. The combination of these securing techniques
+provides a solid mount for the motor as it is ﬁxed axially, laterally and vertically.
+8
+Figure 2.7: Render of the lower section of Darwin II with the fuselage being suppressed to see
+the internal structure
+Near the bottom of the motor there is a ’lip’ which has a larger diameter compared to the rest. This
+lip will provide a surface for the thrust to be transferred. The motor sleeve extends all the way from
+the lip to the motor bulkhead to allow thrust transfer. This single continuous part will distribute the
+loads over a large area of the motor bulkhead and take away the loads from the SHSS.
+Mechanical connections
+Motor SHSS:the motor SHSS is not a structural connection and is only there to retain the motor and
+to stop it falling from the rocket. It is 3/8" in diameter and secured through the motor bulkhead.
+Recovery/motor bulkhead structural rod connections:there are three 8mm rods that run from
+the motor bulkhead through the avionics bay to the recovery bulkhead. They are 120 degrees apart,
+as shown in Figure 2.8. The rods screw into the motor bulkhead, secured using brackets that tighten
+onto the the rods, and bolted with nylon lock nuts that secure the rods to the recovery bulkhead.
+These structural rods are used to transfer some the thrust of the rocket rather than relying on just the
+fuselage of the rocket to handle these large thrust forces.
+Figure 2.8: Render of the avionics bay. Motor bulkhead on the bottom, one of the avionics
+bay fuselage section in between, and the recovery bulkhead on top. Light green components
+represents the PCBs, blue for batteries, and dark grey for CO2 canisters
+9
+Recovery bay eyebolt: the recovery bay eyebolt will have to withstand the force of a sudden
+decelerating rocket at apogee. It should slow the descent of the rocket from 30 m/s to 7 m/s in a short
+amount of time. The recovery bulkhead is 8 mm thick, but if a small diameter connection is used,
+then the force would be concentrated onto a small area and cause failure. Therefore, an M10 eyebolt
+is used as it provides a greater area for the force to act over.
+Rail guides:the rail guides are secured tangentially to the body tube. The upper rail guide attaches
+to the motor bulkhead, and the lower rail guide uses a small block inside the body tube to mount
+onto. The lower guide will have to rely on the strength of the body tube and it transfer of loads to the
+motor sleeve, motor bulkhead and rest of the rocket. The upper guide has a more secure attachment
+compared to the lower guide as some of the forces will be directed to the bulkhead. However, the lower
+rail guide does not need as solid of a connection since lower rail guides typically have less forces acting
+on them.
+Flanges: the ﬂanges are used to give extra material for the screws to embed into, as well as an overlap
+for connecting coupling tubes and body tubes. The ﬂanges allow the potential lateral forces on the
+tubes to be spread over a larger area. If they are too short, the body/coupling tubes can act as a lever
+and introduce large stresses into the airframe. In the motor bulkhead there is a large ﬂange projected
+to the aft end that allows two rows of oﬀset screws to be placed to secure body tube in place. If no
+ﬂange were to be used, the bulkhead would have to be thickened to allow for a suitable mounting
+points for the screws. However, the ﬂange allows the thickness of the bulkhead to be reduced and only
+extend the perimeter that comes into contact directly with the fuselage.
+Another beneﬁt that ﬂanges has is that it provides a suitable surface to line up the body tube. For
+example, the body tube for the upper section of the rocket will slip over the ﬂange and will then be
+screwed into position. The extra surface area that the ﬂange provides for the body tube helps to spread
+any forces more evenly over the body tube interface, as well as providing a greater seal for the recovery
+sequence.
+2.3.3 Numerical Analysis
+Trajectory simulations
+To validate that Darwin II’s design is capable of exceeding its target apogee with the chosen motor
+and airframe design described above (including budgeted masses for payload, recovery and avionics
+subsystems), ﬂight trajectory simulations were performed and compared using two pieces of software:
+OpenRocket and RASAero II. OpenRocket beneftis from a superior UI and integration of optimisa-
+tion features, which were utilised throughout the design process. However, in the supersonic regime,
+which Darwin II is expected to reach, OpenRocket suﬀers from poorer accuracy as a result of various
+simplifying assumptions used in its calculation of drag.
+10
+(a)
+(b)
+Figure 2.9: Darwin II schematic in (a) OpenRocket and (b) RASAero II.
+Compounded with other factors, such as little previous launch experience within the team, as well as
+high sensitivity of the simulations to factors such as surface ﬁnish and centre of gravity, it is clear
+that there is going to be a considerable inherent level of error in any simulations carried out in both
+OpenRocket and RASAero II. As such, the results of these simulations are used merely as a guide for
+predicting the rocket’s apogee, with the aim of "ﬁne-tuning" this prediction actively throughout the
+rocket’sﬂightusinganactivelycontrolledairbrakesystem, discussedinmoredetailinSection2.6.
+11
+0 50 100 150 200 2500
+2;000
+4;000
+6;000
+8;000
+Time [s]
+Altitude [m]
+OpenRocket
+RASAero II
+(a)
+0 20 40 60 80 1000
+200
+400
+600
+Time [s]
+Velocity [m/s]
+Openrocket
+RASAero II
+(b)
+0 10 20 30 40 50 60 50
+0
+50
+100
+150
+Time [s]
+Acceleration [m/s2]
+Openrocket
+RASAero II
+(c)
+0 10 20 30 400
+1
+2
+3
+4
+5
+Time [s]
+Stability [calbers]
+Openrocket
+RASAero II
+(d)
+Figure 2.10: Comparison between OpenRocket and RASAero II simulated (a) altitude, (b)
+velocity, (c) acceleration and (d) stability over duration of ﬂight. Note, RASAero II does not
+include recovery system, hence the large discrepancy in results following apogee.
+A summary of the key results of these simulations are given in Table 2.1.
+Table 2.1: Key trajectory simulation results.
+Parameter OpenRocket RASAeroII Units
+Apogee 9,044 9,112 m
+Max. velocity 575 604 m/s
+Max. acceleration 141 156 m/s 2
+Stability oﬀ rail 1.8 2.0 -
+The above simulations are carried out assuming the rocket is launched at an angle of 84 pointing
+upwards from the horizontal. They also incorporate a simple wind model, assuming an average wind
+speed of approximately 3 m=s, a reasonable value for October in Ponte de Sôr, with a standard
+deviation of 0.3m=s and a wind direction that is parallel to the horizontal. However, in order to better
+understand the inﬂuence of wind speed on the overall trajectory of the rocket, a simple sensitivity
+12
+analysis was carried out in OpenRocket for a range of wind speeds, ranging from 0 to 6 m/s, the
+results of which are presented in Figure 2.11
+0 500 1;000 1;500 2;000 2;500 3;0000
+1;000
+2;000
+3;000
+4;000
+5;000
+6;000
+7;000
+8;000
+9;000
+Position East of Launch [m]
+Altitude [m]
+0 m/s wind
+3 m/s wind
+6 m/s wind
+Figure 2.11: OpenRocket wind sensitivity analysis.
+From this it can be seen that, whilst not having a major impact on the predicted apogee, increasing
+wind speed does have signiﬁcant eﬀect on the rocket’s drift during descent. Note, the results shown
+here are for an upwind launch, and therefore should the rocket be launched downwind the resutls would
+be reversed, and the rocket would drift further East of launch during its descent.
+In addition to the use of OpenRocket and RASAero, a simple in-house trajectory simulation software
+was developed in the MATLAB-based graphical programming environment Simulink. This software
+was developed with the intention of using the same equations of motion as those used in OpenRocket,
+but with added model interactivity which incorporates calculation of drag provided by the airbrake
+subsystem, as well as simulation of the recovery of a deployable payload.
+Detailed Aerodynamic Analysis
+With the aim of going supersonic with Darwin II, it is vital that all of the vehicle’s aerodynamic surfaces
+are well understood prior to launch and that the chances of achieving a successful ﬂight are maximised
+through ensuring the chosen design is suﬃciently stable and eﬃcient. Due to the complexity involved
+in accurately modelling supersonic ﬂow, endeavour enlisted the help of a ﬁnal-year MEng student at
+The University of Edinburgh, Liam Foley, who undertook a year-long research project focusing on this
+challenge. All subsequent methodology and results outlined in this section are credited to Liam.
+The focus of this work was divided into two main stages: performing initial analytical simulations to
+be used for veriﬁcation, and a numerical analysis of a full 3D model of the rocket. For the purpose
+of keeping this section concise, the focus will be on the latter of the two stages, in which Darwin II’s
+geometry was imported into the commercial Computational Fluid Dynamics based simulation software,
+StarCCM+. Within StarCCM+, the the solver conditions, surfaces, and boundary conditions of the
+domain were deﬁned. In simulating Darwin II, a steady-state, three-dimensional, inviscid ideal gas ﬂow
+solver was used. A coupled implicit method was chosen and a Courant number of 1.0 was used.
+13
+• Steady-state: due to the rocket’s aerodynamic proﬁle, there will be relatively low drag force
+and therefore it can be assumed that the deceleration experienced will be slow. As such, quasi-
+steady-state analysis is suitable.
+• Inviscid: viscous eﬀects are generally negligible compared to pressure eﬀects, therefore assuming
+that the ﬂow is inviscid will give an accurate result.
+• Three-dimensional: due to the geometry of the rocket, a 2D simpliﬁcation is unrealistic. Simu-
+lation time has been reduced by sectioning the smallest repeating symmetrical section on of the
+rocket, a length-wise 60° section from the nose cone tip to the end of the aft cone.
+A summary of the initial conditions used in the simulation of Darwin II are summarised in Ta-
+ble 2.2.
+Table 2.2: Initial conditions used in CFD simulations.
+Flow property Initial conditions Units
+Altitude 10,000 m
+Flow velocity 1.8 Mach
+Local speed of sound 299.8 m/s
+Velocity 539.64 m/s
+Freestream density 0.414 kg/m 3
+Freestream pressure 26,500 Pa
+Freestream temperature 223.3 K
+The results of the computational simulation can be seen in Figure 2.12, which shows the velocity
+distribution and Mach number. In Figures 2.13 and 2.14 show the Mach distribution in more detail
+and the temperature around the ﬁns. The results of the simulations were validated analytically. This
+analysis help the design of the aerodynamic surfaces of the rocket, implementing a front and rear taper
+in the ﬁns to reduce the stagnation zone behind the ﬁns for reduction in drag and temperature. Another
+change from this analysis was the reduction of the leading edge angle of the ﬁns. This will reduce the
+eﬀect of the shock waves traveling along the span of the ﬁn, which will increase the eﬀects of the shock
+waves towards the tip. This will increase the pressure on the main surface of the ﬁn, which will pull
+the CoP further towards the aft of the rocket at supersonic speeds, increasing the stability.
+14
+Figure 2.12: A side-on view of the Darwin II rocket simulation showing the velocity of the ﬂow
+around the rocket.
+Figure 2.13: Plots of Mach number of air-ﬂow around (a) the tip of the nose cone and (b) the
+ﬁns and tail of the rocket.
+Figure 2.14: Plot of air-ﬂow temperature around the ﬁns.
+To add to the analysis carried out in the previous section, a summary of the positions of the Centre of
+Pressure and Centre of Gravity during the ascent are given in Figure 2.16, which compares the values
+obtained in OpenRocket with those obtained through the above described CFD simulations.
+15
+0 0:5 1 1:5 2 2:5 30:9
+0:95
+1
+1:05
+1:1
+1:15
+1:2
+Nose cone
+Main body
+Fin
+Aft cone
+Distance from nose cone tip [m]
+Temperature coeﬃcient [-]
+(a)
+0 0:5 1 1:5 2 2:5 30:6
+0:8
+1
+1:2
+1:4
+1:6
+Nose cone
+Main body
+Fin
+Aft cone
+Distance from nose cone tip [m]
+Pressure coeﬃcient [-]
+(b)
+Figure 2.15: Distribution of (a) temperature and (b) pressure along the length of the rocket.
+Figure 2.16: Schematic veiw of Darwin II showing Centre of Gravity at beginning (Orange) and
+end (Black) of the boost phase, along with Centre of Pressure calculated using OpenRocket at
+subsonic velocities (Blue) and supersonic velocities (Red), and from CFD simulations (Black).
+16
+Expected Loading
+To ensure the safety and structural strength of Darwin II’s airframe and its connections, an under-
+standing of the magnitude of structural loads that will be encountered throughout its ﬂight is essential.
+As endeavour’s ﬁrst attempt at performing a detailed structural analysis of a rocket design, the ap-
+proach taken for estimating the loads the rocket’s airframe is subjected to is a simple one: for the
+determination of axial loads, the rocket is treated as a 1-D rigid beam, with the axial load at any
+point along the rocket’s length, at any instant during the ﬂight, calculated by summing the axial forces
+acting at this point. Such an approach requires dividing the rocket into segments, along which the
+acting drag force is assumed to be a constant and the mass is assumed to increase linearly along the
+length of the segment. Figure 2.17 details the various segments chosen for this simpliﬁed approach,
+and the loads acting on each.
+Figure 2.17: Treatment of axial loads on rocket’s airframe structure.
+This method can then be used to calculate the expected axial load at any point along the rocket’s
+length using the following equation:
+Fa(x;t ) =
+i=6X
+i=1
+[Fa;i 1(t) +FT;i (t)  ax(t) mi(x)  FD;i(t)] (2.1)
+whereFa is the axial force acting at the chosen point at a distancex from the nose cone tip at a time
+t into the duration of the rocket’s ascent.Fa;i 1 is the total axial force acting on all segments in the
+forward direction of the chosen point andFT is the motor’s thrust force. The inertial force due to the
+rocket’s acceleration is accounted for through the termax mi whereax is the rocket’s acceleration in
+the x-direction andmi is the total mass of all rocket segments in the forward direction of the chosen
+point, as well as the total forward mass of that particular segment at the chosen point. Finally, the
+drag force acting on each segment is accounted for through the termFD.
+For a full, detailed analysis and explanation of these various loads, see Appendix H. Using the above
+approach, a plot detailing the axial force along the length of the rocket throughout the duration of the
+motor’s burn is obtained, shown in Figure 2.18. From this, it is then possible to extract the time at
+which the maximum axial loads are experienced, shown in Figure 2.19.
+17
+0
+1
+2
+3
+0
+2
+4
+6
+ 2;000
+ 1;000
+0
+1;000
+2;000
+3;000
+x [m]t [s]
+Fa [N]
+ 1;500
+ 1;000
+ 500
+0
+500
+1;000
+1;500
+2;000
+2;500
+Figure 2.18: 3-D plot showing the variation in axial forces on the rocket’s airframe along its
+length during the motor’s burn time.
+0 0:5 1 1:5 2 2:5 3
+ 2;000
+ 1;000
+0
+1;000
+2;000
+3;000
+Nose cone
+Main body
+Fin
+Aft cone
+x [m]
+Fa [N]
+ 2
+ 1
+0
+1
+2
+3
+106
+ [Pa]
+Figure 2.19: Maximum axial force and axial stress acting along the length of the airframe.
+From this analysis, it is clear that the stresses experienced by the vehicle’s airframe are low in com-
+parison to the yield strength of both CFRP and GFRP, with a more detailed analysis of the critical
+loads and their eﬀect being looked at in the following section.
+18
+Critical Loading Analysis
+To ensure that the critical load bearing parts of Darwin II are suﬃciently strong, static stress analysis
+using FEM was performed on the aft cone cap, the motor bulkhead, and the recovery bulkhead using
+a software called nTopology.
+The ﬁrst part analysed is the aft cone cap. This part is responsible for transferring the thrust of the
+motor to the motor sleeve, which then transfers it to the motor bulkhead. As this part is directly
+responsible for transferring the thrust of the motor to the rest of the rocket, the force acting on it is
+due to the inertia of the rocket minus the motor. With the mass of the rocket (not including the motor)
+is constant during ascend, the largest force this part experiences is when the vehicle is undergoing peak
+acceleration. The magnitude of this force is calculated using the following equation:
+F = (mtotal  mmotor) apeak (2.2)
+Where F is the inertia force on the aft cone cap,mtotal is the total mass of the rocket (about 34.6 kg),
+mmotor is the mass of the motor at launch (about 16.8 kg) andapeak is the peak acceleration (expected
+to be about 15 g). Using the equation above, a maximum force of 2619.3 N is expected, but for this
+simulation a peak acceleration of 22.5 g is used for a high FoS, which raises the maximum force to
+3928.9 N. This force acts along the small lip of the motor casing and then transferred through the aft
+cone cap into the motor sleeve’s bottom face. These faces were used as boundaries, with the lip of the
+motor being the surface where the inertia force is acting, and the motor sleeve’s bottom face being a
+displacement constraint. The results of the analysis are shown in Figure 2.20.
+(a)
+ (b)
+Figure 2.20: Results of the static analysis of the (a) top and (b) bottom faces of the aft cone
+cap
+According to the analysis, the largest stress on the cap is about 28 MPa. This part is manufactured out
+of Al 6082-T6, which has a yield stress of about 260 MPa. With the yield stress of this alloy being 9.3
+times larger than the maximal stress experienced, the part is deemed safe. Using an acceleration in the
+analysis that is 1.5 times larger than the expected peak further conﬁrms the safety of this part.
+Analysis the motor bulkhead was done in a similar manner. This part is responsible for transferring
+the thrust from the lower body, through avionics bay, and to the upper body. Using equation 2.2 with
+a peak acceleration of 22.5 g (for the same reason as before), total mass of 34.6 kg, and replacing
+mmotor with mlower, wheremlower is the mass of the lower body (about 21.5 kg), gives a maximum
+inertia force of 2891.5 N. Technically the lower body’s skin is also connected to the bulkhead, but it
+19
+is screwed into the bulkhead’s outer radius, and as its mass is negligible to the rest of the rocket that
+is being accelerated by the bulkhead, it is not included in the analysis. The maximum inertia force
+of 2891.5 N acts along the groove the motor sleeve and is transferred to the three rods that form the
+structure of the avionics bay. Taking these into consideration, the groove’s horizontal surface (where
+the surface on the top face of the motor sleeve touches) is the surface at which the inertia force acts,
+and as the rods are screwed into the tapped holes of the bulkhead, the displacement restraint is the
+cylindrical surface of the tapped holes. The results of the analysis are shown in Figure 2.21.
+(a)
+ (b)
+Figure 2.21: Results of the static analysis of the (a) top and (b) bottom faces of the motor
+bulkhead. To reduce computation, the shoulder that adds extra stability to the skin connection
+was shortened during the analysis as the thrust is not transferred through it.
+The analysis shows that the largest stress on the bulkhead is 37.5 MPa. Like the aft cone cap, this
+part is also Al 6082-T6, with a yield stress of 260 MPa. With the yield stress of this alloy being 6.9
+times larger than the maximal stress experienced, the part is deemed safe. Using an acceleration in the
+analysis that is 1.5 times larger than the expected peak further conﬁrms the safety of this part.
+The recovery bulkhead is connected to the upper body through a large surface, which reduces stress
+accumulations during ascent. However, when the main chute opens during descent, all the inertia
+force is transferred through the eye bolt and then through the three rods of the avionics bay that are
+secured to the recovery bulkhead. This can create stress accumulation at the eyebolt and the the area
+where the three rods are secured, which can lead to failure. The analysis used a peak force of 2000 N,
+while 1300 N was expected to be the maximum force on the eyebolt. Since the time of the analysis,
+the payload area underwent a slight change which resulted in the maximal force being smaller than
+1300 N. A new analysis was not done because if the part is suitable for 2000 N, then decreasing the
+force acting on it makes it more safe. Calculating the expected force is done using equation 2.8 that
+is described in section 2.4.3. As the chute is attached to the eyebolt, the force is transferred to the
+bulkhead through the tapped hole of the bolt and then the into the three rods of the avionics bay
+through the securing nuts. As a result, the cylindrical surface of the eyebolt’s hole is where the 2000
+N acts, and the top surface of the bulkhead where the nuts are secured is the displacement restraint.
+The results of the analysis are shown in Figure 2.22 below.
+20
+(a)
+ (b)
+Figure 2.22: Results of the static analysis of the (a) top and (b) bottom faces of the recovery
+bulkhead.
+The analysis shows that the largest stress on the bulkhead is 94 MPa. Like the two previous parts,
+this bulkhead is also Al 6082-T6, with a yield stress of 260 MPa. With the yield stress of this alloy
+being 2.8 times larger than the maximal stress experienced, the part is deemed safe. Using a force for
+the analysis that is much larger than the expected one further conﬁrms the safety of this part.
+2.4 Recovery Subsystem
+2.4.1 Introduction
+The Darwin II recovery system is a dual deployment two-chute system consisting of a 24-inch drogue
+parachute, a 96-inch main parachute, aCO 2 canister powered ejection mechanism and a pyrotechnic
+staging system.
+2.4.2 Components and Speciﬁcations
+The components of the DII recovery system are as follows:
+1. Rocketman 96-inch High Performance Parachute, 1x – Main Parachute
+2. Rocketman 24-inch Elliptical Parachute, 1x – Drogue Parachute
+3. Tinder Rocketry RAPTORCO 2 Ejection System, 2x
+4. Rocketman Shock Cord, 1x
+5. Rocketman Y-harness, 3x
+6. Eye Bolt M8 x 18mm, 2x
+7. 25 x 0.3m E-match, 1x
+8. 23g CO2 Canister, 2x
+9. Fruity Chutes L2 Recovery Tether, 1x
+The parachute speciﬁcations are as given in Table A.2.
+21
+2.4.3 Recovery Subsystem Calculations
+The parachute sizes were calculated from solving the drag equation 2.3 as follows:
+Fd = Cdr2v2
+2 (2.3)
+Where the symbols correspond to the following physical parameters:
+• Fd - Drag force acting on the rocket measured in Newtons (N)
+• Cd - Drag Coeﬃcient
+•  - Air Density for a given altitude in kilogrammes per cubic metre (kg=m3)
+• r - Radius of the parachute in metres (m)
+• v - Descent speed of the rocket in metres per second (m=s)
+Equating the drag force to the rocket’s weight and rearranging for r, we have that:
+r =
+r 2mg
+Cdv (2.4)
+Where:
+• m - Mass of the rocket in kilogrammes (kg)
+• g - Acceleration due to gravity in metres per square second (m=s2)
+The results are given in Table 2.3 below:
+Table 2.3: Range of radii of drogue and main for successful recovery
+Chute
+Parameter Drogue Main Unit
+Deployment
+Altitude 10 0.5 km
+Range of
+CDValues 1.6<CD < 2:2
+Air Density 0.4135 1.225 kg/m 3
+Target Speed
+Range 23<v<46 v<9 m/s
+Calculated Range
+of Radii 0.42<r<0.94 1.14<r<1.54 m
+*The range of CD values was based upon what was quoted in commercially available parachutes.
+From the results in Table 2.3, a shortlist of suitable commercially available parachutes was written
+up from which the Rocketman 96-inch, high performance toroidal parachute and 24-inch, elliptical
+parachute were selected in order to give a high speed of descent while minimising wind drift.
+22
+In order for the recovery system to deploy, theCO2 gas has to exert enough pressure given in equation
+2.5.
+Pressure (lb=in2) = Force (lb)
+Area(in2) (2.5)
+The volume of the recovery bay is given in equation 2.6:
+Volume (in3) =   (diameter(in))2 length(in)
+4 (2.6)
+If we know the pressure required to deploy the recovery system, then the mass of BP we require is
+given by equation 2.7, and the mass ofCO 2 is simply ﬁve times the required mass of BP.
+mB P = PV
+RT (2.7)
+Where:
+• mB P - Mass of BP in grammes, (g)
+• P - Pressure required to eject the nose cone and drogue chute in (lb=in2)
+• V - Volume of Free Recovery Bay in (in3)
+• R - Combustion Gas Constant of FFFF BPRB P = 22:16ftlbf=lbm R
+• T - Combustion Gas Temperature, for FFFF BP,TB P = 3307 R
+The results of our calculations are given in Table A.2 in Appendix A.
+At the centre, an M10 eyebolt is anchored in with an M10 hex nut, which should provide a large area
+to dissipate the jerking force of the parachute deployment. With a bad case scenario of a 1560N force,
+from a sudden opening of 0.5s, from 32m/s to 6m/s at 30kg. Using SolidWorks simulations, it came
+to a factor of safety of 4.3 before yield stress is reached.
+F = mV
+t (2.8)
+Where:
+• F - Force inN
+• m - Mass of the rocket inkg
+• V - Change in velocity from deployment inm=s
+• t - Time for the main parachute to deploy ins
+2.4.4 Recovery Simulation
+The descent of the rocket was simulated using a combination of analytical and computational tools.
+First we analyse the time and velocity of the recovery using the equations described in section 2.4.3.
+We validated these results with the OpenRocket one, showed in Figure 2.10. Finally we created the
+MATLAB Simulink code so we could analyse the recovery distance, time and area of recovery in a
+home-developed software. This analysis shows that even with high wind conditions for a safety launch
+(no more than 20 km/h wind-speed) the recovery Area will be within 1km of the launch pad.
+23
+2.4.5 Recovery sequence
+For the recovery of the rocket, a dual deployment system will be implemented. This will involve a
+jettison of the payload and nosecone that will fall separately to the main body of the rocket. At apogee,
+the RAPTORCO2 ejection system will activate, releasing the gas from two 23 gCO2 canisters. The
+expansion of theCO 2 will result in shear pins holding the nose cone in place to break. This will allow
+the drogue chute to be released and inﬂate at apogee, bringing the main body descent speed to a
+predicted 28 m/s. The main body should descend at this speed until it reaches an altitude of 500 m,
+where the main parachute will be released. This will be done by using a Tender Descender L2, which
+once activated, will allow the drogue to pull the main parachute bag up, which will release the main
+parachute, slowing the rocket body to 6 m/s until it lands.
+Figure 2.23: Diagram showing the connections present at the launch stage in the recovery
+system
+The main parachute and TD (Tender Descender) will be anchored to the eyebolt in the centre of the
+recovery bulkhead using quicklinks. The body of the TD is then attached to the eyebolt using a kevlar
+lanyard to prevent it escaping once activated. The drogue parachute will be connected to the top
+24
+quicklink on the TD using a shock cord. A seprate kevlar Y-harness will connect the main parachute
+bag to the top TD quicklink to stop the bag from moving up the recovery bay. Both the RAPTOR
+and TD have redundant ignition charges, in the event that there is a failure on one of the charges in
+either system.
+2.5 Payload Subsystem
+Introduction
+Endeavour’s Payload for this edition of EuRoC was designed to be modular and able to ﬂy on several
+diﬀerent types of missions. Its ﬁrst mission was at Mach 21, a payload competition taking place at
+Machrihanish AFB, which required us to use a CANSat format with a 350g mass limit. Following
+EuRoC, we are scheduled to ﬂy aboard of Darwin I, the Team’s 3000 ft, subsonic launcher. We
+created an "Advanced Mission’s Pack" to operate our Payload even aboard Darwin II, with greater
+accelerations and lower temperatures. The Pack augments the CANSat capabilities and introduces
+telemetry and dual-event recovery systems housed in a CUBESat structure, allowing us to control our
+descent and capture atmospheric and radiation data more reliably.
+Figure2.24: CrossSectionviewoftheNosecone, theCANSatandtheCUBESatafterseparation
+from the main body.
+Mass and Form Factor
+Re-usability and modularity across a variety of missions was a critical mission requirement. Most
+of the sensing electronics - including the radiation sensing instrumentation - reside within a standard
+CANSat enclosure (66 mm in diameter and 160 mm in height). The recovery hardware and the relevant
+recovery and telemetry electronics are housed in a 1U CUBESat enclosure (100mm x 100mm x 100mm).
+The two modules are fully independent electrically, with their own power supplies, and are coupled
+mechanically through an M6 Eye Bolt, placed to allow the loads from the mission’s most violent event
+(Main Chute deployment) to optimally traverse the craft and prevent catastrophic failure. Following
+separation, the Nosecone and Payload remain coupled, descending as an unit, independent from the
+main body tube. In the following points we dig deeper into the speciﬁcs of each module. Detailed
+mass budgets are given in Appendix G, Figures G.1 and G.2.
+CANSat form factor:For this section, we were restricted by the Mach 21 regulations to a maximum
+of350g. Thestructureiscomposedoftwomodular, lightweightaluminiumverticalplateswhichsupport
+25
+all of the electronics. The plates are secured to an upper and lower poly-carbonate bulkheads. The
+CNC machines at the student Maker Space could not handle metals, and poly-carbonate was the
+natural choice, representing the intersection of low cost, low mass and manufacturability. The plates
+are bolted on to the bulkheads such that the SRBF composite external shell is clamped and held in
+place thanks to lips carved in the bulkheads.
+CUBESat form factor:Darwin II can launch up to 4kg, putting a limit on the mass of the CUBESat
+at 3.65kg - more than suﬃcient. The frame is constructed from a lightweight aluminium plate, strong
+stainless steel corner rails, and GFRP faces all around. An important factor to consider is the eﬀect
+of an extended descent-time on the down-range drift. While it is desirable tominimise the mass at
+liftoﬀ to increase our chances of reaching apogee at 9000m, it is also desirable todescend rapidly, so
+that cross-winds do not make ground recovery eﬀorts too lengthy. It was decided to couple the system
+to the nosecone so that they could descend as a single body. This design change allowed us to increase
+the mass being supported by the Payload parachuteswithout adding any mass to the lift-oﬀ weight of
+Darwin II. The aluminium and steel structure is enclosed in GFRP sheets on the four lateral faces, in
+order to ensure RF transparency necessary for the GPS Ceramic Patch Receiver. The upper face of the
+cube is open and exposes the custom-made GRFP recovery bay, which houses the main 30” parachute,
+the Tender Descender pyrotechnic device and the relevant shock-cords. This bay includes two small,
+separate compartments for the batteries and the pyrotechnic device, mitigating the risks of damaging
+or catching the lines or the parachute. All the electronics to handle GPS tracking, telemetry and
+downlink communications, as well as our COTS ﬂight computer, are housed below the recovery bay.
+The 868MHz omni-directional stub antenna for ground communications is held within a 3D-printed
+housing epoxied to the outer shell of the CANSat to maximise the chances of perfect Line of Sight
+(LOS) communication with the ground station. Similarly, the COTS EggTimer GPS Mini Transmitter
+mandated by the Altitude Logging and Transmission Addendum is epoxied to the side of the CANSat
+through a 3D printed adapter.
+Figure 2.25: Render showing the CUBESat and CANSat ready to be integrated. Note that the
+transparency of the outer shells has been altered to facilitate grasp internal layout
+26
+Removal, Interface and Deployment
+The payload is mounted "upside-down" during launch. After deployment, aerodynamic forces acting
+on the nosecone shell and drogue parachute will force the Payload+Nosecone system in a stable "nose-
+down" conﬁguration. There are two key interfaces with the Upper Body of the rocket. Moving
+afterwards, the ﬁrst of these interfaces is a GFRP ring epoxied to the inner diameter of the upper-
+body coupling tube, which supports a round GFRP pusher plate upon which one of the CUBESat’s
+faces lay. During launch, this ring contributes to supporting the weight of the payload. Not being
+connected to its support ring by bolted connections or adhesives, during the CO2 over-pressure event
+that initiates the recovery phase, the plate acts as a piston. The shear pins that connect the Nosecone
+to the body tube fail, and the assembly separates permanently.
+There is a further interface connecting the Payload to the Nosecone, coupling the two for the whole
+mission, including descent. The 8mm thick Bulkhead is made of continuous carbon ﬁber reinforced
+nylon, selected for its excellent impact resistance and strength comparable to aluminium. It connects
+to the bottom face of the CUBESat and features a cutout for the CANSat to pass through. Reinforcing
+ribs housing threaded inserts extend to the inner face of the Nosecone, allowing for 6 short countersunk
+bolts to secure the Bulkhead to the Nosecone.
+This coupling structure allows the payload to be easily worked on on launch day. After ﬁnal electronics
+tests, the pusher plate is laid onto its support ring and the bulkhead is bolted onto the CUBESat lower
+face. The payload is then lowered into the Nosecone and the fasteners connecting the Bulkhead to
+the Nosecone can be screwed in. Finally, the Nosecone+Payload Assembly is slid onto the upper
+coupling tube, and the shear pins are inserted, completing the upper body integration.In Figure 2.26,
+the diﬀerent elements of the assembly are distinguished based on colour: the Upper Coupling tube
+(yellow), the Pusher Plate (green), the Payload Bulkhead (red) and Nosecone (blue).
+Figure 2.26: Colourised Cross Section of the Nosecone-Payload Assembly
+Functionality
+This payload accomplishes a series of main missions. It has its two scientiﬁc objectives, which are
+entirely performed by the CANSat:
+1. To characterise the radiation environment at altitude by collecting snapshots of high-energy
+particles using a reverse-engineered RasPIX - a CERN-developed particle detector.
+27
+2. To collect atmospheric data from a collection of environmental monitoring sensors (EMC - En-
+vironmental Monitoring Cluster), and build a data bank that can be compared with previous
+and future ﬂights.
+In addition, it acts as anengineering demonstrator to experiment with deployable payloads and all
+the complexity of ejection sequences, dual event recovery and radio communications in extremely re-
+duced dimensions. Experience from this campaign will facilitate the team’s future deployable payloads
+that will be able to incorporate our 1U module for a turn-key recovery solution. All of the recovery
+electronics, hardware, and the Recovery Flight Computer (RFC) are housed in the CUBESat.
+RASPix is a COTS particle detector for years and has ﬂight heritage aboard the ISS. The system
+which we obtained, courtesy of a partnership with the Institute for Research in Schools, consists of
+an FPGA capable of recording 15 exposures per minute via a single, 300µm thick silicon radiation
+imaging detector. The system will be used for radiation monitoring: its 256x256 sensor captures the
+trace of particles, each decaying and interacting with the silicon wafer according to speciﬁc patterns.
+Electrons, being the least massive, leave long, curly, thin traces (visible in Figure 2.27, while protons
+leave shorter, thicker traces. The counting and sorting of each type is handled by a Raspberry Pi B,
+which we stripped of all unnecessary components to minimise failure points, reduce mass and reduce
+the volume taken up by the board. The Pi logs radiation data, and creates a wireless network to
+remotely initiate data capture from the launch rail. The detector is powered by a 3.7V, 750mAh LiPo
+pouch-style battery.
+Figure 2.27: Example of Data Outputted by the RasPIX - from P. Burian et al 2017 (JINST)
+EMC was developed in house - it is based around an Arduino Nano and features a number of sensors
+and peripherals. After breadboard tests, the design was moved to Altium Designer to formalise our
+schematics (available in the appendix) into robust CAD models. Upon ordering the ﬁrst iteration of
+our PCB, we spotted some non-critical faults. The second version of the PCB features a more robust
+electronic design, thanks to wider traces, more eﬃcient routing and better aligned pins and silkscreen.
+The unconventional shape of the board is due to the tight volumetric constraints in this section of the
+payload. The sensors are lifted oﬀ the board, and are supported by a 3D printed “bridge”. This has the
+beneﬁt of positioning the sensors up against the outer shell of the payload, improving the reliability of
+our sensors by exposing them more directly to the atmosphere.
+28
+Since our team is relatively new and does not have any high-altitude ﬂight data from previous launches,
+we have no data describing the cooling or heating of the internal volumes of our vehicles as they traverse
+the stages of recovery. All components of the EMC and the descent computer were chosen to be able to
+operate at -40°C, but The RASPix and Eggtimer batteries are based on Lithium Polymers, which are
+notoriously sensitive to very low temperatures. Approximate calculations using a lumped capacitance
+thermal model, and assuming the worst case scenario (150% faster descent speed, assuming a uniform
+block of ABS, and ignoring the protection given by the nosecone structure) show that the temperature
+of the payload, if exposed to a -40C air-stream at 60m/s, would reach equilibrium with the environment
+in 30 seconds. A COTS 7.5W resistive patch heater was selected to work in conjunction with a simple
+thermistor mounted to the battery pouches. -10°C was deemed an acceptable operational temperature
+for the LiPo battery, and a PD controller was implemented on the Arduino Nano using Pulse Width
+Modulation (PWM).
+The heating patch requires a 12V power supply, so a XL6009 boost converter was chosen to upscale the
+9V provided by a Lithium PP3 battery from Energizer, which will be discussed further in the Power
+& Energy section. The electrical architecture of the CANSat is shown in 2.28
+Figure 2.28: CANSat Electrical Architecture
+Finally, the RFC, residing in the CUBE, handles all tasks concerning telemetry and recovery. It
+is powered by a Teensy 4.0, chosen for its fast clock speed and compact size. This allows us to
+run telemetry and recovery software tasks on separate virtual threads, isolating so that that if an
+unexpected critical fault occurred in either one of them, the other would not be aﬀected. For example, if
+a fault occurred in the GPS tracking, that would not stop the program ﬁring the chute from completing
+its task.
+Recovery Task:Altitude is tracked using a high precision barometer from Bosch (BMP388) which
+oﬀers a ±8 Pascal uncertainty (approximately of±0.5 metres). The program starts oﬀ by saving a
+reading for the ground pressure at the launch site. Then it begins comparing the previously recorded
+altitude with the current altitude every 250ms. If the current altitude is found to be lower than the
+previously recorded one for three times in a row, the RFC assumes the payload has begun descending
+from apogee. It then starts monitoring when the altitude crosses the 500m above launch site level
+mark, at which point it triggers a BJT transistor switch, closing the high-current Pyro channel feeding
+29
+an e-match, which will ignite the black powder held in the Tender Descender chamber, deploying the
+main parachute.
+Telemetry Task:GPS coordinates are received at a 1Hz frequency via serial communication from a
+passive Ceramic Patch antenna facing upwards. The sentences are decoded from the NMEA standard
+intoastringshowinglatitude, longitude, altitudeandnumberofsatellitesinview, andthentransmitted
+via SPI to an RFM95W LoRa transceiver operating at 868MHz operating at a transmission power of
++20dBm (100mW is the legal maximum transmission power). Due to our team being scattered around
+Europe to complete internships, it was not possible to conduct tests on the range of the system. Our
+calculations (equations 2.9 and 2.10) show that at a range of 9km we can expect a -116dBm signal
+at the ground station using the stock 2dBi RX/TX antennas and incorporating a 30dB loss due to
+humidity, which is suﬃcient for the RFM95W receiver given its low-end sensitivity of -148dBm.
+Pout[dBm] = Ptx +Gtx  Lf reespace  Lmisc +Grx (2.9)
+where Lfree space [dBm] = 20log10(range [km]) + 20log10(frequency [MHz]) + 32:44 (2.10)
+Finding the Payload is a major criterion for mission success. Our base station features an omni-
+directional 3 dB-gain stub antenna for ground recovery, and a 8.5dB-gain, 6-element Yagi-Uda one, for
+live telemetry. According to the same calculations, this setup triples our range.
+The complete CUBESat architecture is shown in Figure 2.29
+Figure 2.29: CUBESat Electrical Architecture
+Power/Energy
+In total, 4x 9V Energizer Lithium-Manganese Dioxide (Li/MnO2), PP3 format batteries were used
+throughout the entire payload, powering the EMC board, the Heater, the Recovery Flight Computer,
+and the EasyMini FC . These provide several advantages, being 1/3 of the mass of conventional alkaline
+equivalents, but most importantly being designed with extreme operating conditions in mind. Unlike
+LiPo’s, they are equipped with vents to prevent pressure buildup when exposed to lower atmospheric
+pressures at apogee and are able to supply a constant current at lower temperatures. They support
+30
+a high burst discharge rate up to 1.5Amps, which is much more than the 500mA we found necessary
+for the correct operation of our e-matches. In terms of expected ﬂight time, EMC’s ﬂight heritage
+shows that it is able to continuously log data while surviving oﬀ a single of the above mentioned 9V
+batteries for over 3 hours. Similarly, the RASPix has been tested in continuous logging mode for 57
+minutes running oﬀ its 750mAh LiPo pack. Based on manufacturer speciﬁcations and data-sheets, the
+Recovery Flight Computer’s (RFC) should consume no more than 300mA when running at 5V, so we
+expect the battery to last over 3 hours on the 750mAh 9V battery. The team has not yet tested the
+ﬁnal conﬁguration of the Recovery Flight Computer (RFC) and is eagerly awaiting to conﬁrm this. If
+that proves not to be the case, another 9V battery will be added in parallel to double the battery life.
+The EasyMini has also proved to reliably survive in ﬂight mode for over 1 hour on a 9V battery. The
+other form of stored energy on board is in the form of 0.2 grams of black powder held in the combustion
+chamber of the Tender Descender. In order to ﬁre, the system has to bearmed by manually ﬂipping
+a slide switch on the main PCB (done on the launchpad through a small opening on the nose cone)
+and thenactivated by either the RFC or the COTS EasyMini FC, both relying on barometric data
+showing the vehicle hasBOTH started descendingAND crossed the 500m altitude mark.
+Recovery
+Dual event recovery is absolutely necessary for our payload. A drogue parachute enables a rapid but
+controlled descent from apogee to 500 metres, while limiting the terminal velocity of the system such
+that, at the instant of main chute deployment, the payload is not torn apart by excessive deceleration
+loads. The main criteria for Descent solution selection are reliability, practicality, and the reduction
+of deployment loads and landing energy. The payload relies on a 10” COTS Drogue Chute from Black
+Cat Rocketry in conjunction with a 30” COTS Main Chute from Fruity Chutes.
+Recovery Sequence:Upon separation from Darwin’s Lower Body, the drogue is immediately exposed
+to the air-stream. It will tension a 1m long shock cord secured to the CUBESat bulkhead by an M4
+eye nut. This line is equipped with a Tender Descender (TD), a COTS pyrotechnic device redundantly
+controlled by our SRAD Recovery Flight Computer and COTS EasyMini Flight Computer. This line
+is bifurcated above the TD, with a short connection to the main chute bag. When the 500m mark is
+reached, the 0.2 gram black powder charge held in the Tender Descender is detonated by any 1 of 3
+parallel e-matches, severing the line that previously transferred the drag force from the drogue to the
+bulkhead. The drogue, initially loose, will start pulling away, engaging the other end of the bifurcated
+line and pulling the Main Chute bag out of the Recovery Bay and into the free air-stream. The Bag
+is connected to a loop sewn to the crown of the Main, so as the Drogue engages the line, the Bag
+and Main are pulled apart, and the Main proceeds to inﬂate, transferring its drag force down through
+another 1 metre line of shock cord, through a swivel and ﬁnally into a separate M6 eye nut secured to
+the CUBESat Bulkhead. The sequence is shown in a simpliﬁed way in Figure 2.30:
+31
+Figure 2.30: Payload Deployment Sequence
+Knowing the mass of the Payload+Nosecone assembly is 3kg, the system speciﬁcations (Table A.2),
+and the terminal velocity formula (Equation 2.11), we can estimate the descent speed of the chutes,
+which allows us to obtain shock loading ﬁgures to input into FEM simulations of the structure.
+vt =
+r 2mg
+ACd
+(2.11)
+Fruity Chutes estimates the main chute should unfurl in 0.25 to 0.5 seconds. Using Formula 2.8, the
+the shock loading can be calculated to be between 154 and 308 N. Results of FEM analysis on the
+Payload Bulkhead subjected to a 600N are shown in Figure 2.31. It shows that the maximum stress
+in the part is 7.73MPa, well below the yield stress of the carbon reinforced nylon material (60MPa
+matrix, 540MPa ﬁber).
+Figure 2.31: Payload Bulkhead Static Analysis - Main Chute Deployment
+32
+Table 2.4: Recovery system data of the Payload.
+Assembly Parameter Value Units
+Drogue (Supplied by Black Cat Rocketry)
+Coeﬃcient of drag 0.7 -
+Diameter 10 inch
+Mass incl. hardware 21 g
+Packing Volume 25 cm 3
+Mass of black powder used 0.2 g
+Deployment altitude 9000 m
+Descent rate @ 9000m 57.3 m/s
+Descent rate @ 500m 32.9 m/s
+Main (Supplied by Fruity Chutes)
+Chute coeﬃcient of drag 1.5 -
+Diameter 30 inch
+Mass incl. hardware 63 g
+Packing Volume 190 cm 3
+Mass of black powder used 0.2 g
+Chute deployment altitude 500 m
+Maximum stopping velocity 60 m/s
+Chute descent rate 8.4 m/s
+At sea level, the descent speed for Drogue and Main chutes can be calculated easily as 31.3 and 8.4 m/s
+respectively. However, air density varies continuously and signiﬁcantly (by a factor of 3, depending on
+atmospheric conditions) from the deployment altitude of 9000m to sea level. Thus, a Simulink model
+accounting for the variation was created, showing the following results shown in Figure 2.32. The model
+predicts the descent rate, showing both vertical speeds and altitude over time. The total descent time
+of 232 seconds is easily found as the instant the altitude crosses the zero mark. Crucially, it does not
+model horizontal wind loading, which aﬀects the horizontal speed and ultimately determines the ﬁnal
+landing spot of the payload.
+0 50 100 150 200 2500
+0:2
+0:4
+0:6
+0:8
+1
+104
+Time [seconds]
+Altitude [meters]
+(a) Altitude vs Time
+0 50 100 150 200 2500
+20
+40
+60
+Time [seconds]
+Vertical Speed [meters per second]
+(b) Vertical Speed vs Time
+Figure 2.32: Results of the Simulink Model
+33
+Data Ouput and Dissemination of Results
+The Payload will produce a great deal of valuable data from the sensors in the CANSat section. The 9
+data streams from the EMC will be logged as a .csv ﬁle to a 16GB SD card, while the frames from the
+radiation camera RASPix will be recorded on a separate card, within the Raspberry Pi OS. The data
+collected by the payload will go on to enrich our data bank and enable us to compare ﬂight data and
+environmental conditions from our previous and future launches, including the already-ﬂown mission
+at Machrihanish AFB, and our team’s upcoming mission at the Shetland Islands, where our payload
+will ﬂy once again aboard Darwin I, a subsonic version of the vehicle we are presenting at EuRoC. The
+reason why it is even possible for the team to ﬂy such delicate and expensive hardware as the RASPix is
+because of a collaboration with the Institute for Research in Schools, who kindly donated the device. In
+exchange, Endeavour has planned and participated in a series of educational activities within the local
+high-schools of Edinburgh covering topics such the importance of space exploration technology, the
+fundamental physics of rocketry, and deep dives into how many of the sensors aboard Darwin actually
+work. Following EuRoC, we are scheduled to conduct programming workshops where, using Python
+together with popular libraries such as SciPy, Pandas and Matplotlib, students will manipulate, ﬁlter
+and visualise real ﬂight data from our test campaigns and ﬂights.
+2.6 Active Flight Control Subsystem
+Airbrake Design Overview
+Darwin II features the ability to apply active braking during its ascent through the use of a servo-
+actuated, geared three-ﬁn airbrake system, the ﬁnal design for which is pictured in Figure 2.33. The
+purpose of such a system is to allow Darwin II to achieve a greater level of accuracy in reaching its
+target apogee: the logic is to design the rocket to overshoot the 9km target, then, during the ascent
+phase, actively adjust the deployment of the airbrake ﬁns based on live data measurements, such
+that suﬃcient drag is provided to allow the rocket to come to come to a stop as close to the target
+height as possible. This idea, whilst simple in concept, proved to be a complex challenge to execute in
+practice.
+Figure 2.33: Render of the fully actuated airbrake system.
+Safety
+The Air-brakes are a critical feature of the rocket and its correct deployment (or lack thereof) can be the
+diﬀerence between a successful launch or expensive and dangerous ﬁreworks. The ﬁrst design feature
+that the need to have is to produce only axial forces; any other asymmetry could aﬀect the rocket
+trajectory, deviating it from its parabolic path and potentially going sideways with the consequent
+risk. Thus, the system need to be completely symmetrical in the axial direction, both in design and
+34
+actuation. If one ﬂap deploys sooner than the other, it will create a lateral force, deviating the rocket
+from its trajectory and making it going sideways. In order to achieve this, the 3 ﬂaps are completely
+identical and all are actuated by the same central gear-rack system attached to the servo.
+In order to ensure that the air brakes retract during failure mode, the system was originally planned to
+have three extension springsto retract upon failure. However, with issuesﬁtting them into the assembly
+alternative options were explored. Spiral torsion springs were considered, but after contacting various
+spring manufacturers, the combination of size, force and rotational angle made this impossible. It
+was therefore decided that the failure mode retraction would be accomplished through a secondary
+redundant control system, which would control the servo to fully retract the brakes if the primary
+control system was lost.
+(a)
+ (b)
+(c)
+ (d)
+Figure 2.34: Airbrake system FEA key results: (a)
+Finally, It is necessary to ensure that the ﬂaps stiﬀ enough for the application and the they do not
+jam and get stuck due to external loading. The later problem was solved by adding a layer of HDPE
+between the laser cut layers of aluminum and the ﬂap. Due to it lubricant properties and low density
+the HDPE is perfect for this application. To ensure suﬃcient stiﬀness and structural integrity, several
+FEA using ANSIS and analytical calculation were made. The maximum deployment velocity of the
+Airbrakes is 200m/s, in order to avoid transonic eﬀects. Thus we can calculate the maximum expected
+load for the biggest possible length (biggest area). The biggest uncertainty with this approach is that
+it is diﬃcult to estimate the drag coeﬃcient of a ﬂap perpendicular to the ﬂow attached to a surface.
+The literature estimates a Cd or around 1.1-1.2, but the load calculation a Cd of 1.6 was using, give a
+load per ﬂap of 133N/ﬂap. The results of this FEA analyses can be seen in ﬁgure 2.34. The maximum
+stress, as one intuitively guesses, is at the root of the ﬂap. This is 11.3 MPa well below the 250
+MPa of the yield stress of the aluminium 6086-T6 used, given a safety factor of around 23. Thus the
+second unknown to ask if the total deﬂection and stiﬀness of the ﬂap. The analysis showed that only
+a maximal deﬂection of 0.1mm is expected in the worst case scenario. Then, it is safe to conclude that
+35
+the stack is structurally strong and stiﬀ enough for this application, and the biggest focus should be
+on the control system and characterization of the system.
+Active Control
+Once the air brake design has been validated and there is conﬁdence its mechanical integrity, the
+biggest problem to solve is how to control them. As mention previously the, the ﬂaps are actuated by
+a gear-rack system controlled by a servo motor, thus, the output of our active control will be the angle
+of rotation of the servo. Since we now the length and number of teeth of the rack, it is easily shown
+that it is necessary 100 degrees of rotation to fully deploy the ﬂaps.
+One option to control the rotation of the serve would be estimate the drag force of the ﬂaps using
+equation 2.3, but due to the uncertainties of drag coeﬃcient this method is not reliable. Instead a
+combination of a model predictive and PID control have been used: First the ideal trajectory has
+been calculated using a 6-DOF model implemented in Simulink, predicting an apogee of 9Km, then
+a critically damped PID controller has been implemented into the FC. This critically damped PID
+control (not overshoot) compared the current velocity, acceleration and altitude (system inputs) with
+the previously calculated ideal path, then using a tabulate servo angle-drag table, it operated the ﬂaps.
+So instead of being calculating every time step the whole trajectory, which will be very computationally
+expensive, the system is just compared the inputs with the ideal inputs, then actuated the servo to
+change the inputs and repeated until the ideal trajectory is reached.
+36
+3. Mission Concept of Operations Overview
+For a nominal launch, the vehicle must be initialised successfully through the standard e-match pro-
+cedure, launch with no structural failure, transmit data live to ground station, achieve apogee of 9 km
+exactly with payload and drogue chute deployment occurring, and main chute deployment at 500 m.
+Ideally both the vehicle and the payload is recovered successfully with GPS coordinates transmitting
+from both. See Figure 3.1 for more information on each phase of the rocket.
+Figure 3.1: Rocket’s stages
+Before arriving at the launch pad, the vehicle and the payload should be fully assembled and motor
+loaded. While the structures, recovery, and payload teams work to prepare the vehicle and payload
+on the launch rail, avionics and software have to set the sensor ‘initial’ values for the launch area into
+the ﬂight computer (on both vehicle and payload) for accurate measurements during ﬂight. Once the
+structure is on the launch rail and sensors are calibrated, the initialisation sequence of the FC logic
+can be initiated on ground control with the software & avionics team. The GPS from both vehicle and
+payload should start transmitting. They will also ensure that sensors are collecting measurements and
+writing to the SD card with no issues, thus entering the armed state.
+The motor should be ignited once everyone has cleared the launch pad. If the launch is successful,
+the rocket should enter the powered ascent phase where the motor propellant is burned. This is when
+the vehicle is under the highest acceleration and should ﬂy without sustaining damage. The payload
+should begin collecting and logging data, although no meaningful data is expected as it is housed
+inside the nose cone. The FC logic should enter the powered ascent or ‘Boosting phase’ when the
+measured acceleration is positive (upwards). The Kalman ﬁlter should start ﬁltering measurements
+for noise reduction and the FC boosting phase timer will be constantly extended until acceleration
+starts decreasing. This should signal the FC that the vehicle has entered the motor burnout phase, or
+‘Coasting phase’. The motor propellant has been exhausted and the FC should deploy the airbrake to
+adjust the projected apogee to exactly 9 km. The airbrake should operate with no failure and should
+generate enough drag to slow the rocket down for the target apogee along with the controller, which
+will be in charge of operate the Air brakes base on previous ground simulation and tabulated values.
+Alongside the controller, the FC should continue to collect, ﬁlter, and log data.
+When the apogee is reached, the FC should enter ‘DrogueDeployed State’ by satisfying two of three
+conditions: 1. velocity passed a minimum threshold, 2. altitude starts dropping, or 3. pressure
+increases. During this state, the airbrake should be retracted and the recovery phase should begin.
+The recovery charges (CO2 canisters) should be deployed with a digital signal from the FC activating
+the e-matches, causing the shear pins to shear oﬀ and the nose cone, coupled with the payload, is
+separated from the rest of the vehicle. This ejects the drogue chute and deploys it as well.
+The separated nose cone and payload should start a diﬀerent descent path down compared to the
+vehicle. The drogue chute should deploy automatically just after ejection and the sensor cluster in the
+CanSat should collect and log actual environmental data. The FC on the payload should also calculate
+37
+its altitude for deployment of the main chute and be transmitting GPS data to the ground station.
+During this face the Tender Descender will be connected to the drogue chute, carrying the load.
+Meanwhile the vehicle should be coasting with the drogue chute deployed. The FC should be constantly
+measuring and comparing the altitude measurement to the deﬁned main chute deployment altitude
+of 500 m. If the altitude is equal or below the stored value or if the time after drogue deployment
+surpasses the pre-set time limit of 315 sec, then the main chute should automatically deploy through
+the same separation as the drogue chute. The FC will activate the e-matched of the Tender Descender,
+breaking the plastic pin and releasing the main chute. After the main chute deploys, the FC enters
+‘MainDeployed State’ with no additional recovery events in the vehicle. The vehicle will coast down
+until it reaches ground, and the FC should register touchdown when pressure and altitude is constant,
+and velocity is close to zero.
+Throughout the diﬀerent phases, the FC should be collecting and logging data onto the SD card on
+board, and transmit data to ground control. While the data collected after landing is irrelevant, the
+avionics bay should be functional as the most important data transmitted to the ground station after
+landing is the GPS coordinate for recovery. The avionics power source should last for 1.8 hours.
+See Figure 2.10 for simulated ﬂight trajectory, vertical velocity, acceleration, and stability of the vehicle
+during ﬂight.
+See Figure 2.2 for the thrust curve of our primary motor selection Cesaroni O3400 and secondary
+selection N5800.
+Figure 3.2: Altitude vs Time
+38
+Figure 3.3: Speed vs Time
+39
+4. Conclusions and Outlook
+We have successfully designed a vehicle with a deployable payload capable of surviving travel in the
+supersonic regime, control its apogee, transmit data real-time, and be recovered with minimal damage
+to vehicle and payload. We have also design and implemented an SRAD FC using Rust, and created
+simulation and numerical models in MATLAB and Simulink of the rocket, trajectory and expected
+loads. This is a huge milestone for the team, and it will the foundation for future projects.
+Endeavour has accomplished major tasks through the pandemic. We have successfully designed and
+manufactured a new rocket from scratch when we had to do most of our work online and had restric-
+tions on number of people that were allowed to meet. Even thought it is our ﬁrst launch, we have
+implemented advanced concepts such as the airbrakes, advanced additive manufacturing technique,
+and so on to Darwin II. Furthermore, we will be able to use the data collected from EuRoC for an out-
+reach workshop in the local high school. Overall, this year has been successful in giving students and
+younger pupils more experience in aerospace and STEM. This would not have been possible without
+the dedication from the team members.
+While it has been a productive year, there were some aspects that did not go as well. As a young
+team, we were inexperienced in some rocketry-speciﬁc aspects and had to go through many iterations
+before we could ﬁnalise the design. As a result, manufacturing and testing was delayed. We didn’t
+realise there was a gap between the engineering we’ve learned in university and the detail required for
+a good rocket design. In addition, connections to supports and advice had to be an on-going task as
+we were not as well-known as other student teams. However, as the years go by and the more events
+and launches endeavour participates in, the more well-connected the team will be.
+We’ve learned a lot of lessons by building Darwin II. We now know how to construct a more realistic
+timeline as we understand the eﬀects of lead times of manufacturing, iterations, and testing. In
+particular, we realised that PCB requires multiple iterations (starting from a breadboard) and smaller
+testing in between to successfully complete the avionics system and test it with recovery and rest of
+the hardware. In addition, we have gained more experience in utilising more materials and processes
+such as HDPE, wood, continuous ﬁbre additive manufacturing, and utilising header pins that allows
+easier removal of PCB components. We’ve also learned the importance of team identity and culture
+in increasing productivity. Because of COVID-19, team socials had to be something that needed to
+be organised instead of something that naturally happens after a meeting. These socials helped team
+members to get to know each other and increased productivity and dedication.
+For next year, we would like to dedicate more time in the logistics of designing a rocket. Creating a
+feasible timeline and altering it as necessary, updating databases of parts more rigorously, and ensure
+that handovers are done more systematically to ensure that the future years that join endeavour do
+not have to re-invent the wheel. We would also focus more on social media promotion of our work
+for better documentation and publicity. In the technical aspect of things, we would like to allow more
+time to test and do multiple iterations of the rocket. This will create a more robust and well thought
+out rocket. Even more quantitative and qualitative testing will be planned and carried out, and we’ll
+take the lesson learnt to improve upon each iteration. In a similar argument, more simulations is
+something that we will aim for for next year. It will help us predict the behaviour of the rocket where
+testing cannot show us and ensure that the rocket will be safe. In addition, it will give endeavour more
+knowledge in FEA and CFD that can be used for years to come.
+For next year’s rocket, Darwin III, we would like to improve upon the concepts that we have imple-
+mented in Darwin II. A more advanced airbrake control system to improve the controller response
+and better manipulate the apogee, better bonding between composites and metal components, more
+in-house composite manufacturing, and advanced data communication between the ﬂight computer
+and the ground station such as video live streams of ﬂight footage.
+40
+A. System Data
+Table A.1: Structural system data of Darwin II.
+Parameter Value Units
+Length 2.74 m
+Vehicle & payload mass with propellant 34.5 kg
+Propellant mass 10.93 kg
+Payload mass 2.4 kg
+Number of stages 1 -
+Inner diameter 152.4 mm
+Outer diameter 156.4 mm
+Number of ﬁns 3 -
+Fin span 190 mm
+Fin root length 360 mm
+Fin tip length 70 mm
+Target apogee 9000 m
+Maximum velocity 575 m/s
+Maximum acceleration 141 m/s 2
+Flight duration 500 s
+Motor burn time 6.4 s
+Time from launch to apogee 40 s
+41
+Table A.2: Recovery system data of Darwin II.
+Assembly Parameter Value Units
+Drogue
+Coeﬃcient of drag 1.6 -
+Diameter 24 inch
+Mass of CO2 separation charge 23 g
+Mass of black powder used 0.24 g
+Deployment altitude 9000 m
+Descent rate 28 m/s
+Main
+Chute coeﬃcient of drag 2.2 -
+Diameter 96 inch
+Mass of CO2 separation charge 0 g
+Mass of black powder used 0.2 g
+Chute deployment altitude 500 m
+Chute descent rate 6 m/s
+Table A.3: Telemetry system data of Darwin II.
+Assembly Parameter Value Units
+Vehicle
+Power duration 1.8 hours
+Communication frequency 433 MHz
+Output power (max.) 100 mW
+Communication range (w/ Yagi RX) 20000 m
+Payload
+Power duration >1 hour
+Communication frequency 868 MHz
+Output power 100 mW
+Communication range (w/ Yagi RX) 15000 m
+Ground station
+Power duration >2 hours
+Transceiver sensitivity (max.) -120 dBm
+Communication range (uni-directional) 20000 m
+Communication range (omni-directional) 3000 m
+42
+B. Detailed Test Reports
+B.1 Recovery testing
+TO BE CONDUCTED SHORTLY
+43
+B.2 SRAD propulsion system testing
+THIS PAGE IS INTENTIONALLY LEFT BLANK
+44
+B.3 SRAD pressure system testing
+TO BE CONDUCTED SHORTLY
+45
+B.4 SRAD Flight computer testing
+B.4.1 GPS Module Testing
+Testing of the GPS module ensures that we can, without relying on the COTS FC, perform a successful
+recovery of the rocket once it has completed its ﬂight.
+To do so, the following tests were conducted:
+Initial Breadboard Test:
+This test comprised of building up the GPS circuit on a breadboard, supplying the BigRedBee with its
+required 5V power supply. Thereafter it could be moved independently around a local park in order
+to gauge the following:
+• Whether it could achieve a ﬁrm satellite connection
+• If it could sustain this connection
+• How accurately it could pinpoint its location
+After moving the setup around for roughly 1 hour, the setup was powered oﬀ and the results checked
+through a plug-in on Google Maps.
+The results of the test indicated that although the module was slow to establish a satellite link, once it
+did it never disconnected. It should be noted that this was on a clear day with minimal cloud cover and
+few natural or man-made obstructions such as trees or buildings. As well as this, the data gathered
+was plotted and accurately portrayed the route taken during the testing period.
+The test was deemed successful and the next stage could be explored.
+First PCB Implemented Test:
+After the success of the ﬁrst breadboard test, the GPS module was then connected to the PCB designed
+to represent its circuit, the telemetry board. Connecting this up to the main controller board, the data
+from the GPS would be transmitted to our micro-controller and thereafter displayed on its serial
+monitor on a computer. This would allow us to observe if it satisﬁed the conditions outlined in the
+previous test.
+Powering on the controller board and placing the setup next to an open window, the output from the
+micro-controller was observed.
+The results indicated that the module now struggled to establish a connection, and when it did it
+quickly lost it. This was most likely a result of a lack of clear line-of-sight due to obstructions and
+cloud cover.
+This test was repeated many times over the course of several weeks, with varying but unsatisfying
+results.
+Testing Summary:
+Over the course of testing the BigRedBee GPS module, the following observations were notewor-
+thy:
+• The module struggled with obtaining a satellite lock on cloudy days or when in the presence of
+obstructions
+46
+• When neither of these were hindrances were present, it still took longer than was permissible to
+establish a connection
+• The data transmission to the micro-controller bottle-necked readings from other components as
+it transmits at only 1Hz
+As a result of these ﬁndings, it was decided that a new module would be implemented to replace the
+BigRedBee. The module chosen was an Adafruit Ultimate GPS Breakout. It was chosen because it
+operated on the same transmission protocol as the BigRedBee, used the same pins to communicate
+with the controller board, had a faster transmission rate of 10Hz, and was recommended by our Payload
+sub-team.
+Once acquired, it was subjected to the same tests as the previous module and proved to be faster at
+acquiring satellite connection, even indoors.
+Therefore, this will be the module implemented in the ﬁnal iteration of our FC PCB’s.
+B.4.2 Battery Testing
+In order to guarantee suﬃcient ﬂight time for the FC, testing how long the batteries would take to
+discharge was essential. Given that the threshold for full operation is 5V, this meant we were testing
+a discharge range of 2.4V. This threshold is deﬁned by the components that operate on a 5V supply,
+e.g.: the Teensy micro-controller. If the battery’s voltage drops below 5V, these components will no
+longer be able to operate at full functionality or in some cases, they won’t operate at all.
+To conﬁrm how long our FC would function fully for, the following tests were conducted:
+Controller Board Drain Test:
+The ﬁrst board to test was the controller board. This contains components such as the IMU’s, barom-
+eters, and micro-controller. It is a relatively low impact load on the battery supply as all of the
+components have a current draw in the order of 10’s of microamps up to a few milliamps.
+A simple test setup consisting of an Arduino Uno and a potential divider breadboard circuit was used
+to monitor the voltage supplied to the PCB by the battery. The Adruino acted as an analogue voltage
+sensor, and the potential divider stepped down the voltage to within the Arduino’s voltage range of
+0-5V.
+The board was then connected to the 7.4V battery and powered on. The Arduino’s output was
+conﬁrmed to be approximately 3.7V (which correlated to 7.4V before it was stepped down), and the
+setup was then left to run. It should be noted that the script controlling the voltage measurement
+printed the value every second, with the number of elapsed seconds displayed too.
+After roughly 2.5 hours, the battery’s voltage had dropped by only 0.44V, so the setup was powered
+down and disconnected as this showed ample running time.
+The test was deemed successful and the next stage could be explored.
+Testing Summary:
+At the time of writing, not all of the tests could be completed for this section.
+As it stands, the controller board can operate on battery supply for ample time to encompass standby
+on the launch pad, ﬂight, and recovery.
+Going forward, the telemetry and peripheral board, which contain the components that draw the most
+current and therefore use the most power, will be subjected to a battery drain test.
+47
+B.4.3 Barometer and Temperature Testing
+A brief conﬁrmation of the sensor module’s temperature stimulus response had been conducted by
+simply heating the air around the module and observing the temperature rise in the data output. For
+the pressure, no testing has been conducted thus far.
+At the time of writing however, not all of the tests could be completed for this section.
+B.4.4 IMU Testing
+As with the previous section, this sensor module’s stimulus response was tested initially by rotating
+the board on diﬀerent axes whilst observing the output. The response was registered, but further
+thorough testing needs to be conducted to gauge accuracy.
+At the time of writing however, not all of the tests could be completed for this section.
+B.4.5 RF Testing
+Reading data successfully is one thing, but being able to observe these readings is even more so. As a
+result, it was vital to ensure that our transmission system would be suﬃcient when our rocket reached
+apogee. Initially, the idea was to use an ampliﬁer on the telemetry board to boost the transceiver’s sig-
+nal to ground, but this proved to be a bad implementation as it would attenuate our signal signiﬁcantly.
+As a result, we decided to implement a more sensitive ground station receiver instead.
+ThismeanttestinghowwellourFCandgroundstationcommunicatedatincreasinglyfurtherdistances.
+Since our system now consists of two diﬀerent types of antennas, uni-directional and omni-directional,
+these had to both be tested.
+The following were tests conducted on these antennas:
+Omni-directional Short Range RF Test:
+To begin with, a simple breadboard implementation of the transceiver for our FC was connected
+alongside our ground station breadboard setup; both programmed on an Arduino Uno. They were
+then placed side-by-side, at a distance of a few inches, and the FC transceiver was set to transmit a
+simple data packet.
+This proved successful and there were no issues reading the packet sent by the FC transceiver.
+This meant we could increase the testing distance.
+Omni-directional Mid Range RF Test:
+Thereafter, the setup was taken outside where they were placed at each end of a street approximately
+300m in length.
+The same data packet transmission was sent from the FC transceiver and it was received successfully
+by the ground station transceiver.
+Now the setup was ready for a long distance test.
+Omni-directional Long Range RF Test:
+Lastly, the same setup was taken to two local high points in the city, where the transceivers would
+be above most obstructions with clear line-of-sight of one another. These points where approximately
+2.7km apart.
+48
+Following the same procedure, data was successfully transmitted across this distance with very few
+disruptions to the data stream.
+The testing of the transceivers with the omni-directional antennas was deemed a success and the
+uni-directional antennas could now be tested.
+Testing Summary:
+At the time of writing, not all of the tests could be completed for this section.
+However, we have conﬁrmed that the omni-directional antenna functions appropriately and can be
+used for recovery in the ﬁnal stages on the rockets descent.
+Going forward, the uni-directional YAGI antenna will be tested under similar conditions to those
+outlined above. Thereafter, both antennas will be connected simultaneously to the ground station and
+tested in parallel with the Payload system.
+B.4.6 Output Testing
+The main controller board contains outputs that control other aspects of the rocket, i.e.: the air-brake
+system and the recovery initialisation. As a result, it is vital to ensure that these events are triggered
+appropriately.
+In order to conﬁrm this, the following tests were conducted:
+Servo Motor Test:
+The servo motor controls the extension of the air-brake blades in order to control the speed of the
+rocket in its cruising state. This means that the servo needs to rotate when supplied a signal from the
+micro-controller.
+In order to test this, a simple script was written on an Arduino to open and close the air-brakes by
+rotating the servo between two limits. This had proved troublesome at ﬁrst, but was easily remedied
+when the Arduino and the servo were connected to the same ground.
+After this, it was just a matter of ﬁnding appropriate limits for the servo so that it will not stall or
+extend too far during nominal operation.
+This test was deemed successful and so the next stage would be to test it directly from the controller
+board.
+At the time of writing however, not all of the tests could be completed for this section.
+E-match Ignition Test:
+In order to deploy the parachutes to slow the descent of the rocket after it has achieved its apogee
+goal and begins its descent back to ground, e-matches are used to ignite a charge that will eject them
+from the rocket body. These e-matches require an electrical current in order to ignite. This therefore,
+needed to be tested.
+In order to do this, initially, the e-matches were simply connected to a power supply and supplied with
+a current. This proved successful and they ignited without issue.
+The next stage of testing would be to ignite them via the main FC controller board.
+At the time of writing however, not all of the tests could be completed for this section.
+49
+B.4.7 Miscellaneous Testing
+Iteration testing
+When each iteration of the FC PCB’s arrived, they needed to be tested thoroughly to ensure all
+electrical connections and supplies were correct in order for the FC to operate fully.
+The electrical architecture has undergone 3 versions thus far, with a 4th version underway for the
+telemetry board. The main points to note from testing these iterations is as follows:
+Version 1:
+• Incorrectly placed capacitor creating short circuit
+• Surface mount components too small to solder adequately
+• Bluetooth breakout board no longer required
+• Switch circuit resistor incorrectly connected
+• Insuﬃcient oﬀ-sheet connectors
+• No 5V supply on the telemetry board
+Version 2:
+• Incorrect power supply for Teensy micro-controller
+• Switch circuit transistor drew too much
+• Antenna ampliﬁer no longer required
+• Servo output required an empty pin for PWM control
+• Some diodes redundant
+Version 3:
+• Old GPS module (BigRedBee) to be replaced by Adafruit module
+• Eggtimer COTS to be implemented
+B.4.8 Future Tests:
+Having been unable to complete all the necessary tests at the time of this submission, the following is
+a summary of what still needs to be tested before the competition:
+• Telemetry and peripheral PCB battery drain test
+• Pressure, temperature, and IMU data variation
+• Uni-directional YAGI antenna range test tests
+• E-match ignition PCB test
+• Servo control PCB test
+50
+C. Hazard Analysis Report
+Propellant Hazard Analysis
+The most dangerous of all the hazardous material in the rocket is the motor propellant. It is a highly
+explosive material and must be treated with extreme care. As a COTS solid motor team, EuRoC will
+be handling and transporting the motor to the competition. We will receive the motor on the launch
+date and will prepare accordingly.
+The motor will not be taken out of its packaging until we are absolutely sure that the vehicle is ready to
+go on the launch pad and the assembly checklist has been completed. All personnel handling the motor
+will be wearing safety goggle and the motor will be assembled horizontally to prevent any falls. Mem-
+bers assembling the motor will be extremely familiar and will follow the motor installation procedure
+and checklist very closely to ensure that the motor is secured. The vehicle will then be transported
+to the launch pad very carefully. Tasks that has to be done on the launch pad will be minimised and
+done so in a gentle manner for safety. If the launch is unsuccessful, the members will follow the mishap
+launch checklist to disassemble the motor assembly and deactivate it accordingly if deemed to be safe.
+Separation Charge (CO2 Canister and Black powder) Hazard Analysis
+While vital for recovery, CO2 canisters and black powder can be dangerous if handled incorrectly.
+Our main separation charges are the CO2 canisters, one main and one redundant. These require
+a small amount of black powder and an e-match to pressurise and separate the vehicle. Our main
+chute deployment system, the tender descender, also requires a small amount of black powder to
+actuate. Recovery testing will allow us to know the exact amount of black powder we need, and
+precise measurement will ensure that we use the minimum that we need for safety and eﬃciency.
+Both the black powder and the CO2 canisters will be available through the EuRoC pyrotechnical shop
+and will be transported and handled correctly until the launch date.
+Once the black powder and CO2 canisters are in our possession, we would have to ensure that it is
+handled safely. All members that will handle black powder will be wearing gloves and all members
+working in the recovery assembly will be wearing safety goggles. No naked ﬂames or sparks will be
+near the black powder to prevent any accidental ignition.
+51
+D. Risk Assessment
+Table D.1: Risk assessment matrix of Darwin II.
+Failure mode Mission PhaseFailureprobabilityMishapseverityCriticalityranking Comment and justiﬁcation
+Insuﬃcient pressurisationduring recovery Apogee 1 3 3 Check seal during assemblyand apply additional adhesives as needed
+Shear pins not breakingApogee 1 3 3 Design according to rocketry standardTest by previous designers
+Payload detached fromnose cone after separationApogee andshortly after1 3 3 Apply adhesives during ﬁnal assembly
+Detachment of metal tipof nose cone All 1 1 1 Minor eﬀect on aerodynamic performance
+Drogue chute deployment failureApogee 2 3 6 Receive advice from expert rocketeer in UKin folding and storage of drogue chute
+Battery disconnected during ﬂightAll 1 3 3 Tape/hot glue on connection
+Connection from vehicle/payloadto ground control lost All 2 3 6 All members focused on tracking vehiclefor yagi direction with binoculars
+Avionics fuselage connectionfailure during ﬂight All 1 2 2 Fuselage is non-structural component of section& components are securely attached
+Airbrake gear failure(seizing/breaking) Motor burnoutto apogee 2 1 2 Airbrake actuates radially and therefore noaerodynamic force will be applied if failed
+Detachment of motor sleevefrom motor bulkhead All 2 2 4 Redesign motor bulkhead to increaseinterference between bulkhead and motor sleeve
+Fin connection failure All 2 3 6 Increased attachment area& additional GFRP ﬁllet on ﬁn
+Leading and trailing edgefalling out All 2 1 2 Minor performance deterioration
+Aft cone failuredue to motor thrustPowered ascent2 3 6 Additional metal reinforcementon area above motor thrust ring
+Electronics bay rods bucklingPowered ascent1 3 3 Rod made from steel& increased thicknessAnalytical and numerical analysis
+Motor sleeve bucklingPowered ascent1 3 3 Increased thickness of the sleeve& Load carried also by fuselage and motor bulkhead
+Airframe buckling Powered ascent1 3 3 Increased of the wall thickness and general strength
+Shearing of airframe joint boltsAll 1 3 3 Increased number of bolts& Glued connections
+Failure of joints under bendingPowered ascent1 3 3 At least one body diameter in the interfaces
+Rocket becomes unstable at supersonic velocitiesPowered ascent1 3 3 OpenRocket, RasAero and Star CCM+ analysis
+Motor failed ignition Launch 2 2 4 Checklist and inspection of mortor and e-matches
+Entanglement of the parachutesAll 1 3 3 Proper folding of the parachutes
+Shock cord breaking Recovery 1 3 3 Analytical calculation and safety factor when selecting the diameter
+Tender descender not working properlyRecovery 2 3 6 Use of the device according to manufacture
+Run out of battery All 1 2 2 Analytical analysis of the battery durationPlus 1h of total battery
+Poor wire connection All 1 3 3 Use of block terminal to secure the wiresThoroughly test of the wires connection prior to launch
+Improper alignment of the ﬁnsPowered ascent2 2 4 Correct assembly of the ﬁnsAligment with laser system
+Radio frequency interferenceRecovery 2 2 4 Two body diameters of RF transparency around the emittersUse of diﬀerent frequencyUse of Yagi and onmidirectional antennas in ground station
+52
+E. Checklists & Procedures
+E.1 Shipment & Edinburgh departure
+Shipment checklist:
+• Toolbox
+– Screwdriver, allen key, spanners
+– Nippers, tweezers, pliers
+– Soldering iron, solder, soldering tape, solder sucker, wire
+– Epoxy, superglue, masking tape, duct tape, hot glue
+– Knife, scissors
+– Dremel, Dremel bits
+– Electrical adapters
+• Fasteners
+– Avionics Bay:
+∗ 11x M3’s for PCB mounting
+∗ 7x M2’s for securing SD card reader and barometers
+∗ 12x M3’s for securing IMU’s
+∗ 4x M3’s for securing COTS FC
+∗ 8x M2.5’s for securing Raspberry Pi Zero’s
+∗ 2x M2.5’s for securing GPS module
+∗ 4x M2.5’s fr mounting Raspberry Pi camera module
+∗ 4x M3’s for mounting the antenna support
+• Main vehicle
+– Nose Cone
+– Nose cone tip
+– Shear pins
+– Electronics bay assembly and recovery bay
+– Lower body fuselage
+– Motor bulkhead
+– Motor sleeve
+– Aft cone
+• Recovery system
+– Main Parachute
+– Drogue Parachute
+– Tinder Rocketry RAPTOR CO2 Ejection System, 2x
+– Rocketman Shock Cord
+– 3 Rocketman Y-harness
+53
+– 2 Eye Bolt M8 x 18mm
+– 25 x 0.3m E-match
+– 2 23g CO2 Canister
+– Fruity Chutes L2 Recovery Tether
+• Aerials
+• Banner (pop up and stand)
+• Technical poster
+• PPE Boots & goggles
+• Binoculars
+• Spare 3D print parts and sensors
+Edinburgh departure:
+• First-aid kit
+• Masks
+• Hard copy of documents
+– Technical report
+– Checklist & procedures
+– Other logistics related documents
+• Avionics & ground control
+– Completed avionics bay and ground control
+∗ 3 PCB’s
+∗ 3 Batteries
+∗ COTS ﬂight computer
+∗ Antennas
+∗ SD card
+∗ Independent camera module
+– Cables for antenna (uFL to SMA), inter-PCB connection (jumpers), and micro-controller
+(USB-A to micro-USB)
+– Battery charger
+– SD card reader
+• Payload
+– CanSat
+– CubeSat
+– Batteries
+– COTS ﬂight computer
+– Antennas
+– Recovery system
+– Fasteners
+54
+E.2 Pre-launch assembly checklist & procedure
+E.2.1 Lower section
+• Motor sleeve attached
+• Fin attachment bonded
+• Fin inserted
+– Fin edges inserted and attached
+• Aft cone ring interested
+• Full lower assembly glued and assembled
+• Motor inserted
+• Aft. bolted to the lower assembly
+• Motor bolted to motor bulkhead
+• motor bulkhead attached to lower assembly fuselage
+E.2.2 Airbrake
+• Rack & gear meshed and secured
+• Check correct actuation of the ﬁns
+• Check correct and successful actuation of the servo
+• Avionics rod secured to the motor bulkhead
+E.2.3 Avionics bay
+Assembly procedure:
+1.
+Position and secure the rod clasps at the right location on the rods with M3 screws. Slide into
+airbrake and recovery bulkhead assembly and secure with M6 nuts.
+55
+2.
+Mount cross-rods and PCB assemblies; including battery, camera and GPS mounts, and align
+with cross rods using hole positions. Then, attach assembly to the 3 structural rods via the
+pre-positioned clamps.
+3.
+ Position the 3 outer “skin” sections and attach to recovery bulkhead assembly and airbrakes
+via. 6x M3 bolts at top and bottom.
+Checklist:
+• recovery bulkhead is assembled
+• Collar secured
+• PCB secured
+• PCB is working
+• Connections between boards and to e-match and servo outputs
+• Side panel attached
+E.2.4 Recovery section - INCOMPLETE CHECKLIST & PROCE-
+DURE
+Hardware assembly procedure:
+56
+1.
+Assemble recovery bulkhead by securing camera, canisters and eyebolt. Slide bulkhead onto
+electronics bay rods and secure with nuts.
+2.
+Connect shock cord to eyebolt. Position and secure coupling tube and recovery bay body tube.
+Insert and organise parachutes and cords.
+Recovery procedure: linking parachutes
+Checklist:
+• try to see if recovery section is sealed by pushing air into it or something through one shear pin
+hole?
+• all recovery connections are secure
+• no tangles in shock cords
+• black powder in tender descender and CO2 canister
+• avionics rod secured
+57
+E.2.5 Nose cone - INCOMPLETE CHECKLIST
+Assembly procedure
+1.
+Secure metal tip using threaded end and M10 nut.
+2.
+Apply adhesive to payload spring plate and payload rail guides, and position in nose cone.
+58
+3.
+Compress spring by inserting payload and payload separator plate.
+checklist
+• Payload secured to nose cone
+• Tip secured
+Payload - INCOMPLETE CHECKLIST
+• Cube and Can connected
+• recovery all inside
+• sensors are on and connected
+E.2.6 Entirevehiclewithoutmotor-INCOMPLETECHECKLIST
+Assembly procedure:
+59
+1.
+Slide nose cone assembly over upper coupler tube and secure in place with shear pins.
+Checklist:
+• Shear pins inserted
+E.3 Launch day
+E.3.1 Motor installation Procedure
+1.
+Slide the motor into the motor sleeve assembly.
+60
+2.
+Slide on aft cone and align tab on aft cone with tab on ﬁn attachment.
+3.
+Insert ﬁns into aligned tabs and secure with M5 bolts and nuts.
+4.
+Slide in the assembly from step 4 to lower body fuselage.
+61
+5.
+Insert motor bulkhead on top and secure with 6 M3 screws and screw in motor from top with
+3/8x1/2 bolt.
+E.3.2 Launch checklist
+• sensor calibration
+• avionics initialisation
+• ﬁlming setup for recording & recovery
+E.3.3 motor mishap disassembly PROCEDURE & CHECKLIST
+• Remove rocket from the launch pad
+• Cut current from e-matches Remove e-matches and any other activation device
+• Move rocket to a safe working location
+• Inspect the motor
+E.3.4 motor disassembly after recovery PROCEDURE
+• Remove Avionics bay from Airbrakes
+• Unscrew rods from motor bulkhead
+• Remove airbrakes
+• Remove motor retention bolt
+• Remove Aft cone bolts
+• Slide out motor
+62
+F. Engineering Drawings
+A
+A
+ 117.2 
+ 98 
+ 7° 
+ 121 
+ 15 
+SECTION A-A
+PLAN
+A
+A
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+E4, F2 A Angle changed the angle from 9 to 7 degres
+Outer diameters changed from 128 to 121 mm 10/05/2021 YES
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: +/- 0.1
+   ANGULAR: +/- 0.5°
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A3ALUMINIU 6082-T6
+WEIGHT: 
+ZSOLT CSONKA
+JAMIE WHITE 19/05/21
+22/04/21
+D2-101
+AFT CONE CAP
+A
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+ALEJANDRO VARGAS 09/05/21
+SOLIDWORKS Educational Product. For Instructional Use Only.
+63
+ 70.00 
+ 216.00 
+ 308.00 
+ 26.00 
+ 92.00 
+ 29.9° 
+ 10.00 
+ 5.00 
+ 8.00 
+ 3X 90.00 
+ 11.30 
+TYP 4 PLCS
+A
+ 5.00 
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:
+   ANGULAR:
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:2 SHEET 1 OF 1
+A3
+WEIGHT: 
+ALEX STEVENSON
+stru-fin_D2_102
+SOLIDWORKS Educational Product. For Instructional Use Only.
+64
+ 20.00 
+ 5.00 
+ 10.00 
+ 11.84 
+ 1.70 
+ 9.00° 
+ 180.16 
+ 20.00  160.16 
+ 5.00 
+ 10.00 
+ 5.00 
+UNLESS OTHERWISE SPECIFIED:
+CHECKED
+SIZE
+APPLICATION
+TITLE:
+PROPRIETARY AND CONFIDENTIAL
+INTERPRET GEOMETRIC
+TOLERANCING PER:
+Q.A.
+BCM
+FINISH
+AFT CONE CONNECTOR
+DWG.  NO.
+DATE
+USED ON A
+DIMENSIONS ARE IN MILIMMITERS
+TOLERANCES: 0.125MM
+FRACTIONAL
+ANGULAR: MACH      BEND 
+TWO PLACE DECIMAL    
+THREE PLACE DECIMAL  
+ANEXT ASSY
+MATERIAL
+NAME
+REV
+DO NOT SCALE DRAWING SCALE: 1:1
+D2-103
+ENG APPR.
+THE INFORMATION CONTAINED IN THIS
+DRAWING IS THE SOLE PROPERTY OF
+ENDEAVOUR. ANY 
+REPRODUCTION IN PART OR AS A WHOLE
+WITHOUT THE WRITTEN PERMISSION OF
+ENDEAVOUR IS 
+PROHIBITED.
+THORNEL MAT VMA 
+COMMENTS:
+DRAWN
+MFG APPR.
+SHEET 1 OF 1
+2 1
+A
+B
+A
+B
+12
+ENDEAVOUR
+SOLIDWORKS Educational Product. For Instructional Use Only.
+65
+A
+B
+ 300.00 
+ 25.40 
+ 20.00  90.00  10.00 
+ 20.00 
+DETAIL A
+SCALE 2 : 5
+ 99.00 
+ 102.00 
+ 5.00 
+ R76.20 
+ 120° 
+ 2.50 
+ 90° 
+DETAIL B
+SCALE 1 : 1
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:
+   ANGULAR:
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:10 SHEET 1 OF 1
+A3
+WEIGHT: 
+main part of fin attachment_D2_104
+SOLIDWORKS Educational Product. For Instructional Use Only.
+66
+ 120° TYP 
+AA
+B
+TOP
+A
+A
+B1
+C1
+B2
+B3
+A6
+A1
+A2
+A3
+A4
+A5
+X
+Y
+00
+ 99.0 
++
+-
+0.0
+0.5 
+ 152.4 
+-
+-
+0.0
+0.1 (f7) 
+ 2.0 
+ 10.0 
+ 16.4 
+ 43.7 
+ (27.3) 
+ R5.0  
+ 146.4 
+ 85 ±1 
+ R5.0 
+ 105.0 
++
+-
+0.5
+0.0 
+C
+SECTION A-A
+B
+C
+D
+GROOVE THICKNESS 
+MUST BE +3
+ R30.0 
+ R55.0 
+DETAIL B
+SCALE 2 : 1
+D1
+D2
+D3
+D4
+ALL 6 "PIZZA SLICES" 
+THROUGH ALL THE WAY
+ 
+33.9 
+ 28.9 
+ 90° 
+ 23.88 
++
+ 
+0.02
+0.00 (H7) 
+DETAIL C
+SCALE 2 : 1
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+E9, F10 A Milled holes added. 18/05/2021 Yes
+C10 B Addition of the external flange 17/08/2021 Yes
+C10 C
+External flange added in rev B is changed to a shoulder 
+with an outer diameter 5mm smaller than the 
+blukhead's.
+23/08/2021 Yes
+B10 D Shoulder added in rev C is replaced to a flange similar 
+to rev B, but longer. 24/08/2021
+TAG X LOC Y LOC SIZE
+A1 -67.5 18.54 10.0 5.0
+A2 17.7 -67.73 10.0 5.0
+A3 17.7 67.73 10.0 5.0
+A4 49.8 -49.19 10.0 5.0
+A5 49.8 49.19 10.0 5.0
+A6 -67.5 -18.5 10.0 5.0
+B1 -60 0 M6x1-H6 THRU
+B2 30 -51.96 M6x1-H6 THRU
+B3 30 51.96 M6x1-H6 THRU
+C1 0 0  9.8 THRU ALL
+ 20.6  6.4
+D1 54.1 10.0 10.0 THRU
+D2 44.6 32.1 10.0 THRU
+D3 28.3 10.0 10.0 THRU
+D4 27.6 11.8 10.0 THRU
+A A
+B B
+C C
+D D
+E E
+F F
+G G
+H H
+12
+12
+11
+11
+10
+10
+9
+9
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: 
+0.1mm
+   ANGULAR: 0.5º
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A2ALUMINUM 6082-T6
+WEIGHT: 
+ZSOLT CSONKA 31/08/21
+D2-111
+MOTOR BULKHEAD
+D
+685.9 g
+SOLIDWORKS Educational Product. For Instructional Use Only.
+67
+ 
+110.0 
+ 
+60.0 
+D1
+D2
+D4
+D3
+D5
+D6
+D7
+D8
+D9 D10
+D11 D12
+D13
+D14
+D15
+D16
+D17
+D18
+D19
+D20
+D22
+D21
+D23
+D24
+X
+Y
+00
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+B Addition of the external flange 17/08/2021 Yes
+C
+External flange added in rev B is changed to a shoulder 
+with an outer diameter 5mm smaller than the 
+blukhead's.
+23/08/2021 Yes
+D Shoulder added in rev C is replaced to a flange similar 
+to rev B, but longer. 24/08/2021
+TAG X LOC Y LOC SIZE
+A6 -67.50 -18.54 10.0 5.0
+D1 54.08 10.0 10.0 THRU
+D2 44.64 32.12 10.0 THRU
+D3 28.28 10.0 10.0 THRU
+D4 27.58 11.79 10.0 THRU
+A A
+B B
+C C
+D D
+E E
+F F
+G G
+H H
+12
+12
+11
+11
+10
+10
+9
+9
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: 
+0.1mm
+   ANGULAR: 0.5º
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A2ALUMINUM 6082-T6
+WEIGHT: 
+ZSOLT CSONKA 24/08/21
+D2-111
+MOTOR BULKHEAD
+D
+679.4 g
+SOLIDWORKS Educational Product. For Instructional Use Only.
+68
+ 1162.00 
+ 308.00 
+ 1.50 
+ 3.00 
+ 10.30 
+6 M3 Holes 
+around 
+lower body
+3 Fin Slots at 120º, 
+around lower body
+ 156.40 
+ 152.40 
+A A
+B B
+C C
+D D
+E E
+F F
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES: +-0.125mm
+   LINEAR:
+   ANGULAR:
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:10 SHEET 1 OF 1
+A4Hexcel AS4C 
+(3000 Filaments)
+WEIGHT: 
+BCM
+ENDEAVOUR
+D2-112
+Lower Body
+A
+SOLIDWORKS Educational Product. For Instructional Use Only.
+69
+ 6.00 TYP 
+ 8.00 
+ 36.00  310.00  20.00 
+M6x1 6g
+15mm MFT TYP
+B
+1
+1 Minimun Full ThreadA
+2 3-OFF
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+F3 A
+Rod diameter change from 10 to 
+8mm diameter
+Threard chandes from M8 to M6
+Material changed from 6083-T6 to 
+Steel 1040
+10/05/2021 Yes
+D4 B Rod dimension changed to from 200 
+to 310 mm 05/07/2021 Yes
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: 
+0.1mm
+   ANGULAR: 
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:2 SHEET 1 OF 1
+A4
+WEIGHT: 
+jAMIE WHITE
+JAMIE WHITE 19/05/21
+19/05/21 Rod
+B
+A A
+B B
+C C
+D D
+E E
+F F
+4
+4
+3
+3
+2
+2
+1
+1
+D2-301Steel 1045
+399.9 gram
+ALEJANDRO VARGAS AVG 10/05/21
+X3
+SOLIDWORKS Educational Product. For Instructional Use Only.
+70
+A
+A1
+B1
+B2
+A2
+C1
+A3
+BB
+B
+X
+Y
+ 58.3 TYP 
+ 142.4 
+ 120° TYP 
+B
+B
+ R2 TYP 
+ R2 TYP 
+ 7 TYP 
+ 15° TYP  R62.1 
+ R71.7 
+DETAIL A
+SCALE 2 : 1
+ISOMETRIC
+IGNORE THESE HOLESI
+ 10.0 
+ 10.0 
+ 8.0 
+ 
+152.40 
+- -0.04
+0.09
+ (f7)  
+147.40 
+-
+-0.04
+0.09
+ (f7) 
+ 143.4 
+SECTION B-B
+TOP PLAN
+BOTTOM
+A
+A
+TAG X LOC Y LOC SIZE
+A1 -51.96 30 6.5 THRU
+A2 0 -60 6.5 THRU
+A3 51.96 30 6.5 THRU
+B1 -45 -2 29.5 THRU
+B2 -23.14 -40.91 29.5 THRU
+C1 0 0 10.0 THRU
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+A10, E3 A Outer diameter change from 152.4 to 147.4 mm 15/05/2021 Yes
+D9, G11, 
+G8 B Holes changed from 8mm to 6.5mm 15/05/2021 Yes
+A A
+B B
+C C
+D D
+E E
+F F
+G G
+H H
+12
+12
+11
+11
+10
+10
+9
+9
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: +/- 0.1 
+   ANGULAR: +/- 0.5
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A2
+WEIGHT: 
+JAIME WHITE
+ALEJANDRO VARGAS 15/05/21
+05/04/21
+B
+RECOVERY BULKHEAD
+JO SHEPTON 05/04/21
+D2 - 401ALUMINIUM 6082-T6
+418.3 g
+SOLIDWORKS Educational Product. For Instructional Use Only.
+71
+ 578.07 
+ 435.07 
+4xR1.25 THRU
+ 103.00 
+ 78.20 
+R1637.57
+ 152.40 
+ 
+156.40 
+ 34.55 
+ 
+38.70 
+A A
+B B
+2
+2
+1
+1
+WEIGHT: 
+AD2-501 Nose Cone
+GFRP
+ENDEAVOURBCM
+Nose ConePROPRIETARY AND CONFIDENTIAL
+THE INFORMATION CONTAINED IN 
+THIS DRAWING IS THE SOLE 
+PROPERTY OF ENDEAVOUR.  ANY 
+REPRODUCTION IN PART OR AS A 
+WHOLE WITHOUT THE WRITTEN 
+PERMISSION OF ENDEAVOUR IS 
+PROHIBITED.
+COMMENTS:
+SHEET 1 OF 1
+Q.A.
+MFG APPR.
+ENG APPR.
+CHECKED
+DRAWN
+DATENAME
+DIMENSIONS ARE IN MILIMMETERS
+TOLERANCES: 0.125MM
+FRACTIONAL
+ANGULAR: MACH      BEND 
+TWO PLACE DECIMAL    
+THREE PLACE DECIMAL  
+NEXT ASSY USED ON
+APPLICATION DO  NOT  SCALE  DRAWING
+FINISH
+MATERIAL
+REV.
+A
+DWG.  NO.SIZE
+SCALE:1:5
+SOLIDWORKS Educational Product. For Instructional Use Only.
+72
+ M10x1.5-6g 
+ 30° 
+ 20.00 
+ 39.77 
+ 15.5 MFT 
+ (92.2) 
+ 72.22 
+ (74.22) 
+SECTION A-A
+2x45º
+A
+ISOMETRIC
+1
+1 MINIMUN FULL THREAD
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+D7 A 2x45º internal flange added 18/05/2021 Yes
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR: +/-0.1
+   ANGULAR:+/-0.5°
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:3:2 SHEET 1 OF 1
+A3ALUMINIUM 6082-T6
+WEIGHT: 
+JAMIE WHITE 19/05/21
+22/04/21
+D2-504
+Metal Tip
+A
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+ALEJANDRO VARGAS
+ZSOLT CSONKA
+09/05/21
+SOLIDWORKS Educational Product. For Instructional Use Only.
+73
+ 5 
+ 2 
+FRONT
+ 66.00 
+ 62.00 
+-
+-
+0.05
+0.10 
+ 15 TYP  15 TYP 
+ 17.00 TYP  17.50 TYP 
+TOP
+3.1mm THRU
+ 6.3 X 90° 
+TYP 6 PLCS
+BOTTOMA A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A3Alumininium 6063
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-608
+PLD_Bottom_Plate
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+74
+ 10 
+FRONT
+4.1 mm
+ 6.30 X 90°
+TYP 4 PLCS
+ 5 TYP 
+ 5 TYP 
+ 93 TYP 
+ 49 
+ 49 
+ 93 TYP 
+ 98 
+ 98 
+BOTTOM
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 2
+A3Steel
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-614
+PLD_Cube_Bottom_Plate
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+75
+ 10 
+FRONT
+4.1 mm
+ 6.30 X 90°
+TYP 4 PLCS
+ 5 TYP 
+ 5 TYP 
+ 93 TYP 
+ 49 
+ 49 
+ 93 TYP 
+ 98 
+ 98 
+ 80.00 
+ 25 
+BOTTOM
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 2
+A3Steel
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-614
+PLD_Cube_Bottom_Plate
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+76
+ 3 
+4.1mm THRU
+ 6.3 X 90° 
+TYP 4 PLCS
+2.05mm THRU
+ 4.4 X 90° 
+TYP 12 PLCS
+ R5 TYP 
+ 98.00 
+ 98.00 
+ 80.00 
+ 19.00 TYP 
+ 44.00 TYP 
+ 45.00TYP  44.00 TYP 
+FRONT
+Side
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A3Steel
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-615
+PLD_Halo
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+77
+ 87 
+ 10 
+ 20.00 
+ 70.00 
+FRONT
+TAP M3 THRU TYPTAP M3 THRU TYP
+ 30 
+ 63 
+ 5 TYP 
+A
+A
+DRILL 10mm
+TAP M4
+ 5 
+ 5 
+TOP
+DRILL 10mm
+TAP M4 5 
+ 5 
+BOTTOM
+SIDE
+4 - OFF1
+REVISIONS
+ZONE REV. DESCRIPTION DATE APPROVED
+D6, E6 A M3 added 19/05/2021 Yes
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 0.5 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A3Steel
+WEIGHT: 
+Alberto Progida
+Alberto Progida
+ALEJANDRO VARGAS 15.05
+29.04
+29.04
+D2-616
+A
+PLD_Rail
+A.P.
+B
+A.P.
+A.V.G.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+78
+ 12.5 TYP 
+ 27.5 TYP 
+ 42.5 TYP 
+ 11.36  
+ 55 
+ 3.1mm THRU
+TYP 18 PLCS
+ 158.07 
+ 165.42 TYP 
+ 30.00 
+ 10.00 
+ 20.00 
+ 35.00 
+ R11.00 TYP 
+ 25.71 
+ 38.71 
+ 44.71 
+ 57.71 
+ 63.71 
+ 109.71 
+ 115.71 
+ 147.71 
+ 7.36 
+UP  90°  R 2 
+UP  90°  R 2 
+Bend Line
+Bend Line
+R 3mm3mm
+R 5mm5mm
+A
+ 2 
+ 165.42 
+SIDEFRONT
+Note: see Sheet  2 for further hole details on FRONT view
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 2
+A3Alumininium 6063
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-607a
+PLD_RASPix_Plate
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+79
+ 5 
+ 3 
+3.1mm THRU
+ 6 X 90° 
+TYP 6 PLCS
+ 4.1mm THRU
+ 66 
+  62.00 
+-
+-
+0.05
+0.10 
+  15 TYP   15 TYP 
+  17 TYP    17.50 TYP 
+Bottom
+Top
+Front
+Isometric
+A A
+B B
+C C
+D D
+E E
+F F
+8
+8
+7
+7
+6
+6
+5
+5
+4
+4
+3
+3
+2
+2
+1
+1
+DRAWN
+CHK'D
+APPV'D
+MFG
+Q.A
+UNLESS OTHERWISE SPECIFIED:
+DIMENSIONS ARE IN MILLIMETERS
+SURFACE FINISH:
+TOLERANCES:
+   LINEAR:    +/- 0.1mm
+   ANGULAR: +/- 1 deg
+FINISH: DEBURR AND 
+BREAK SHARP 
+EDGES
+NAME SIGNATURE DATE
+MATERIAL:
+DO NOT SCALE DRAWING REVISION
+TITLE:
+DWG NO.
+SCALE:1:1 SHEET 1 OF 1
+A3Polycarbonate
+WEIGHT: 
+Calum Arnott
+Alberto Progida
+14.04
+15.04
+D2-608b
+PLD_Upper_Plate
+C.A.
+A.P.
+SOLIDWORKS Educational Product. For Instructional Use Only.
+80
+G. Subsystem Details
+G.1 Payload Mass Budget
+Figure G.1: CANSat Section Mass
+81
+Figure G.2: CUBESat Section Mass
+82
+H. Detailed Structural and Mechanical Calcula-
+tion
+During the calculation of the expected loading on the rocket’s airframe, described in Section 2.3.3
+Darwin II was split into a number of body elements, along the length of which the axial and shear
+forces, and bending moments were to be calculated. Table H.1 provides more detail on the exact
+values used in the calculation of these forces, whereCD is drag coeﬃcient andCN is normal force
+coeﬃcient.
+Table H.1: Structural system data of Darwin II.
+Parameter Body station Value Units
+Nose cone
+Length 0.55 m
+Mass 1.05 kg
+CD 0.03 -
+CN 0.08 -
+Recovery bay
+Length 0.38 m
+Mass 7.4 kg
+CD 0.05 -
+CN 0.02 -
+Electronics bay
+Length 0.31 m
+Mass 4.2 kg
+CD 0.03 -
+CN 0.01 -
+Lower body
+Length 0.81 m
+Mass 12.4 kg
+CD 0.16 -
+CN 0.21 -
+Lower body + ﬁns
+Length 0.63 m
+Mass 7.5 kg
+CD 0.07 -
+CN 0.09 -
+83
+I. Detailed Software Architecture
+PreArming State
+Teensy powered on
+(physically)
+Attempt Bluetooth
+Connection to GROUND
+NOConnection
+Established
+Await init Signal
+NO
+YES
+init Signal
+Received
+Initialisation Sequence
+Testing Sequence
+Sound Buzzer Pattern #1
++ LED Pattern #1
+Sound Buzzer Pattern #2
++ LED Pattern #2
+YES
+Sound Buzzer Pattern #3
++ LED Pattern #3
+Sound Buzzer Pattern #4
++ LED Pattern #4
+Boosting State
+Armed State
+Armed State
+Coasting State
+Boosting State Coasting State DrogueDeployed State
+Landed State
+MainDeployed State
+Collect measurements
+YES
+NO
+acceleration > a0
+Start mainTimer (t=0 sec)
+Log initial measurements
+Collect measurements
+Start boostingTimer (sec)
+Set measurementCount = 0
+Collect measurements
+Filter measurements 
+(Kalman Filter)
+Log measurement buffer to
+SD card (every Tlog
+timesteps)
+Add filtered measurements 
+to buffer
+measurementCount += 1
+YES
+NO
+NO
+Is acceleration
+constant?
+NO NO
+NO
+YES
+measurementCount % 
+Tlog == 0
+YES
+NO
+boostingTimer >
+boostingTMax
+CONSTANTS
+Tlog = .. (timesteps)
+boostingTMax = .. (s)
+coastingTMax = .. (s)
+drogueTMax = .. (s)
+a0 = .. (m/s^2)
+mainAlt = 457 (m)
+vf = .. (m/s)
+Start coastingTimer (sec)
+Collect measurements
+Filter measurements 
+(Kalman Filter)
+Add filtered measurements 
+to buffer
+measurementCount += 1
+ 
+NO
+Are 2 of the following satisfied:
+- velocity increases
+- altitude drops
+- pressure drops
+DrogueDeployed State
+coastingTimer >
+coastingTMax
+Log measurement buffer to
+SD card (every Tlog
+timesteps)
+YES
+NO measurementCount % 
+Tlog == 0
+Log Apogee Time
+& decision criterion
+YES
+Start drogueTimer (sec)
+Collect measurements
+Filter measurements 
+(maybe?)
+Add filtered measurements 
+to buffer
+measurementCount += 1
+NO
+YESaltitude <=
+mainAlt
+Send deployMain signal
+Log Main deploy time 
+& decision criterion
+MainDeployed State
+YESdrogueTimer >
+drogueTMax
+Log measurement buffer to
+SD card (every Tlog
+timesteps)
+YES
+NO
+NO
+measurementCount % 
+Tlog == 0
+Start mainTimer (sec)
+Collect measurements
+Filter measurements 
+(maybe?)
+Add filtered measurements 
+to buffer
+measurementCount += 1
+YES
+NO
+velocity <= vf
+&
+altitude == constant
+&
+pressure == constant
+Log Landing time
+Log measurement buffer to
+SD card (every Tlog
+timesteps)
+YES
+measurementCount % 
+Tlog == 0
+Solve MPC problem
+Send airbrakes actuating
+signal
+Retract airbrakes
+Send co2ChargeOff signal
+(nose cone separates,
+payload & drogue pulled out)
+Figure I.1: Software logic for SRAD FC.
+84
+Boolean
+BooleanTeensy
+Accelerometer (14 bit) + 
+Magentometer (16 bit) + 
+Gyroscope (16 bit)
+IMU
+(I2C / SPI)
+Tranceriver
+Drogue chute
+Main chute
+Airbrakes
+Logger (SD card)
+Ground Control
+Pressure (24 bit) + Temperature (24 bit)Pressure sensor
+(I2C / SPI)
+GPS
+Figure I.2: DATA Flow Teensy
+85
+J. Detailed Electrical Architecture
+J.1 Overview
+The Darwin II FC is composed of three PCBs purposely designed with modularity and easy integration
+in mind. The three boards and the COTS FC are powered in parallel from the 7.4V LiPo battery
+power supply, which is stepped down primarily to 5V and 3.3V for its components. The COTS ﬂight
+computer is completely isolated from the SRAD ﬂight computer, and conncects in parallel with the
+outputs.
+The following diagram demonstrates the connections between each of the PCB’s:
+Figure J.1: PCB Integration
+Processing:
+Our FC is controlled by a PJRC Teensy 4.0 micro-controller situated on our 2nd PCB, the controller
+board (see Figure J.3). It operates on an ARM Cortex-M7 running at a maximum clock speed of
+600MHz.
+It contains 40 digital I/O pins, 31 of which can produce Pulse Width Modulation (PWM) outputs.
+These pins are are used to facilitate data ﬂow and system control in the FC. These functions include,
+but are not necessarily limited to:
+• Reading from our sensor modules
+• Performing calculations on the data read from the sensors
+• Igniting the e-matches to initiate the recovery sequence
+• Rotating the servo motor to control the airbrakes system
+• Transmitting the data through the transceiver module to the ground station
+• Activating the camera system
+86
+• Log ﬂight data to the on-board SD card
+Communication:
+Inordertorelayﬂightdatafromthevehicletothegroundstation, ourFCutilisesanAdarfuitRFM96W
+LoRa Radio transceiver breakout situated on our telemetry board (see Figure J.4). It operates at a
+frequency of 434MHz, with a maximum power output of 100mW. It can achieve a range of up to 20km
+with the appropriate antenna and clear line-of-sight.
+Our ground station utilises the same transceiver module, connected to an Arduino Uno.
+For transmitting down to ground, we will be using an omni-directional antenna to maximise the
+transmission area. The ground station will have two antennas, the same omni-directional antenna as
+the FC, and a uni-directional YAGI antenna. These will be used at diﬀerent stages of the rockets
+ﬂight:
+• From launch and until we deploy the main chute, we will use the YAGI uni-directional antenna
+as we can guarantee clear line-of-sight. It requires us to aim it straight at the rocket in order to
+maintain a strong connection.
+• When the main chute has has deployed and the vehicle’s descent slows, its path could vary
+signiﬁcantly. As a result, keeping track of the rockets location will prove more diﬃcult, hence
+switching to the omni-directional antenna. This means we will have an increased chance of
+receiving transmissions from the vehicle and this will aid in recovering it.
+Measurements:
+One of our FC’s primary objectives is to obtain data from various sensors throughout its ﬂight. This
+data is relayed to ground through the communication system described above, as well as stored on a
+dedicated SD card.
+The following sensor modules are present on our FC, situated on the controller board (see Figure
+J.3):
+• Sparkfun LSM9DS1 IMU breakout: contains an accelerometer, magnetometer, and gyroscope,
+to provide 9 degrees of freedom (DoF), measuring acceleration, angular velocity, and heading.
+• Parallax MS5607 Altimeter Module: contains a barometric pressure and temperature sensor to
+measure altitude and temperature.
+• Adafruit Ultimate GPS breakout: a GPS transceiver module that provides accurate geographical
+positioning outputs
+87
+(a) PCB 1 Layout.
+1
+1
+2
+2
+3
+3
+4
+4
+D D
+C C
+B B
+A A
+Title
+Number RevisionSize
+A4
+Date: 7/05/2021 Sheet   of
+File: C:\Users\..\PCB_1.SchDoc Drawn By:
+COTS_FC
+EasyMini COTS_FC
+IN1
+2
+OUT 3
+GND
+V_Reg
+L7805CV
+3V3[1]1
+GPIO2/SDA3
+GPIO3/SCL5
+GPIO4/GPCKL07
+GND[1]9
+GPIO17/GEN011
+GPIO27/GEN213
+GPIO22/GEN315
+3V3[2]17
+GPIO10/MOSI19
+GPIO9/MISO21
+GPIO11/SCLK23
+GND[2]25
+ID_SD27
+GPIO529
+GPIO631
+GPIO1333
+GPIO1935
+GPIO2637
+GND[3]39
+5V[1] 2
+5V[2] 4
+GND[8] 6
+TXD0/GPIO148
+RXD0/GPIO1510
+GPIO18 12
+GND[4] 14
+GEN4/GPIO2316
+GEN5/GPIO2418
+GND[5] 20
+GEN/6GPIO2522
+CE0!/GPIO824
+CE1/!GPIO726
+ID_SC 28
+GND[6] 30
+GPIO12 32
+GND[7] 34
+GPIO16 36
+GPIO20 38
+GPIO21 40
+RaspberryPi1
+ADA3708
+3V3[1]1
+GPIO2/SDA3
+GPIO3/SCL5
+GPIO4/GPCKL07
+GND[1]9
+GPIO17/GEN011
+GPIO27/GEN213
+GPIO22/GEN315
+3V3[2]17
+GPIO10/MOSI19
+GPIO9/MISO21
+GPIO11/SCLK23
+GND[2]25
+ID_SD27
+GPIO529
+GPIO631
+GPIO1333
+GPIO1935
+GPIO2637
+GND[3]39
+5V[1] 2
+5V[2] 4
+GND[8] 6
+TXD0/GPIO148
+RXD0/GPIO1510
+GPIO18 12
+GND[4] 14
+GEN4/GPIO2316
+GEN5/GPIO2418
+GND[5] 20
+GEN/6GPIO2522
+CE0!/GPIO824
+CE1/!GPIO726
+ID_SC 28
+GND[6] 30
+GPIO12 32
+GND[7] 34
+GPIO16 36
+GPIO20 38
+GPIO21 40
+RaspberryPi2
+ADA3708
+Main +1
+Apogee +2
+En_Cam3
+OSC_2
+OSC_2
+R_pulldown
+10k
+1 2
+C_in
+33uF
+1 2
+C_out
+100nF
+V_bat 1
+GND 2
+PCB1 Supply
+OSC_3
+Main- 1
+Apogee- 2
+FCGND
+TL
+M4
+TR
+M4
+BL
+M4
+BR
+M4
+(b) PCB 1 schematic.
+Figure J.2: PCB 1 - COTS FC and camera module board.
+88
+(a) PCB 2 Layout.
+1
+1
+2
+2
+3
+3
+4
+4
+D D
+C C
+B B
+A A
+Title
+Number RevisionSize
+A4
+Date: 8/29/2021 Sheet   of
+File: C:\Users\..\PCB_2.SchDoc Drawn By:
+SPI clock
+GND
+CS-Baro3
+CS-Baro2
+SPI clockGND
+RXD
+TXD
+SPI clockGNDCS-AG_IMU2CS-AG_IMU1CS-M_IMU2CS-M_IMU1CS-SD
+SPI clock
+SDA/MOSI/SDI
+3.3V
+CS-Trans
+GND1
+VDD2
+SDA3
+SCL4
+SDO-AG 13SDO-M 12CS-AG 11CS-M 10RDY 9INT-M 8INT-1 7INT-2 6DEN 5
+IMU_1
+LSM9DS1
+GND1
+VDD2
+SDA3
+SCL4
+SDO-AG 13SDO-M 12CS-AG 11CS-M 10RDY 9INT-M 8INT-1 7INT-2 6DEN 5
+IMU_2
+LSM9DS1
+GND1
+VDD2
+SDA3
+SCL4
+SDO-AG 13SDO-M 12CS-AG 11CS-M 10RDY 9INT-M 8INT-1 7INT-2 6DEN 5
+IMU_3
+LSM9DS1
+G1 G10 01 12 23 34 45 56 67 78 89 910 1011 1112 12
+VBA T VBA T3.3V_1 3.3V_1G2 G2
+VINVIN G3G3 3.3V_23.3V_2 2323 2222 2121 2020 1919 1818 1717 1616 1515 1414 1313
+ON/OFFON-OFF PROGRAMPGM
+TEENSY
+TEENSY
+1
+2
+3
+Switch_Buzzer
+2N3904
+1
+2
+3TranMain
+2N3904
+Term A 1Term B 2
+PMain
+Terminal
+IN 1
+GND 2
+OUT 3
+5V
+L7805CV
+VIN3
+GND1
+VOUT2
+3.3V
+LD1117V33
+ApogeeD1
+1N4007
+Term A1Term B2
+PDrogue
+Terminal
+IndicatorLED
+304090041
+CS-Baro1
+GND1 VIN2 PS3 SCL4 SDA/SDI5 SDO6 CS7
+Altimeter_1
+MS5607
+GND1 VIN2 PS3 SCL4 SDA/SDI5 SDO6 CS7
+Altimeter_2
+MS5607
+GND1 VIN2 PS3 SCL4 SDA/SDI5 SDO6 CS7
+Altimeter_3
+MS5607
++
+-
+Buzzer
+CST-951AP
+1
+2
+3
+TranDrogue
+2N3904
+MainD2
+1N4007
+VIN 1GND 2SIG 3
+ServoOut
+ServoOut
+V_bat1GND2
+Power
+OSC_3
+Main +1 Apogee +2 En_Cam3
+OSC_2
+OSC_2
+MOSI1
+MISO2
+SCK3
+OSC_3A
+OSC_3A
+VIN1 3V2 GND3 CLK4 D05 DI6 CS7 CD8
+SDreader
+SDreaderada
+IMU3_CS
+SDA
+SDA
+SDA
+SDA
+SDA
+SDA
+SDA
+SDA
+SDO
+SDO
+SDO
+SDO
+SDO
+SDO
+SDO
+SDO
+SDO
+SDA
+1 2
+C_out3V
+10uF
+1 2
+C_in3V
+100nF
+R_IMUPullUp1
+10k
+R_ALTPullUp3
+10k
+R_ALTPullUp2
+10k
+R_ALTPullUp1
+10k
+R_IMUPullUp2
+10kR_IMUPullUp3
+10k
+1 2
+Cout5V
+100nF
+1 2
+Cin5V
+33uF
+RDrogueBase
+1k
+R1_PMain
+1k
+RBuzTrans
+1k
+RDrogueCollector
+100
+R2_PMain
+100
+RLED
+150
+V_bat 1
+GND 2
+PCB1 Supply
+OSC_3
+V_bat1 GND2
+PCB3 Supply
+OSC_3
+CS_TRAN1 ICSP_DA TA2
+OSC_3B
+OSC_3B
+G01 RST2
+OSC_3C
+OSC_3C
+112233
+Switch
+TL
+M3
+TR
+M3
+Mid
+M3
+BR
+M3
+BL
+M3
+(b) PCB 2 schematic.
+Figure J.3: PCB 2 - SRAD FC board with sensors, indicators, and outputs.
+89
+(a) PCB 3 Layout.
+1
+1
+2
+2
+3
+3
+4
+4
+D D
+C C
+B B
+A A
+Title
+Number RevisionSize
+A4
+Date: 8/29/2021 Sheet   of
+File: C:\Users\..\PCB_3.SchDoc Drawn By:
+RST9 CS8 MOSI7 MISO6 SCK5 G04 EN3 GND2 VIN1 G1 10
+G2 11
+G3 12
+G4 13
+G5 14
+Transceiver
+RFM96W
+N/C8Battery+7Battery-6
+ICSP_DCLK1
+ICSP_DA TA2
+GROUND3
+3.3V4
+MCLR5
+GPS?
+bigRedBee
+1
+VOUT 2VIN3
+GND
+V-regulator
+LD1117V33
+MOSI 1MISO 2SCK 3
+OSC_3A
+OSC_3A
+IN1GND2OUT3
+5V
+L7805CV
+12
+C_out
+10uF
+12
+C_in
+100nF
+CS_TRAN 1
+ICSP_DA TA2
+OSC_3B
+OSC_3B
+G0 1
+RST 2
+OSC_3C
+OSC_3C
+V_bat 1
+GND 2
+PCB3_Supply
+OSC_3
+Camera
+Rasberry-pi camera
+*
+Antenna Support
+TR
+M3
+MID_R
+M3MID
+M3BL
+M3
+BR
+M3
+(b) PCB 3 schematic.
+Figure J.4: PCB 3 - Telemetry Board.
+90
+(a) EMC Layout.
+1
+1
+2
+2
+3
+3
+4
+4
+D D
+C C
+B B
+A A
+Title
+Number RevisionSize
+A
+Date: 9/05/2021 Sheet   of
+File: C:\Users\..\EMCschemv2.0.SchDoc Drawn By:
+SDI/SDA
+SCK/SCL
+Pressure Sensor
+2
+1
+3
+4
+5
+6
+P8
+MicroSD Card Reader
+1
+23
+Q1
+IRF840
+2
+1
+3
+P2
+UV Sensor
++5V
+GND
+MOSI
+SS
+SCK
+MISO
+2
+1
+Battery
+1
+23
+Q2
+MOSFET
+2 1
+D2
+2 1
+D3
+2
+1
+3
+4
+P3
+DPS310
+K 1A2
+D1
+2
+1
+3
+4
+P4
+SGP30 VOC/CO2
+1
+J0
+Heater 1
+1
+J1
+Heater 2
+C2
+10u
+C1
+100n
+1 2
+10k
+R0
+2 1
+1k
+R2
+2 1
+1k
+R3
+Vin1
+Vin2
+Sig3
+GND4
+OzoneB
+2 1
+1k
+R4
+1 2
+150
+R5
+2
+1
+3
+P1
+DHT22
+D0/TX 1D1/RX 2RESET_1 3GND_1 4D2 5D3 6D4 7D5 8D6 9D7 10D8 11D9 12D10 13D11 14D12 15
+VIN30 GND_229 RESET_228 5V27 A726 A625 A524 A423 A322 A221 A120 A019 AREF18 3V317 D1316
+Arduino
+A000005
+9V
+GND
++-LS?
+CST-951AP
+SDI/SDA
+SCK/SCL
+5V
+GND
+GND
+5V
+5V
+Signal
+GND
+GND
+Signal
+5V
+5V
+GND
+Signal
+2
+1
+VR1
+Voltage Regulator
+22 1 1
+3 3
+S?
+Environmental Monitoring Cluster (EMC)
+1 C
+A. Progida, S.Hassett
+(b) EMC schematic.
+Figure J.5: Environmental Monitoring Cluster
+91
+(a) PCB 3 Layout.
+1
+1
+2
+2
+3
+3
+4
+4
+D D
+C C
+B B
+A A
+G1G1
+00
+11
+22
+33
+44
+55
+66
+77
+88
+99
+1010
+1111
+1212
+VBA TVBA T
+3.3V_13.3V_1
+G2G2
+VIN VIN
+G3 G3
+3.3V_2 3.3V_2
+23 23
+22 22
+21 21
+20 20
+19 19
+18 18
+17 17
+16 16
+15 15
+14 14
+13 13
+ON/OFF ON-OFF
+PROGRAMPGM
+Teensy
+VIN1
+3VO2
+GND3
+SCK4
+SDO5
+SDI6
+CS7
+INT8
+MH1 MH1
+MH2 MH2
+BMP388
+VIN 1
+GND 2
+EN 3
+G0 4
+SCK 5
+MISO 6
+MOSI 7
+CS 8
+RST 9
+G510 G411 G312 G213 G114
+TransceiverT1
+2 1
+1k
+R1
+D1
+21
+1k
+R2
+D2
+COTS_FC?
+EasyMini COTS_FC
+9V
+3.3V
+GND
+.     MAIN-.     MAIN+EasyMini.     9V
+.     GND
+Pteensy
+B        .
+A        .
+E-Match
+CD1
+100n
+CD2
+10u
++-Bzz
+CST-951AP
+2 1
+150
+R3
+22 1 1
+3 3
+S1
+IN1GND2OUT3
+VReg
+L7805CV
+1
+2
+3Pyro
+3.3V1
+EN2
+VBA T3
+FIX4
+TX5
+RX6
+GND7
+VIN8
+PPS9
+GPS
+Adafruit GPS - June
+(b) PCB 3 schematic.
+Figure J.6: Recovery Flight Computer
+92
+
+--- END CONTENT: EuRoC_technical_report___Darwin_II_compressed.pdf ---
