@@ -73,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hero Carousel Logic
     setupHeroCarousel();
+
 });
+
 
 function setupHeroCarousel() {
     // Auto-scroll removed as per user request.
