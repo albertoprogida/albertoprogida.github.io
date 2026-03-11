@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Alberto Progida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b9fd8',
+                        secondary: '#1a5c8a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+
+        // Apply theme before paint
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#eef5fb] text-[#0c2340] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
+
+    <!-- News Ticker -->
+    <div class="fixed top-0 w-full z-50 bg-[#d97706] text-white overflow-hidden" style="height:2rem;">
+        <div class="flex items-center h-full">
+            <span class="flex-shrink-0 px-4 text-xs font-semibold uppercase tracking-widest bg-[#b45309] h-full flex items-center">New Publication</span>
+            <div class="overflow-hidden flex-1 relative">
+                <a href="https://link.springer.com/article/10.1007/s12567-026-00698-z" target="_blank" rel="noopener"
+                   class="ticker-track inline-block whitespace-nowrap text-sm hover:underline">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subpage Header -->
+    <nav class="subpage-header">
+        <div class="subpage-header-inner">
+            <a href="index.html" class="flex items-center gap-1 text-[#0c2340] dark:text-[#c8e0f8] hover:text-primary transition-colors font-serif font-bold text-lg flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Home
+            </a>
+            <div class="flex items-center gap-2">
+                <a href="experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#e0eef8] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Experience</a>
+                <a href="projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] hover:bg-[#e0eef8] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Projects</a>
+                <a href="ideas.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] hover:bg-[#e0eef8] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Ideas</a>
+            </div>
+            <button id="theme-toggle" class="p-2 hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] transition-colors rounded-sm" aria-label="Toggle Theme">
+                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="graph-paper pt-28 pb-6 min-h-screen flex flex-col transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 flex flex-col flex-1 min-h-0 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1 min-h-0">
+
+                <!-- Experience Column -->
+                <div class="drawing-card relative bg-[#f5faff] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
+                    <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                        <div class="drawing-field flex-1">
+                            <span class="drawing-label">Title</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">Experience</span>
+                        </div>
+                        <div class="drawing-field w-20">
+                            <span class="drawing-label">DWG No.</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">002</span>
+                        </div>
+                        <div class="drawing-field w-14">
+                            <span class="drawing-label">Rev.</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">A</span>
+                        </div>
+                    </div>
+
+                    <div id="resume-scroll-1" class="overflow-y-auto flex-1 p-8 resume-scroll space-y-6">
+                        <!-- OSS -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#d97706] bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#d97706] font-semibold">Sept 2024 - Current</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Oxford Space Systems Ltd.</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Associate Spacecraft Mechanical Engineer</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Led the breadboarding &amp; detailed design of a hinged-rib antenna deployment motorization chain and pointing gimbal.
+                            </p>
+                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                                <li>Kinematic modelling and component selection.</li>
+                                <li>Design and assembly of intricate sub-assemblies.</li>
+                                <li>AIT activities for qualification vibration and environmental testing.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Lodestar -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">July 2023 - Sept 2023</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Lodestar Ltd.</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Robotics Engineer</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Designed, built, and tested a scaled 3-DOF demonstrator used to raise seed rounds.
+                            </p>
+                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                                <li>Assembled modular powertrain (BLDC + Harmonic Drives).</li>
+                                <li>Developed parametric baseline for 7-DOF LEO-capable robotic arm.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Orbex -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">Sept 2022 - July 2023</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Orbex</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Structures Engineering Placement</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Owned DFM of flight hardware, including tolerance stack-up and GD&amp;T to BS8888.
+                            </p>
+                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                                <li>Designed metallic pressure vessel components (cryogenic).</li>
+                                <li>Managed &gt;3000-part production-quality CAD assemblies.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Flowcopter -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">June 2022 - Sept 2022</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Flowcopter Ltd.</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Avionics Hardware R&amp;D Intern</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Hardware reverse engineering of ROTAX light aircraft ECU. Design of multi-layer PCBs.
+                            </p>
+                        </div>
+
+                        <!-- RFA -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">June 2021 - Aug 2021</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Rocket Factory Augsburg</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Hardware Test Engineering Intern</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Wiring, testing, and commissioning of instrumentation on a MW-scale turbo-machinery test rig.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Scroll Hint -->
+                    <div id="exp-hint"
+                        class="absolute bottom-4 right-4 bg-[#0c2340] dark:bg-[#c8e0f8] text-[#c8e0f8] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
+                        Scroll for more &rarr;
+                    </div>
+                </div>
+
+                <!-- Education & Projects Column -->
+                <div class="drawing-card relative bg-[#f5faff] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
+                    <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                        <div class="drawing-field flex-1">
+                            <span class="drawing-label">Title</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">Education &amp; Projects</span>
+                        </div>
+                        <div class="drawing-field w-20">
+                            <span class="drawing-label">DWG No.</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">003</span>
+                        </div>
+                        <div class="drawing-field w-14">
+                            <span class="drawing-label">Rev.</span>
+                            <span class="drawing-value dark:text-[#c8e0f8]">A</span>
+                        </div>
+                    </div>
+
+                    <div id="resume-scroll-2" class="overflow-y-auto flex-1 p-8 resume-scroll space-y-6">
+
+                        <!-- EDUCATION -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">2023 - 2024</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Imperial College London</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">MSc Advanced Aerospace Engineering</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Distinction (85.6%) — Second of cohort.
+                            </p>
+                        </div>
+
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">2019 - 2022</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">University of Edinburgh</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">BEng Mechanical Engineering</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                First Class (77%). IMechE Best Student Award.
+                            </p>
+                        </div>
+
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-primary font-semibold">2017 - 2019</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">UWC Atlantic</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">International Baccalaureate</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                41/45. £60k Full Residential Scholarship.
+                            </p>
+                        </div>
+
+                        <!-- PROJECTS separator -->
+                        <div class="border-t border-[#85b4d4] dark:border-[#1e4a70] my-8"></div>
+
+                        <!-- Composite Flexure -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2024</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Composite Flexure</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">MSc Thesis</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Experimenting with ultra-thin printed circuits within CFRP flexures. Abaqus Explicit Dynamic model correlation.
+                            </p>
+                        </div>
+
+                        <!-- Pan Tilt -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2022</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Subsea Pan &amp; Tilt Actuator</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">BEng Thesis</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Designed precision underwater actuator (90m depth). 58:1 low-backlash worm drive.
+                            </p>
+                        </div>
+
+                        <!-- Darwin III -->
+                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2021 - 2022</div>
+                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Darwin III Sounding Rocket</h3>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Chief Engineer</p>
+                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                                Led 40+ students. Launch to 7000m (Mach 1.7). Managed mechanical sub-assemblies and avionics integration.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Scroll Hint -->
+                    <div id="edu-hint"
+                        class="absolute bottom-4 right-4 bg-[#0c2340] dark:bg-[#c8e0f8] text-[#c8e0f8] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
+                        Scroll for more &rarr;
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Alberto Progida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b9fd8',
+                        secondary: '#1a5c8a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+
+        // Apply theme before paint
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#eef5fb] text-[#0c2340] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
+
+    <!-- News Ticker -->
+    <div class="fixed top-0 w-full z-50 bg-[#d97706] text-white overflow-hidden" style="height:2rem;">
+        <div class="flex items-center h-full">
+            <span class="flex-shrink-0 px-4 text-xs font-semibold uppercase tracking-widest bg-[#b45309] h-full flex items-center">New Publication</span>
+            <div class="overflow-hidden flex-1 relative">
+                <a href="https://link.springer.com/article/10.1007/s12567-026-00698-z" target="_blank" rel="noopener"
+                   class="ticker-track inline-block whitespace-nowrap text-sm hover:underline">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subpage Header -->
+    <nav class="subpage-header">
+        <div class="subpage-header-inner">
+            <a href="index.html" class="flex items-center gap-1 text-[#0c2340] dark:text-[#c8e0f8] hover:text-primary transition-colors font-serif font-bold text-lg flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Home
+            </a>
+            <div class="flex items-center gap-2">
+                <a href="experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] hover:bg-[#e0eef8] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Experience</a>
+                <a href="projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#e0eef8] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Projects</a>
+                <a href="ideas.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] hover:bg-[#e0eef8] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Ideas</a>
+            </div>
+            <button id="theme-toggle" class="p-2 hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] transition-colors rounded-sm" aria-label="Toggle Theme">
+                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="graph-paper pt-28 pb-6 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Card -->
+            <div class="drawing-card bg-[#f5faff] dark:bg-[#0d2240] shadow-xl">
+                <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                    <div class="drawing-field flex-1">
+                        <span class="drawing-label">Title</span>
+                        <span class="drawing-value dark:text-[#c8e0f8]">Projects</span>
+                    </div>
+                    <div class="drawing-field w-20">
+                        <span class="drawing-label">DWG No.</span>
+                        <span class="drawing-value dark:text-[#c8e0f8]">004</span>
+                    </div>
+                    <div class="drawing-field w-14">
+                        <span class="drawing-label">Rev.</span>
+                        <span class="drawing-value dark:text-[#c8e0f8]">A</span>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- LERTa -->
+                <a href="portfolio/lerta.html" class="tile-card fade-in delay-50">
+                    <img src="images/project pics/cover/LERTa.png" alt="Deployable Antennas / LERTa Platform"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">LERTa Platform</span>
+                    </div>
+                </a>
+
+                <!-- Darwin III -->
+                <a href="portfolio/darwin-iii.html" class="tile-card fade-in delay-100">
+                    <img src="images/project pics/cover/d3_liftoff.png" alt="Rocketry / Darwin III Rocket"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">Darwin III Rocket</span>
+                    </div>
+                </a>
+
+                <!-- Avionics -->
+                <a href="portfolio/avionics.html" class="tile-card fade-in delay-150">
+                    <img src="images/project pics/cover/pcb.JPG" alt="Electronics / Avionics Hardware"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">Avionics Hardware</span>
+                    </div>
+                </a>
+
+                <!-- Materials -->
+                <a href="portfolio/materials.html" class="tile-card fade-in delay-200">
+                    <img src="images/project pics/cover/samples.JPG" alt="Materials Science / Composite Materials"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">Composite Materials</span>
+                    </div>
+                </a>
+
+                <!-- TARS Robotics -->
+                <a href="portfolio/robotics.html" class="tile-card fade-in delay-250">
+                    <img src="images/project pics/cover/tars1.jpg" alt="Robotics / TARS Robotics"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">TARS Robotics</span>
+                    </div>
+                </a>
+
+                <!-- Mechanisms -->
+                <a href="portfolio/mechanisms.html" class="tile-card fade-in delay-300">
+                    <img src="images/project pics/cover/exploded.png" alt="Mechanism Design / Mechanism Design"
+                        class="tile-card-img" loading="lazy">
+                    <div class="tile-card-body">
+                        <span class="tile-title">Mechanism Design</span>
+                    </div>
+                </a>
+
+            </div>
+                </div><!-- /p-6 -->
+            </div><!-- /drawing-card -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
