@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "WebFetch(domain:albertoprogida.github.io)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('C:/Users/alber/Documents/GitHub/albertoprogida.github.io/third_angle.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(python3 -c \"\nfrom PIL import Image\n\nimg = Image.open\\('C:/Users/alber/Documents/GitHub/albertoprogida.github.io/third_angle.png'\\)\nsize = max\\(img.size\\)  # 960\nsquare = Image.new\\('RGBA', \\(size, size\\), \\(0, 0, 0, 0\\)\\)\noffset = \\(\\(size - img.width\\) // 2, \\(size - img.height\\) // 2\\)\nsquare.paste\\(img, offset\\)\nsquare = square.resize\\(\\(64, 64\\), Image.LANCZOS\\)\nsquare.save\\('C:/Users/alber/Documents/GitHub/albertoprogida.github.io/favicon.png'\\)\nprint\\('Done'\\)\n\")",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('C:/Users/alber/Documents/GitHub/albertoprogida.github.io/third_angle.png'\\); size = max\\(img.size\\); sq = Image.new\\('RGBA', \\(size, size\\), \\(0,0,0,0\\)\\); sq.paste\\(img, \\(\\(size-img.width\\)//2, \\(size-img.height\\)//2\\)\\); sq = sq.resize\\(\\(64,64\\), Image.LANCZOS\\); sq.save\\('C:/Users/alber/Documents/GitHub/albertoprogida.github.io/favicon.png'\\); print\\('Done'\\)\")",
+      "Bash(cd \"C:/Users/alber/Documents/GitHub/albertoprogida.github.io\" && sed -i 's|href=\"third_angle.png\"|href=\"favicon.png\"|g; s|href=\"../third_angle.png\"|href=\"../favicon.png\"|g' index.html experience.html projects.html ideas.html blog/post1.html blog/example-post-1.html portfolio/avionics.html portfolio/composite-flexure.html portfolio/darwin-iii.html portfolio/lerta.html portfolio/materials.html portfolio/mechanisms.html portfolio/robotics.html portfolio/subsea-actuator.html)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python sepia_replace.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python verify_sepia.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && rm sepia_replace.py verify_sepia.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_toggle.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_icon_hidden.py && rm fix_icon_hidden.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_squirgle.py && rm fix_squirgle.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_squirgle2.py && rm fix_squirgle2.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_toggle_button.py && rm fix_toggle_button.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_slider.py && rm fix_slider.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python -c \"\nimport os\n\nfiles = [\n    'blog/post1.html', 'blog/example-post-1.html',\n    'portfolio/darwin-iii.html', 'portfolio/composite-flexure.html',\n    'portfolio/lerta.html', 'portfolio/avionics.html',\n    'portfolio/robotics.html', 'portfolio/materials.html',\n    'portfolio/mechanisms.html', 'portfolio/subsea-actuator.html',\n]\n\nOLD = 'class=\\\\\"bg-[#071628] text-[#c8e0f8] py-8 border-t border-[#1e4a70]\\\\\"'\nNEW = 'class=\\\\\"bg-[#2c1810] text-[#f5ead8] py-8 border-t border-[#5c3820] dark:bg-[#071628] dark:text-[#c8e0f8] dark:border-[#1e4a70]\\\\\"'\n\nfor rel in files:\n    with open\\(rel, 'r', encoding='utf-8'\\) as f:\n        c = f.read\\(\\)\n    if OLD in c:\n        with open\\(rel, 'w', encoding='utf-8'\\) as f:\n            f.write\\(c.replace\\(OLD, NEW\\)\\)\n        print\\('UPDATED:', rel\\)\n    else:\n        print\\('no match:', rel\\)\n\")",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_footer.py && rm fix_footer.py)",
+      "Bash(cd \"C:\\\\Users\\\\alber\\\\Documents\\\\GitHub\\\\albertoprogida.github.io\" && python fix_ideas.py && rm fix_ideas.py)"
+    ]
+  }
+}
