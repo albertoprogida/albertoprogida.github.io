@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b9fd8',
-                        secondary: '#1a5c8a',
+                        primary: 'var(--color-primary)',
+                        secondary: 'var(--color-secondary)',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -40,7 +40,7 @@
     </style>
 </head>
 
-<body class="bg-[#eef5fb] text-[#0c2340] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
+<body class="bg-[#f5ead8] text-[#2c1810] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
 
     <!-- News Ticker -->
     <div class="fixed top-0 w-full z-50 bg-[#d97706] text-white overflow-hidden" style="height:2rem;">
@@ -61,19 +61,22 @@
     <!-- Subpage Header -->
     <nav class="subpage-header">
         <div class="subpage-header-inner">
-            <a href="index.html" class="flex items-center gap-1 text-[#0c2340] dark:text-[#c8e0f8] hover:text-primary transition-colors font-serif font-bold text-lg flex-shrink-0">
+            <a href="index.html" class="flex items-center gap-1 text-[#2c1810] dark:text-[#c8e0f8] hover:text-primary transition-colors font-serif font-bold text-lg flex-shrink-0">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 Home
             </a>
             <div class="flex items-center gap-2">
-                <a href="experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#e0eef8] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Experience</a>
-                <a href="projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] hover:bg-[#e0eef8] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Projects</a>
-                <span class="relative px-3 py-1.5 sm:px-5 sm:py-2 border border-[#85b4d4] dark:border-[#1e4a70] bg-[#f5faff] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#0c2340] dark:text-[#c8e0f8] opacity-50 cursor-not-allowed select-none">Ideas <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-[#d97706]">WIP</span></span>
+                <a href="experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#eeddd0] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Experience</a>
+                <a href="projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#a07850] dark:border-[#1e4a70] bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#2c1810] dark:text-[#c8e0f8] hover:bg-[#eeddd0] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Projects</a>
+                <span class="relative px-3 py-1.5 sm:px-5 sm:py-2 border border-[#a07850] dark:border-[#1e4a70] bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#2c1810] dark:text-[#c8e0f8] opacity-50 cursor-not-allowed select-none">Ideas <span class="text-[9px] font-mono font-bold uppercase tracking-wider text-[#d97706]">WIP</span></span>
             </div>
-            <button id="theme-toggle" class="p-2 hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] transition-colors rounded-sm" aria-label="Toggle Theme">
-                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+            <button id="theme-toggle" aria-label="Toggle theme" style="position:relative;display:inline-flex;align-items:center;width:52px;height:28px;border-radius:9999px;background:#1e4a70;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:background 0.3s ease;">
+                <span id="toggle-knob" style="position:absolute;left:3px;width:22px;height:22px;border-radius:9999px;background:white;display:flex;align-items:center;justify-content:center;transition:transform 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
+                    <svg id="icon-sun" style="display:none" width="14" height="14" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="icon-moon" width="14" height="14" fill="none" stroke="#7ab0d8" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </span>
             </button>
         </div>
     </nav>
@@ -84,8 +87,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1 min-h-0">
 
                 <!-- Experience Column -->
-                <div class="drawing-card relative bg-[#f5faff] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
-                    <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                <div class="drawing-card relative bg-[#fdf6ec] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
+                    <div class="drawing-card-header bg-[#eeddd0] dark:bg-[#07162a]">
                         <div class="drawing-field flex-1">
                             <span class="drawing-label">Title</span>
                             <span class="drawing-value dark:text-[#c8e0f8]">Experience</span>
@@ -102,15 +105,15 @@
 
                     <div id="resume-scroll-1" class="overflow-y-auto flex-1 p-8 resume-scroll space-y-6">
                         <!-- OSS -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#d97706] bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#d97706] bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-[#d97706] font-semibold">Sept 2024 - Current</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Oxford Space Systems Ltd.</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Associate Spacecraft Mechanical Engineer</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Oxford Space Systems Ltd.</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Associate Spacecraft Mechanical Engineer</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Led the breadboarding &amp; detailed design of a hinged-rib antenna deployment motorization chain and pointing gimbal.
                             </p>
-                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                            <ul class="list-disc list-inside mt-2 text-[#5a3820] dark:text-[#7ab0d8] space-y-1">
                                 <li>Kinematic modelling and component selection.</li>
                                 <li>Design and assembly of intricate sub-assemblies.</li>
                                 <li>AIT activities for qualification vibration and environmental testing.</li>
@@ -118,53 +121,53 @@
                         </div>
 
                         <!-- Lodestar -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">July 2023 - Sept 2023</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Lodestar Ltd.</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Robotics Engineer</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Lodestar Ltd.</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Robotics Engineer</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Designed, built, and tested a scaled 3-DOF demonstrator used to raise seed rounds.
                             </p>
-                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                            <ul class="list-disc list-inside mt-2 text-[#5a3820] dark:text-[#7ab0d8] space-y-1">
                                 <li>Assembled modular powertrain (BLDC + Harmonic Drives).</li>
                                 <li>Developed parametric baseline for 7-DOF LEO-capable robotic arm.</li>
                             </ul>
                         </div>
 
                         <!-- Orbex -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">Sept 2022 - July 2023</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Orbex</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Structures Engineering Placement</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Orbex</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Structures Engineering Placement</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Owned DFM of flight hardware, including tolerance stack-up and GD&amp;T to BS8888.
                             </p>
-                            <ul class="list-disc list-inside mt-2 text-[#1b4d7e] dark:text-[#7ab0d8] space-y-1">
+                            <ul class="list-disc list-inside mt-2 text-[#5a3820] dark:text-[#7ab0d8] space-y-1">
                                 <li>Designed metallic pressure vessel components (cryogenic).</li>
                                 <li>Managed &gt;3000-part production-quality CAD assemblies.</li>
                             </ul>
                         </div>
 
                         <!-- Flowcopter -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">June 2022 - Sept 2022</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Flowcopter Ltd.</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Avionics Hardware R&amp;D Intern</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Flowcopter Ltd.</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Avionics Hardware R&amp;D Intern</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Hardware reverse engineering of ROTAX light aircraft ECU. Design of multi-layer PCBs.
                             </p>
                         </div>
 
                         <!-- RFA -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">June 2021 - Aug 2021</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Rocket Factory Augsburg</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Hardware Test Engineering Intern</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Rocket Factory Augsburg</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Hardware Test Engineering Intern</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Wiring, testing, and commissioning of instrumentation on a MW-scale turbo-machinery test rig.
                             </p>
                         </div>
@@ -172,14 +175,14 @@
 
                     <!-- Scroll Hint -->
                     <div id="exp-hint"
-                        class="absolute bottom-4 right-4 bg-[#0c2340] dark:bg-[#c8e0f8] text-[#c8e0f8] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
+                        class="absolute bottom-4 right-4 bg-[#2c1810] dark:bg-[#c8e0f8] text-[#fdf6ec] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
                         Scroll for more &rarr;
                     </div>
                 </div>
 
                 <!-- Education & Projects Column -->
-                <div class="drawing-card relative bg-[#f5faff] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
-                    <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                <div class="drawing-card relative bg-[#fdf6ec] dark:bg-[#0d2240] shadow-xl flex flex-col h-[520px] lg:h-[720px] fade-in delay-100">
+                    <div class="drawing-card-header bg-[#eeddd0] dark:bg-[#07162a]">
                         <div class="drawing-field flex-1">
                             <span class="drawing-label">Title</span>
                             <span class="drawing-value dark:text-[#c8e0f8]">Education &amp; Projects</span>
@@ -197,68 +200,68 @@
                     <div id="resume-scroll-2" class="overflow-y-auto flex-1 p-8 resume-scroll space-y-6">
 
                         <!-- EDUCATION -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">2023 - 2024</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Imperial College London</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">MSc Advanced Aerospace Engineering</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Imperial College London</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">MSc Advanced Aerospace Engineering</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Distinction (85.6%) — Second of cohort.
                             </p>
                         </div>
 
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">2019 - 2022</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">University of Edinburgh</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">BEng Mechanical Engineering</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">University of Edinburgh</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">BEng Mechanical Engineering</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 First Class (77%). IMechE Best Student Award.
                             </p>
                         </div>
 
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#f5faff] dark:bg-[#0d2240]"></div>
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-primary bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
                             <div class="mb-1 text-sm text-primary font-semibold">2017 - 2019</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">UWC Atlantic</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">International Baccalaureate</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">UWC Atlantic</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">International Baccalaureate</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 41/45. £60k Full Residential Scholarship.
                             </p>
                         </div>
 
                         <!-- PROJECTS separator -->
-                        <div class="border-t border-[#85b4d4] dark:border-[#1e4a70] my-8"></div>
+                        <div class="border-t border-[#a07850] dark:border-[#1e4a70] my-8"></div>
 
                         <!-- Composite Flexure -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
-                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2024</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Composite Flexure</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">MSc Thesis</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#a07850] bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#8a6040] font-semibold">2024</div>
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Composite Flexure</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">MSc Thesis</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Experimenting with ultra-thin printed circuits within CFRP flexures. Abaqus Explicit Dynamic model correlation.
                             </p>
                         </div>
 
                         <!-- Pan Tilt -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
-                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2022</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Subsea Pan &amp; Tilt Actuator</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">BEng Thesis</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#a07850] bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#8a6040] font-semibold">2022</div>
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Subsea Pan &amp; Tilt Actuator</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">BEng Thesis</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Designed precision underwater actuator (90m depth). 58:1 low-backlash worm drive.
                             </p>
                         </div>
 
                         <!-- Darwin III -->
-                        <div class="relative pl-8 border-l-2 border-[#85b4d4] dark:border-[#1e4a70]">
-                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#2575aa] bg-[#f5faff] dark:bg-[#0d2240]"></div>
-                            <div class="mb-1 text-sm text-[#2575aa] font-semibold">2021 - 2022</div>
-                            <h3 class="text-xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Darwin III Sounding Rocket</h3>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mb-2">Chief Engineer</p>
-                            <p class="text-lg text-[#1b4d7e] dark:text-[#90c4e8]">
+                        <div class="relative pl-8 border-l-2 border-[#a07850] dark:border-[#1e4a70]">
+                            <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full border-2 border-[#a07850] bg-[#fdf6ec] dark:bg-[#0d2240]"></div>
+                            <div class="mb-1 text-sm text-[#8a6040] font-semibold">2021 - 2022</div>
+                            <h3 class="text-xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Darwin III Sounding Rocket</h3>
+                            <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mb-2">Chief Engineer</p>
+                            <p class="text-lg text-[#5a3820] dark:text-[#90c4e8]">
                                 Led 40+ students. Launch to 7000m (Mach 1.7). Managed mechanical sub-assemblies and avionics integration.
                             </p>
                         </div>
@@ -267,7 +270,7 @@
 
                     <!-- Scroll Hint -->
                     <div id="edu-hint"
-                        class="absolute bottom-4 right-4 bg-[#0c2340] dark:bg-[#c8e0f8] text-[#c8e0f8] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
+                        class="absolute bottom-4 right-4 bg-[#2c1810] dark:bg-[#c8e0f8] text-[#fdf6ec] dark:text-[#0c2340] text-sm font-medium px-4 py-2 opacity-70 animate-bounce pointer-events-none rounded">
                         Scroll for more &rarr;
                     </div>
                 </div>

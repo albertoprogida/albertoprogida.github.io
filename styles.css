@@ -1,3 +1,13 @@
+/* CSS Custom Properties for Theme Colors */
+:root {
+    --color-primary: #7a5230;
+    --color-secondary: #5c3820;
+}
+.dark {
+    --color-primary: #3b9fd8;
+    --color-secondary: #1a5c8a;
+}
+
 /* Custom Scrollbar */
 .resume-scroll::-webkit-scrollbar,
 #hero-carousel::-webkit-scrollbar {
@@ -12,12 +22,22 @@
 
 .resume-scroll::-webkit-scrollbar-thumb,
 #hero-carousel::-webkit-scrollbar-thumb {
-    background-color: rgba(59, 159, 216, 0.4);
+    background-color: rgba(122, 82, 48, 0.4);
     border-radius: 20px;
 }
 
 .resume-scroll::-webkit-scrollbar-thumb:hover,
 #hero-carousel::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(122, 82, 48, 0.7);
+}
+
+.dark .resume-scroll::-webkit-scrollbar-thumb,
+.dark #hero-carousel::-webkit-scrollbar-thumb {
+    background-color: rgba(59, 159, 216, 0.4);
+}
+
+.dark .resume-scroll::-webkit-scrollbar-thumb:hover,
+.dark #hero-carousel::-webkit-scrollbar-thumb:hover {
     background-color: rgba(59, 159, 216, 0.7);
 }
 
@@ -80,7 +100,7 @@ html {
     position: absolute;
     width: 1px;
     height: 18px;
-    background: #85b4d4;
+    background: #a07850;
     left: 50%;
     top: 0;
 }
@@ -90,7 +110,7 @@ html {
     position: absolute;
     height: 1px;
     width: 18px;
-    background: #85b4d4;
+    background: #a07850;
     top: 50%;
     left: 0;
 }
@@ -133,10 +153,10 @@ html {
    =================================== */
 
 .graph-paper {
-    background-color: #eef5fb;
+    background-color: #f5ead8;
     background-image:
-        linear-gradient(rgba(41, 128, 185, 0.25) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(41, 128, 185, 0.25) 1px, transparent 1px);
+        linear-gradient(rgba(120, 80, 40, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 80, 40, 0.2) 1px, transparent 1px);
     background-size: 32px 32px;
 }
 
@@ -153,7 +173,7 @@ html {
    =================================== */
 
 .drawing-card {
-    border: 1.5px solid #85b4d4;
+    border: 1.5px solid #a07850;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
@@ -165,7 +185,7 @@ html {
 
 .drawing-card-header {
     display: flex;
-    border-bottom: 1.5px solid #85b4d4;
+    border-bottom: 1.5px solid #a07850;
     flex-shrink: 0;
 }
 
@@ -175,7 +195,7 @@ html {
 
 .drawing-field {
     padding: 6px 12px;
-    border-right: 1px solid #85b4d4;
+    border-right: 1px solid #a07850;
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -193,7 +213,7 @@ html {
     font-size: 9px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #2d6fa0;
+    color: #8a6040;
     font-family: 'Inter', sans-serif;
     line-height: 1;
 }
@@ -206,7 +226,7 @@ html {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: #0c2340;
+    color: #2c1810;
     line-height: 1.2;
 }
 
@@ -221,10 +241,10 @@ html {
     gap: 4px;
     padding: 1.25rem 1.5rem;
     padding-right: 3rem;
-    border: 1.5px solid #85b4d4;
+    border: 1.5px solid #a07850;
     border-radius: 8px;
-    background: #f5faff;
-    color: #0c2340;
+    background: #fdf6ec;
+    color: #2c1810;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     position: relative;
@@ -232,15 +252,15 @@ html {
 
 .nav-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(59, 159, 216, 0.2);
-    background: #e0eef8;
+    box-shadow: 0 8px 24px rgba(122, 82, 48, 0.15);
+    background: #eeddd0;
 }
 
 .nav-button .nav-button-section {
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #2d6fa0;
+    color: #8a6040;
     font-family: 'Inter', sans-serif;
     line-height: 1;
 }
@@ -249,7 +269,7 @@ html {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #0c2340;
+    color: #2c1810;
 }
 
 .nav-button .nav-button-arrow {
@@ -257,13 +277,13 @@ html {
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #85b4d4;
+    color: #a07850;
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .nav-button:hover .nav-button-arrow {
     transform: translateY(-50%) translateX(4px);
-    color: #3b9fd8;
+    color: var(--color-primary);
 }
 
 .dark .nav-button {
@@ -301,8 +321,8 @@ html {
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    border: 2px solid #85b4d4;
-    background: #e0eef8;
+    border: 2px solid #a07850;
+    background: #eeddd0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,12 +339,12 @@ html {
    =================================== */
 
 .tile-card {
-    border: 1.5px solid #85b4d4;
+    border: 1.5px solid #a07850;
     border-radius: 8px;
     overflow: hidden;
-    background: #f5faff;
+    background: #fdf6ec;
     text-decoration: none;
-    color: #0c2340;
+    color: #2c1810;
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -332,7 +352,7 @@ html {
 
 .tile-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(59, 159, 216, 0.2);
+    box-shadow: 0 8px 24px rgba(122, 82, 48, 0.15);
 }
 
 .tile-card-img {
@@ -367,7 +387,7 @@ html {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
     font-weight: 600;
-    color: #0c2340;
+    color: #2c1810;
 }
 
 .dark .tile-card {
@@ -394,9 +414,9 @@ html {
     top: 2rem;
     width: 100%;
     z-index: 40;
-    background: rgba(238, 245, 251, 0.9);
+    background: rgba(245, 234, 216, 0.9);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #85b4d4;
+    border-bottom: 1px solid #a07850;
     transition: background 0.3s, border-color 0.3s;
 }
 

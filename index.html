@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#3b9fd8',
-                        secondary: '#1a5c8a',
+                        primary: 'var(--color-primary)',
+                        secondary: 'var(--color-secondary)',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -40,7 +40,7 @@
     </style>
 </head>
 
-<body class="bg-[#eef5fb] text-[#0c2340] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
+<body class="bg-[#f5ead8] text-[#2c1810] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
 
     <!-- News Ticker -->
     <div class="fixed top-0 w-full z-50 bg-[#d97706] text-white overflow-hidden" style="height:2rem;">
@@ -61,9 +61,12 @@
     <!-- Header: AP logo + dark toggle only -->
     <nav class="subpage-header">
         <div class="subpage-header-inner">
-            <a href="#" class="text-2xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">AP</a>
-            <button id="theme-toggle" class="p-2 hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] transition-colors rounded-sm" aria-label="Toggle Theme">
-                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+            <a href="#" class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">AP</a>
+            <button id="theme-toggle" aria-label="Toggle theme" style="position:relative;display:inline-flex;align-items:center;width:52px;height:28px;border-radius:9999px;background:#1e4a70;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:background 0.3s ease;">
+                <span id="toggle-knob" style="position:absolute;left:3px;width:22px;height:22px;border-radius:9999px;background:white;display:flex;align-items:center;justify-content:center;transition:transform 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
+                    <svg id="icon-sun" style="display:none" width="14" height="14" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="icon-moon" width="14" height="14" fill="none" stroke="#7ab0d8" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </span>
             </button>
         </div>
     </nav>
@@ -74,10 +77,10 @@
         <!-- Corner registration marks wrapper -->
         <div class="w-full max-w-2xl">
 
-            <div class="drawing-card w-full bg-[#f5faff] dark:bg-[#0d2240] shadow-xl fade-in" style="border-radius:1rem;">
+            <div class="drawing-card w-full bg-[#fdf6ec] dark:bg-[#0d2240] shadow-xl fade-in" style="border-radius:1rem;">
 
                 <!-- Title block row 1 -->
-                <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                <div class="drawing-card-header bg-[#eeddd0] dark:bg-[#07162a]">
                     <div class="drawing-field flex-1">
                         <span class="drawing-label">Title</span>
                         <span class="drawing-value dark:text-[#c8e0f8]">Welcome</span>
@@ -93,7 +96,7 @@
                 </div>
 
                 <!-- Title block row 2: metadata -->
-                <div class="drawing-card-header bg-[#e0eef8] dark:bg-[#07162a]">
+                <div class="drawing-card-header bg-[#eeddd0] dark:bg-[#07162a]">
                     <div class="drawing-field flex-1">
                         <span class="drawing-label">Author</span>
                         <span class="drawing-value dark:text-[#c8e0f8]">A. Progida</span>
@@ -121,12 +124,12 @@
 
                     <!-- Name and subtitle -->
                     <div class="fade-in delay-100">
-                        <h1 class="text-4xl font-bold text-[#0c2340] dark:text-[#c8e0f8] font-serif">Alberto Progida</h1>
-                        <p class="text-lg text-[#1b4d7e] dark:text-[#7ab0d8] mt-1">Mechanical Engineer &middot; Space Systems</p>
+                        <h1 class="text-4xl font-bold text-[#2c1810] dark:text-[#c8e0f8] font-serif">Alberto Progida</h1>
+                        <p class="text-lg text-[#5a3820] dark:text-[#7ab0d8] mt-1">Mechanical Engineer &middot; Space Systems</p>
                     </div>
 
                     <!-- Welcome text -->
-                    <p class="text-[#1b4d7e] dark:text-[#90c4e8] max-w-md leading-relaxed fade-in delay-150">
+                    <p class="text-[#5a3820] dark:text-[#90c4e8] max-w-md leading-relaxed fade-in delay-150">
                         I design hardware for demanding environments — from deployable antennas in orbit to Mach 1.7 sounding rockets. Welcome.
                     </p>
 
@@ -160,7 +163,7 @@
                     <!-- Contact links -->
                     <div class="flex gap-4 pt-2 fade-in delay-250">
                         <a href="mailto:albertoprogida@gmail.com"
-                            class="group flex items-center text-[#0c2340] dark:text-[#c8e0f8] hover:text-primary bg-[#e0eef8] dark:bg-[#071628] hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] px-3 py-2 border border-[#85b4d4] dark:border-[#1e4a70] transition-all duration-300 rounded-lg">
+                            class="group flex items-center text-[#2c1810] dark:text-[#c8e0f8] hover:text-primary bg-[#eeddd0] dark:bg-[#071628] hover:bg-[#e6d0b8] dark:hover:bg-[#1e4a70] px-3 py-2 border border-[#a07850] dark:border-[#1e4a70] transition-all duration-300 rounded-lg">
                             <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -170,7 +173,7 @@
                             </span>
                         </a>
                         <a href="https://linkedin.com/in/albertoprogida" target="_blank" rel="noopener"
-                            class="group flex items-center text-[#0c2340] dark:text-[#c8e0f8] hover:text-primary bg-[#e0eef8] dark:bg-[#071628] hover:bg-[#c8e0f8] dark:hover:bg-[#1e4a70] px-3 py-2 border border-[#85b4d4] dark:border-[#1e4a70] transition-all duration-300 rounded-lg">
+                            class="group flex items-center text-[#2c1810] dark:text-[#c8e0f8] hover:text-primary bg-[#eeddd0] dark:bg-[#071628] hover:bg-[#e6d0b8] dark:hover:bg-[#1e4a70] px-3 py-2 border border-[#a07850] dark:border-[#1e4a70] transition-all duration-300 rounded-lg">
                             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                             </svg>
