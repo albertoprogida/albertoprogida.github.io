@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avionics Hardware | Alberto Progida</title>
+    <title>SRAD Avionics | Alberto Progida</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -65,7 +65,6 @@
             <div class="flex items-center gap-2">
                 <a href="../experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#a07850] dark:border-[#1e4a70] bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#2c1810] dark:text-[#c8e0f8] hover:bg-[#eeddd0] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Experience</a>
                 <a href="../projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#eeddd0] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Projects</a>
-                
             </div>
             <button id="theme-toggle" aria-label="Toggle theme" style="position:relative;display:inline-flex;align-items:center;width:52px;height:28px;border-radius:9999px;background:#1e4a70;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:background 0.3s ease;">
                 <span id="toggle-knob" style="position:absolute;left:3px;width:22px;height:22px;border-radius:9999px;background:white;display:flex;align-items:center;justify-content:center;transition:transform 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
@@ -79,27 +78,218 @@
     <!-- Post Content -->
     <article class="pt-40 pb-20 px-4">
         <div class="max-w-3xl mx-auto">
+
+            <!-- Header -->
             <div class="mb-8 text-center fade-in">
-                <span class="inline-block px-3 py-1 text-sm font-semibold bg-[#fef3c7] text-[#92400e] dark:bg-[#78350f]/40 dark:text-[#fcd34d] rounded-lg mb-4">Avionics</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2c1810] dark:text-[#c8e0f8] mb-4">Avionics Hardware</h1>
+                <span class="inline-block px-3 py-1 text-sm font-semibold bg-[#fef3c7] text-[#92400e] dark:bg-[#78350f]/40 dark:text-[#fcd34d] rounded-lg mb-4">Electronics · SRAD Avionics · EuRoC 2022</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-[#2c1810] dark:text-[#c8e0f8] mb-3">SRAD Avionics</h1>
+                <p class="text-base text-[#7a5840] dark:text-[#7ab0d8]">Endeavour, The University of Edinburgh Student Rocketry Team</p>
+                <p class="text-sm text-[#7a5840] dark:text-[#5b9abd] mt-1">My role: <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Technical Lead and Flight Director</strong></p>
             </div>
 
+            <!-- Cover image -->
             <div class="mb-12 fade-in delay-50 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
-                <img src="../images/project pics/cover/pcb.JPG" alt="PCB Design" class="w-full h-auto object-cover max-h-[500px]">
+                <img src="../images/darwin/avionics_pcbs.png" alt="Full set of SRAD avionics boards aboard Darwin III" class="w-full h-auto object-cover max-h-[480px]">
             </div>
 
-            <div class="prose prose-lg dark:prose-invert mx-auto fade-in delay-100">
-                <p class="lead text-xl text-[#5a3820] dark:text-[#90c4e8] mb-8">
-                    Custom PCB design for flight computers and sensor data acquisition.
+            <div class="fade-in delay-100 space-y-6 text-[#5a3820] dark:text-[#90c4e8] leading-relaxed">
+
+                <!-- Overview -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8]">Overview</h2>
+                <p>
+                    Darwin III's avionics is a fully student-researched and student-developed (SRAD) system, designed from scratch for the <strong class="text-[#2c1810] dark:text-[#c8e0f8]">European Rocketry Challenge (EuRoC) 2022</strong>. It comprises four integrated avionics domains: a centralised power distribution system, the main SRAD avionics stack, a parallel COTS backup, and an independent payload avionics system. Together they handle power management, state estimation, active airbrake control, recovery event triggering, RF telemetry, GPS tracking, and scientific data acquisition.
+                </p>
+                <p>
+                    A key design priority was <strong class="text-[#2c1810] dark:text-[#c8e0f8]">parallel independence</strong> between the SRAD and COTS systems. The SRAD flight computer (Alpha) and the COTS EggTimer Quantum operate in parallel on the same recovery outputs, separated by hardware safety switches. A failure in either system cannot propagate to prevent the other from firing the recovery charges.
                 </p>
 
-                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] mt-12 mb-4">Overview</h2>
-                <p class="mb-6 text-[#5a3820] dark:text-[#90c4e8] leading-relaxed">
-                    Integrates microcontroller, IMU sensors, and telemetry modules into a compact form factor for rocket avionics bays.
+                <!-- Quick stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-8">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 text-center border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="text-2xl font-extrabold text-primary">4</div>
+                        <div class="text-xs mt-1 text-[#7a5840] dark:text-[#7ab0d8]">Avionics domains</div>
+                    </div>
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 text-center border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="text-2xl font-extrabold text-primary">600 MHz</div>
+                        <div class="text-xs mt-1 text-[#7a5840] dark:text-[#7ab0d8]">Teensy 4.1 (Alpha)</div>
+                    </div>
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 text-center border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="text-2xl font-extrabold text-primary">433 MHz</div>
+                        <div class="text-xs mt-1 text-[#7a5840] dark:text-[#7ab0d8]">LoRa telemetry link</div>
+                    </div>
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 text-center border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="text-2xl font-extrabold text-primary">14</div>
+                        <div class="text-xs mt-1 text-[#7a5840] dark:text-[#7ab0d8]">FSM states</div>
+                    </div>
+                </div>
+
+                <!-- System Architecture -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">System Architecture</h2>
+                <p>
+                    The on-board avionics is divided into four main systems (Figure 2.32), each with distinct power feeds and software authority. All electrical schematics are presented in Appendix I of the technical report.
                 </p>
+
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:240px;">
+                        <img src="../images/avionics/system_overview.png" alt="Darwin III Avionics Systems block diagram"
+                             class="w-full h-auto object-contain max-h-96"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/avionics/system_overview.png</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        Figure 2.32: Darwin III Avionics Systems. The SRAD Stack (Papa, Alpha, Bravo, GPS Board) connects to the Battery Bay via the CLB. Safety interlock switches S1–S4 isolate each subsystem. The COTS Stack (EggTimer Quantum + EggFinder GPS) operates in parallel and independently. Payload Avionics occupies a self-powered 2U CubeSat bay.
+                    </figcaption>
+                </figure>
+
+                <ul class="space-y-3 list-none pl-0 mt-2">
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">1.</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Centralised Power Distribution.</strong> A Charging Logic Board (CLB) accepts 60 W (12 V, 5 A) external DC power from the EuRoC generator on the launch pad and switches the entire avionics bay from EXTERNAL to INTERNAL power. Three separate SRAD battery packs connect to the CLB, with all power routing managed through MOSFET switching controlled by Alpha.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">2.</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Main SRAD Avionics.</strong> Three custom boards (Papa, Alpha, Bravo) plus a GPS carrier board, stacked vertically in the avionics bay. Responsible for flight state estimation, airbrake control, recovery event triggering, and downlink telemetry.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">3.</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">COTS Avionics.</strong> EggTimer Quantum flight computer and EggFinder GPS (both from EggTimer Rocketry), with an independent 433 MHz antenna and 2S Li-Ion battery. Forms the redundant recovery system; S4 switch isolates it from the SRAD recovery outputs.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">4.</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Payload Avionics.</strong> Housed within the 2U CubeSat payload bay. Features an independent power distribution board fed by a dedicated LiPo; dormant until signalled by the SRAD avionics stack to conserve power on the pad.</span></li>
+                </ul>
+
+                <!-- Power & Safety Switches -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Power System and Safety Switches</h2>
+                <p>
+                    The batteries are SRAD-fabricated Li-Ion packs built from <strong class="text-[#2c1810] dark:text-[#c8e0f8]">LG MJ1 18650 cells</strong>, offering 3500 mAh capacity at 3.7 V nominal. A 2S2P pack (7 Ah, 7.4 V nominal) powers the SRAD stack; two separate 2S packs (3.5 Ah, 7.4 V) power the COTS flight computers and the RunCam Split 4K camera. All packs include cell-balancing circuits (Battery Management Systems) and are reverse-polarity and over-voltage protected via ideal diodes.
+                </p>
+                <p>
+                    Four <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Schurter 0033.4601 safety interlock switches</strong> are accessible through 5 mm perforations in the avionics bay tube — the same openings that serve as pressure equalisation ports for the barometers. Switches S1 and S2 enable power to the SRAD Stack and COTS Stack respectively; S3 and S4 disconnect the Recovery Bay high-current pyrotechnic outputs. This configuration keeps the SRAD and COTS systems completely parallel and independent: a failure in any single switch cannot cause mission failure.
+                </p>
+
+                <!-- SRAD Stack -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">The SRAD Stack</h2>
+                <p>
+                    The SRAD Stack comprises three main boards and one satellite board, all custom-designed and assembled by the team.
+                </p>
+
+                <h3 class="text-xl font-semibold text-[#2c1810] dark:text-[#c8e0f8] mt-6">Papa — Power Distribution</h3>
+                <p>
+                    Papa is the base board of the stack, fed directly from the Power Routing Board (12 V umbilical or 8.4 V internal). It steps down to <strong class="text-[#2c1810] dark:text-[#c8e0f8]">6 V</strong> for the airbrake and recovery servo-motors, and <strong class="text-[#2c1810] dark:text-[#c8e0f8]">5 V</strong> for Alpha and Bravo. Power conversion is handled by buck converters based on the MP2307DN-LF IC, shielded inside 25×30 mm tin insulator covers to minimise EMI. Laboratory tests confirmed voltage ripple below 50 mV (peak to peak) at 2 A load. Papa's high-current outputs:
+                </p>
+                <ul class="space-y-1 list-none pl-0 mt-2">
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>3× Servo outputs (6 V, 3 A max each, 3 A total)</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>2× Pyro outputs (8.4 V, 800 mA continuous, 3 A peak for 10 ms)</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>1× Digital out (5 V, 800 mA, used to switch camera power)</span></li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-[#2c1810] dark:text-[#c8e0f8] mt-6">Alpha — Sensor Fusion and State Estimation</h3>
+                <p>
+                    Alpha sits above Papa and receives regulated 5 V from it. It is the flight-critical computation board, hosting a <strong class="text-[#2c1810] dark:text-[#c8e0f8]">PJRC Teensy 4.1</strong> development board running at 600 MHz (ARM Cortex-M7). Alpha reads twin redundant barometers (MS5611) and twin redundant accelerometers (LIS331HH) via SPI/I2C buses, fuses the outputs through a <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Kalman filter</strong>, and maintains a continuous estimate of vehicle speed, altitude, and heading. This data is used to identify transitions between the 14 mission states defined in the state machine. Alpha also controls the gates of the high-power MosFETs on Papa via vertical interconnects, giving it authority over all servo and pyrotechnic outputs.
+                </p>
+
+                <h3 class="text-xl font-semibold text-[#2c1810] dark:text-[#c8e0f8] mt-6">Bravo — Telemetry</h3>
+                <p>
+                    Bravo sits at the top of the stack and handles all RF telemetry tasks. It is connected to Alpha via a UART link. Upon receiving GPS coordinates from the GPS Board, Bravo packages them together with vehicle status received from Alpha and transmits the packet to the ground station via a 433 MHz LoRa link at 20 dB (100 mW). Bravo is based on an ATmega2560 microcontroller, with an RFM96 LoRa module, on-board FLASH, microSD card logger, and a GPS carrier connector.
+                </p>
+
+                <!-- Sensor specs -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Sensors</h2>
+                <p>
+                    Sensor redundancy is achieved by fitting twin instances of each inertial and pressure sensor on Alpha, with the Kalman filter continuously fusing and cross-checking their outputs.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 border border-[#a07850] dark:border-[#1e4a70]">
+                        <h3 class="font-bold text-[#2c1810] dark:text-[#c8e0f8] mb-3">LIS331HH Accelerometer ×2</h3>
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y divide-[#a07850]/30 dark:divide-[#1e4a70]/50">
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Axes</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">3-axis (X, Y, Z)</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Range</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">Adjustable, set to 24 g</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Resolution</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">16-bit</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Interface</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">SPI, I2C</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg p-4 border border-[#a07850] dark:border-[#1e4a70]">
+                        <h3 class="font-bold text-[#2c1810] dark:text-[#c8e0f8] mb-3">MS5611 Barometer ×2</h3>
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y divide-[#a07850]/30 dark:divide-[#1e4a70]/50">
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Range</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">10 mbar – 1200 mbar</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Alt. equivalent</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">30 km to −1.5 km ALS</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Resolution</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">24-bit (0.1 m equivalent)</td></tr>
+                                <tr><td class="py-1 text-[#7a5840] dark:text-[#7ab0d8]">Interface</td><td class="py-1 font-medium text-[#2c1810] dark:text-[#c8e0f8]">SPI, I2C</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Airbrake Control -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Airbrake Control System</h2>
+                <p>
+                    During coasting, Alpha runs a real-time apogee prediction algorithm to determine whether airbrake deployment is required to trim the trajectory toward the 9,000 m target. The algorithm models the rocket as a 2D projectile subject to a drag force and numerically solves the resulting system of non-linear ODEs using a <strong class="text-[#2c1810] dark:text-[#c8e0f8]">fourth-order Runge-Kutta integrator</strong> with a 0.5-second timestep. The Teensy 4.1 at 600 MHz can produce a predicted apogee value in under half a millisecond.
+                </p>
+                <p>
+                    Airbrakes are not deployed until the vehicle has dropped below supersonic speed. When the algorithm confirms five independent times that the rocket will overshoot the target by more than 100 m, the flight computer begins calculating how long to hold the airbrakes open. It starts from a minimum opening time (closing when speed drops below 190 m/s), stepping down by 10 m/s until the correction is sufficient.
+                </p>
+
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <img src="../images/avionics/avionics_integration.JPG" alt="SRAD avionics integrated into the RF-transparent avionics bay" class="w-full h-auto object-contain max-h-80 bg-[#fdf6ec] dark:bg-[#0d2240]">
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        The SRAD avionics stack fully integrated into the RF-transparent section of the Darwin III airframe, showing the stacked Papa, Alpha, and Bravo boards within the avionics bay.
+                    </figcaption>
+                </figure>
+
+                <!-- Finite State Machine -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Finite State Machine</h2>
+                <p>
+                    The flight software is organised around a 14-state Finite State Machine (FSM). Three classes of event drive state transitions: <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Nominal Events (Ex)</strong>, triggered by detection of flight milestones; <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Anomalous Events (AEx)</strong>, triggered when the vehicle deviates from the expected trajectory or a system fault is detected; and <strong class="text-[#2c1810] dark:text-[#c8e0f8]">Manual Events (MEx)</strong>, triggered by ground operators via hardware switches or radio commands through the ground station.
+                </p>
+
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:240px;">
+                        <img src="../images/avionics/state_machine.png" alt="Darwin III Finite State Machine"
+                             class="w-full h-auto object-contain"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/avionics/state_machine.png</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        Figure 3.2: Darwin III Finite State Machine. Green states are safe to approach; yellow states indicate pyrotechnic systems are armed. The FSM handles both nominal and off-nominal (anomalous) mission trajectories.
+                    </figcaption>
+                </figure>
+
+                <p>The 14 states and their nominal transitions:</p>
+                <ul class="space-y-2 list-none pl-0 mt-2">
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S1</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Off:</strong> System unpowered.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S2</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Initialise:</strong> Boot sequence, sensor self-test, baseline calibration against launch-site conditions.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S3</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Ready:</strong> All systems nominal; vehicle awaiting arm command.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S4</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Unarmed:</strong> Pyrotechnic outputs disabled; safe for personnel to approach. Transitioned by manual command.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S5</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Armed:</strong> Pyro outputs enabled; range cleared. Vehicle awaiting ignition detection.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S6</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Boosting:</strong> Liftoff detected (positive acceleration). Motor burn phase; datalogging and telemetry active at full rate.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S7</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Coasting:</strong> Motor burnout detected (t+6.34 s). Airbrake deployment algorithm active; apogee prediction running at every timestep.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S8</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Apogee:</strong> Zero vertical velocity detected (t+40.21 s). Airbrakes retract. Nosecone separation command issued to initiate recovery sequence.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S9</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Drogue Deploy:</strong> Nosecone separation charge fires; drogue parachute ejected at 28 m/s descent.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S10</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Drogue Descent:</strong> Stable drogue descent; GPS coordinates transmitted continuously.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S11</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Main Deploy:</strong> 450 m altitude detected (t+188.36 s); Tender Descender fires, deploying main parachute.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S12</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Main Descent:</strong> Stable main parachute descent to touchdown.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S13</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Beacon:</strong> Zero vertical velocity detected at ground (t+255.76 s). System enters low-power beacon mode, transmitting last known GPS location at reduced rate.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">S14</span><span><strong class="text-[#2c1810] dark:text-[#c8e0f8]">Recovered:</strong> Ground operator confirms recovery via radio command; system powers down.</span></li>
+                </ul>
+
+                <!-- Flight Outcomes -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Flight Outcomes</h2>
+                <ul class="space-y-2 list-none pl-0">
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>SRAD avionics performed nominally throughout powered ascent and coasting, surviving max-Q at Mach 1.7 without structural or electrical failure.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>GPS telemetry was suspended above Mach 1.0 per CoCoM export control regulations. A single GPS fix was received after the vehicle exited the supersonic regime, confirming structural integrity through the boost phase.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>LoRa telemetry was lost at high velocity due to ground station antenna tracking limitations at the high angular rates seen during supersonic ascent. Increasing transmission power and improving antenna tracking were identified as primary improvement areas.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>Recovery failure was a mechanical fault: the nosecone failed to separate at apogee, preventing the drogue ejection condition from being met. The avionics correctly detected apogee and issued the separation command; the command was not executed due to a mechanical failure in the separation mechanism.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>The FLASH chip from the COTS EggTimer Quantum FC was recovered from the impact site in good condition, with data recovery attempted upon return to Edinburgh.</span></li>
+                </ul>
+
             </div>
 
-            <div class="mt-16 pt-8 border-t border-[#a07850] dark:border-[#1e4a70] text-center">
+            <!-- Back links -->
+            <div class="mt-12 pt-8 border-t border-[#a07850] dark:border-[#1e4a70] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <a href="darwin-iii.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#a07850] dark:border-[#1e4a70] bg-[#fdf6ec] dark:bg-[#0d2240] text-[#2c1810] dark:text-[#c8e0f8] font-semibold text-sm hover:bg-[#eeddd0] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Darwin III Mission
+                </a>
                 <a href="../projects.html" class="inline-flex items-center text-primary font-medium hover:underline">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
