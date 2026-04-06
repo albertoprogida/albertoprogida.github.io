@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composite Tube Flexures | Alberto Progida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'var(--color-primary)',
+                        secondary: 'var(--color-secondary)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+
+<body class="bg-[#f5ead8] text-[#2c1810] dark:bg-[#071628] dark:text-[#c8e0f8] transition-colors duration-300">
+
+    <!-- News Ticker -->
+    <div class="fixed top-0 w-full z-50 bg-[#d97706] text-white overflow-hidden" style="height:2rem;">
+        <div class="flex items-center h-full">
+            <span class="flex-shrink-0 px-4 text-xs font-semibold uppercase tracking-widest bg-[#b45309] h-full flex items-center">New Publication</span>
+            <div class="overflow-hidden flex-1 relative">
+                <a href="https://link.springer.com/article/10.1007/s12567-026-00698-z" target="_blank" rel="noopener"
+                   class="ticker-track inline-block whitespace-nowrap text-sm hover:underline">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integrated electrical connections in deployable composite tube flexures — A. Progida &amp; M. Santer — CEAS Space Journal (2026)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subpage Header -->
+    <nav class="subpage-header">
+        <div class="subpage-header-inner">
+            <a href="../index.html" class="flex items-center gap-1 text-[#2c1810] dark:text-[#c8e0f8] hover:text-primary transition-colors font-serif font-bold text-lg flex-shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Home
+            </a>
+            <div class="flex items-center gap-2">
+                <a href="../experience.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-[#a07850] dark:border-[#1e4a70] bg-[#fdf6ec] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-[#2c1810] dark:text-[#c8e0f8] hover:bg-[#eeddd0] dark:hover:bg-[#112a50] hover:-translate-y-0.5 transition-all duration-200">Experience</a>
+                <a href="../projects.html" class="px-3 py-1.5 sm:px-5 sm:py-2 border border-primary bg-[#eeddd0] dark:bg-[#0d2240] rounded-lg text-sm sm:text-lg font-semibold font-serif text-primary">Projects</a>
+                
+            </div>
+            <button id="theme-toggle" aria-label="Toggle theme" style="position:relative;display:inline-flex;align-items:center;width:52px;height:28px;border-radius:9999px;background:#1e4a70;border:none;cursor:pointer;padding:0;flex-shrink:0;transition:background 0.3s ease;">
+                <span id="toggle-knob" style="position:absolute;left:3px;width:22px;height:22px;border-radius:9999px;background:white;display:flex;align-items:center;justify-content:center;transition:transform 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
+                    <svg id="icon-sun" style="display:none" width="14" height="14" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="icon-moon" width="14" height="14" fill="none" stroke="#7ab0d8" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Post Content -->
+    <article class="pt-40 pb-20 px-4">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Header -->
+            <div class="mb-8 text-center fade-in">
+                <span class="inline-block px-3 py-1 text-sm font-semibold bg-[#fef3c7] text-[#92400e] dark:bg-[#78350f]/40 dark:text-[#fcd34d] rounded-lg mb-4">Publication · CEAS Space Journal · 2026</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-[#2c1810] dark:text-[#c8e0f8] mb-3 leading-tight">Integrated Electrical Connections in Deployable Composite Tube Flexures</h1>
+                <p class="text-base text-[#7a5840] dark:text-[#7ab0d8]">Alberto Progida &amp; Matthew J. Santer &mdash; Department of Aeronautics, Imperial College London</p>
+                <a href="https://doi.org/10.1007/s12567-026-00698-z" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 mt-3 text-sm text-primary hover:underline font-medium">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    10.1007/s12567-026-00698-z
+                </a>
+            </div>
+
+            <!-- Cover image -->
+            <div class="mb-12 fade-in delay-50 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                <img src="../images/project pics/cover/samples.JPG" alt="Material Samples" class="w-full h-auto object-cover max-h-[420px]">
+            </div>
+
+            <!-- Summary -->
+            <div class="fade-in delay-100 space-y-6 text-[#5a3820] dark:text-[#90c4e8] leading-relaxed">
+
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8]">Overview</h2>
+                <p>
+                    Spacecraft deployable booms and hinges rely on <strong class="text-[#2c1810] dark:text-[#c8e0f8]">tube flexures</strong> — pairs of curved carbon-fibre tape springs that self-latch into a rigid deployed state and can be stowed compactly for launch. This paper introduces a method to make these structural hinges carry electrical signals and power at the same time, eliminating dedicated wire harnesses and reducing system mass.
+                </p>
+                <p>
+                    The approach embeds a <strong class="text-[#2c1810] dark:text-[#c8e0f8]">multi-layer conductive film</strong> at the midplane of the laminate: silver nanoparticle tracks are inkjet-printed onto a 25 µm Kapton substrate, then encapsulated in a thermoplastic polyolefin film to prevent short-circuits with the surrounding carbon fibres. The complete stackup — <span class="font-mono text-sm bg-[#fdf6ec] dark:bg-[#0d2240] px-1.5 py-0.5 rounded">[+45/−45 / Kapton+Ag / PO / −45/+45]</span> — is co-cured on a cylindrical mandrel under vacuum at 150 °C, producing a 127 µm-thick flexure with integral electrical traces.
+                </p>
+
+                <!-- Fig 1: Layup -->
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:220px;">
+                        <img src="../images/paper/fig2_layup.png" alt="Complete layup stackup illustration"
+                             class="w-full h-auto object-contain max-h-64"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/paper/fig2_layup.png</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        <strong>Fig. 2</strong> — The complete [+45/−45/Kapton+Silver Ink/PO/−45/+45] laminate stackup, with the conductive interleave embedded at the midplane. The staggered ply-drop geometry at each end exposes the track terminals while preventing short-circuits with the outer CFRP plies.
+                    </figcaption>
+                </figure>
+
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Assembly &amp; Testing</h2>
+                <p>
+                    Four tube flexures were manufactured — each comprising two tape springs bonded to 3D-printed couplers — and subjected to <strong class="text-[#2c1810] dark:text-[#c8e0f8]">seven fold-unfold cycles</strong> on a custom bending rig. Moment and rotation were measured simultaneously with track resistance and RS-232 signal integrity, giving a complete picture of how the electrical and mechanical performances evolve together under repeated high-strain loading.
+                </p>
+
+                <!-- Fig 2: Assembly render -->
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:260px;">
+                        <img src="../images/paper/fig7_assembly.png" alt="Render of assembled tube flexure"
+                             class="w-full h-auto object-contain max-h-72"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/paper/fig7_assembly.png</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        <strong>Fig. 7</strong> — Render of a fully assembled tube flexure with four conductive tracks (two per spring). The 3D-printed couplers house PCBs for simple electrical connection, while clamp rings fix the tape springs at each end.
+                    </figcaption>
+                </figure>
+
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Test Setup</h2>
+                <p>
+                    Each flexure was mounted between two thin-walled shafts instrumented with full-bridge strain gauge rosettes (±45° to the shaft axis), one fixed and one free to translate along a linear rail to maintain pure bending throughout the fold. End rotations were applied via worm-gear knobs and measured by analogue potentiometers at ±5.4 µ° resolution. Track resistance was logged continuously alongside moment and rotation using a Keysight 34410A multimeter, and RS-232 signal integrity was checked at the start and end of each fold.
+                </p>
+
+                <!-- Fig: Test setup -->
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:260px;">
+                        <img src="../images/paper/fig10_test_setup.jpg" alt="Top-down photograph of the experimental test setup"
+                             class="w-full h-auto object-contain max-h-72"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/paper/fig10_test_setup.jpg</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        <strong>Fig. 10</strong> — Top-down photograph of the bending test rig with a flexure installed. One shaft is fixed while the other translates along a linear rail, ensuring pure bending. Worm-gear knobs drive the end rotations; potentiometers measure angle and strain gauges measure the applied moment.
+                    </figcaption>
+                </figure>
+
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Mechanical Results</h2>
+                <p>
+                    The flexures behaved as expected structurally: a sharp peak moment followed by snap-through and a stable constant moment region. Repeated folding produced a statistically significant <strong class="text-[#2c1810] dark:text-[#c8e0f8]">32% reduction in peak locking moment</strong> between the first and subsequent folds — a "breaking-in" behaviour consistent with progressive compressive matrix damage — while snap angle and constant moment remained unchanged. Abaqus/Explicit quasi-static simulations with a 0.5° mounting misalignment matched first-fold peak moments to within 4%.
+                </p>
+
+                <!-- Fig 3: Moment-rotation -->
+                <figure class="my-10 rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                    <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:260px;">
+                        <img src="../images/paper/fig12_moment_rotation.png" alt="Moment-rotation dataset for Flexure 1"
+                             class="w-full h-auto object-contain max-h-72"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-10 text-center">
+                            <svg class="w-10 h-10 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span class="text-sm opacity-60">Place figure at <code>images/paper/fig12_moment_rotation.png</code></span>
+                        </div>
+                    </div>
+                    <figcaption class="px-5 py-3 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                        <strong>Fig. 12</strong> — Moment-rotation dataset across seven successive folds for Flexure 1, overlaid with quasi-static FEA predictions for 0.0° and 0.5° mounting misalignments. The progressive reduction in peak moment is clearly visible; snap angle and constant moment are stable across folds.
+                    </figcaption>
+                </figure>
+
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Electrical &amp; Thermal Results</h2>
+                <p>
+                    No track failures were recorded across all 28 fold cycles. Every flexure successfully transmitted <strong class="text-[#2c1810] dark:text-[#c8e0f8]">RS-232 data at 115,200 baud</strong> — the maximum standard rate — in both stowed and deployed configurations, and four flexures daisy-chained in series maintained full-rate communication. Power transmission was demonstrated at <strong class="text-[#2c1810] dark:text-[#c8e0f8]">2.5 W</strong>, with no measurable change in electrical resistance or signal quality over the test campaign. Resistive heating to ~50 °C was also achieved, but induced delamination-buckling failure at the silver-track/polyolefin interface during stowage — identifying bond strength as the critical barrier to shape-memory applications.
+                </p>
+
+                <!-- Fig 4 & 5: two images side by side -->
+                <div class="my-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <figure class="rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:200px;">
+                            <img src="../images/paper/fig16_ir_power.png" alt="Infrared thermal imagery of power transmission"
+                                 class="w-full h-auto object-contain max-h-52"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-6 text-center">
+                                <svg class="w-8 h-8 mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                <span class="text-xs opacity-60"><code>images/paper/fig16_ir_power.png</code></span>
+                            </div>
+                        </div>
+                        <figcaption class="px-4 py-2.5 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                            <strong>Fig. 16</strong> — Infrared imagery of Flexure 2 transferring 101 mA at steady state. Spring 2B (higher resistance, 318 mW dissipated) shows a 4.0 °C rise above ambient versus 3.4 °C for Spring 2A.
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-lg overflow-hidden border border-[#a07850] dark:border-[#1e4a70]">
+                        <div class="bg-[#fdf6ec] dark:bg-[#0d2240] flex items-center justify-center" style="min-height:200px;">
+                            <img src="../images/paper/fig21_sem.png" alt="SEM images of thermal failure"
+                                 class="w-full h-auto object-contain max-h-52"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div style="display:none" class="w-full flex-col items-center justify-center text-[#a07850] dark:text-[#3a6a90] p-6 text-center">
+                                <svg class="w-8 h-8 mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                <span class="text-xs opacity-60"><code>images/paper/fig21_sem.png</code></span>
+                            </div>
+                        </div>
+                        <figcaption class="px-4 py-2.5 text-sm text-[#7a5840] dark:text-[#7ab0d8] bg-[#fdf6ec] dark:bg-[#0a1d36] border-t border-[#a07850] dark:border-[#1e4a70]">
+                            <strong>Fig. 21</strong> — Scanning electron micrographs of the thermally induced delamination failure. The silver track is cracked and peeled from the Kapton substrate; lack of PO residue on the track surface indicates poor adhesion at the Ag–PO interface.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- Key findings -->
+                <h2 class="text-2xl font-bold text-[#2c1810] dark:text-[#c8e0f8] pt-4">Key Findings</h2>
+                <ul class="space-y-2 list-none pl-0">
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>RS-232 digital communication at 115,200 baud sustained in both deployed and fully stowed states, with up to four flexures daisy-chained in series.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>2.5 W power delivery demonstrated with no measurable degradation in resistance or signal quality over seven fold-unfold cycles.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>Resistive heating to ~50 °C is achievable in the deployed state, but causes delamination-buckling failure during stowage — bond strength improvement (plasma treatment, laser micro-texturing) is identified as the key next step.</span></li>
+                    <li class="flex gap-2"><span class="mt-1 text-primary font-bold flex-shrink-0">→</span><span>A 37% reduction in peak stiffness between folds is consistent with compressive matrix damage observed in non-interleaved flexures in prior studies, not attributable to the conductive interleave alone.</span></li>
+                </ul>
+
+            </div>
+
+            <!-- Back link -->
+            <div class="mt-16 pt-8 border-t border-[#a07850] dark:border-[#1e4a70] text-center">
+                <a href="../projects.html" class="inline-flex items-center text-primary font-medium hover:underline">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Projects
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-[#2c1810] text-[#f5ead8] py-8 border-t border-[#5c3820] dark:bg-[#071628] dark:text-[#c8e0f8] dark:border-[#1e4a70]">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Alberto Progida. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
